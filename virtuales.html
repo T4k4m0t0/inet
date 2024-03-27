@@ -1,0 +1,388 @@
+<html>
+<head>
+<title>Virtuales</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+<body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="8" cellspacing="8" bgcolor="#fffaf2" width="100%" height="100%">
+ 
+  <tr>
+
+    <td width="50%" bgcolor="#FFFAF2" valign="top">
+
+&#149; 
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <a name="virtual"></a> <b>VMware virtual:</b> </font><br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+    <a href="https://communities.vmware.com/welcome" target="_blank">
+VMware -comunidad ingles</a><br>
+
+    <a href="https://www.vmware.com/es/support/workstation.html" target="_blank">
+VMware -comunidad español</a><br>
+    <a href="https://www.sysadmit.com/2013/12/vmware-formatos-ova-y-ovf.html" target="_blank">
+VMware -Formatos <b>OVA y OVF</b> </a><br>
+
+
+    <a href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2055196" target="_blank">
+Usar adaptadores Ethernet virtuales en modo promiscuo en un host Linux</a><br>
+    <a href="http://www.windowsbleu.com/2014/09/how-to-install-windows-9-technical_30.html" target="_blank">
+Instalar W10 en VMware -Windows 10</a><br>
+   <a href="http://my.opera.com/obiwan2208/blog/guia-vmware-workstation-indice" target="_blank">
+VMware Workstation - Guia completa </a><br>
+   <a href="http://ccm.net/faq/7591-boot-from-your-usb-drive-under-vmware" target="_blank">
+VMware Workstation - Boot desde USB Drive</a><br>
+
+      <a href="https://iboysoft.com/howto/macos-ventura-vmware.html" target="_blank">
+<b>Guía actualizada que instala prácticamente cualquier macOS en VMware</b></a><br>
+    <a href="http://www.argentinawarez.com/trucos-manuales-y-guias/1605725-como-instalar-windows-8-en-vmware-workstation-8-a.html" target="_blank">
+<b>Instalar Windows 8</b> en VMWare Workstation 8</a><br>
+    <a href="https://www.howtogeek.com/125640/how-to-convert-virtual-machines-between-virtualbox-and-vmware/" target="_blank">
+How To <b>Convert Virtual Machines</b> Between <b>VirtualBox and VMware</b></a><br>
+
+
+    <a href="https://www.howtogeek.com/289594/how-to-install-macos-sierra-in-virtualbox-on-windows-10/" target="_blank">
+How to Install </b>macOS High Sierra</b> in VirtualBox on Windows 10</a><br>
+
+    <a href="https://olarila.com/forum/" target="_blank">
+<b>Hackintosh</b> instructions, tutorials, step by step, how to, guides - Olarila</a><br>
+    <a href="http://olarila.com/forum/viewtopic.php?f=50&t=6508" target="_blank">
+[Guide] Virtual Box Installation - Hackintosh instructions</a><br>
+ 
+<br>
+    <a href="https://www.vmware.com/es/products/workstation-player.html" target="_blank">
+<b>VMWare Player</b></a><br>
+    <a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/16_0" target="_blank">
+<b>VMWare Player 16.1.2</b></a><br>
+    <a href="https://communities.vmware.com/t5/Desktop-Hypervisor/ct-p/16000-home" target="_blank">
+<b>VMWare Player</b> foro desktop</a><br>
+    <a href="https://communities.vmware.com/t5/Desktop-Hypervisor/ct-p/16000-home" target="_blank">
+<b>VMWare Player</b> foro VMware Workstation Player Discussions</a><br>
+
+
+
+<br>
+    <a href="https://communities.vmware.com/thread/629730" target="_blank">
+SCSI Driver and Windows Up<b>VMware Workstation Pro 15.5.2</b> VMware Communities</a><br>
+    <a href="https://communities.vmware.com/thread/619183" target="_blank">
+Windows 10 KB4517211 Stops <b>VMware Workstation Pro 12</b> VMware Communities</a><br>
+
+
+    <a href="https://www.tenforums.com/windows-10-news/141310-cumulative-update-kb4517211-windows-10-v1903-build-18362-387-sept-26-a-14.html#post1735768" target="_blank">
+KB4517211 <b>VMWare software can't to work on current Windows builds</b> tenforums.com</a><br>
+
+    <a href="https://www.tenforums.com/virtualization/141820-vmware-workstation-pro-cant-run-windows-message-3.html#post1740491" target="_blank">
+<b>VMware Workstation Pro 12</b> can't run on Windows -VMware Communities</a><br>
+
+    <a href="https://tipstecnologicos.es/" target="_blank">
+<b>Tips Tecnológicos.es</b> - Blog tecnológico sobre VMware, Microsoft, Linux entre otros</a><br>
+
+    <a href="https://miketabor.com/" target="_blank">
+<b>Mike Tabor</b> - Blog Ramblings from a virtualization enthusiast</a><br>
+
+<br>
+<b>Workstation 15.5.2: fallo "LSI Adapter, SAS 3000 Series, 8-port with 1068 (LSI)"</b><br>
+Antes actualización, desde -administrador dispositivos, -controladores de almacenamiento, desinstale como dicen, el driver sin reiniciar cuando lo pide.
+<br>
+
+
+<br>
+Hyper-V y VMware no son compatibles, ya que tratan de ejecutar el hypervisor por debajo.<br><br>
+
+Una solución, es activar/desactivar  momentáneamente <br>
+el hypervisor de Hyper-V para que pueda ejecutarse el de VMware<br>
+Cuando necesitemos Hyper-V lo volvamos a activar con un simple comando:<br>
+<b>CMD:</b> Con este comando se desactiva el hypervisor de Hyper-V<br>
+
+<b>bcdedit /set hypervisorlaunchtype off</b><br>
+Reiniciar el PC<br><br>
+
+Para activarlo.:<br>
+
+<b>bcdedit /set hypervisorlaunchtype Auto</b><br>
+Para comprobar estado.:<br>
+<b>bcdedit /v</b><br>
+<br>
+
+Script.: <br><br>
+
+@Echo off<br>
+set /p Msg=se va a activar Hyper-V. Para aceptar pulse s:<br>
+If %Msg% NEQ s exit<br>
+bcdedit /set hypervisorlaunchtype auto<br>
+shutdown.exe /r /t 5<br>
+<br>
+@Echo off<br>
+set /p Msg=se va a activar VMWare Workstation. Para aceptar pulse s:<br>
+If %Msg% NEQ s exit<br>
+bcdedit /set hypervisorlaunchtype off<br>
+shutdown.exe /r /t 5<br>
+[/QUOTE]<br>
+
+
+<br>
+Problemas conexión Internet.:<br>
+<b>VMware SIN Red</b><br>
+Icono abajo en VMware general<br>
+Network Adapter -settings -Network Connection -Custom  -VMNET 8 (NAT) <br>
+Disconnect<br>
+Connect<br>
+<br>
+
+<br>
+&#149; 
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <a name="discovirtual"></a> <b>Discos Virtuales:</b> </font><br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+    <a href="https://www.microsoftinsider.es/129438/utilizar-los-discos-virtuales-vhd/" target="_blank">
+Cómo utilizar los discos virtuales VHD -microsoftinsider.es</a><br>
+    <a href="https://www.osboxes.org/" target="_blank">
+<b>OSBoxes - Virtual Machines for VirtualBox & VMware </b></a><br>
+
+
+
+<br>
+
+
+</td>
+
+     <td width="50%" bgcolor="#FFFAF2" valign="top"> &#149; 
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <a name="hyperV"></a> <b>Hyper-V:</b> </font><br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+     <a href="http://www.technig.com/install-linux-mint-on-hyper-v/" target="_blank">
+Como instalar <b>Hyper-V</b> en Windows 10</a><br>
+     <a href="https://www.youtube.com/watch?v=gupryp4z2Fc" target="_blank">
+Crear Máquina virtual con <b>Hyper-V</b> en Windows 10 -youtube</a><br>
+
+     <a href="https://ashwaniashwin.wordpress.com/2014/06/27/configure-remote-desktop-connection-to-hyper-v-virtual-machine/" target="_blank">
+Como instalar Remote Desktop Connection a <b>Hyper-V</b></a><br>
+     <a href="https://social.technet.microsoft.com/wiki/contents/articles/24545.installing-ubuntu-14-04-lts-as-a-generation-2-hyper-v-guest.aspx" target="_blank">
+Installing Ubuntu 14.04 LTS as a Generation 2 <b>Hyper-V</b> guest</a><br>
+     <a href="https://communities.vmware.com/thread/421023" target="_blank">
+No sound device for Linux mint |VMware Communities guest</a><br>
+
+
+
+
+    <a href="https://technet.microsoft.com/es-es/magazine/hh922967.aspx" target="_blank">
+Hyper-V con Windows PowerShell -Creación máquinas virtuales</a><br>
+    <a href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/quick_start/walkthrough_create_vm" target="_blank">
+Hyper-V -Creación máquinas virtuales</a><br>
+
+<b>CTRL+ALT+Fn/inter</b> Salir Pantalla completa<br>
+<b>CTRL+ALT+Fin</b> Administrador de Tareas<br>
+
+
+
+
+
+<br>
+Powershell (adm)<br>
+<b>Import-Module "C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1"</b>
+<b>ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath "f:\Windows 10 x64.vmdk" -DestinationLiteralPath "C:\Users\Public\Documents\Hyper-V\Virtual hard disks\pgdc" -VhdType DynamicHardDisk -VhdFormat Vhd</b>
+<br>
+<br>
+    <a href="hhttps://www.muycomputer.com/2018/12/17/ubuntu-linux-hyper-v/" target="_blank">
+<b>Ubuntu Linux</b> en una sesión <b>Hyper-V</b></a><br>
+<br>
+
+    <a href="https://docs.microsoft.com/es-es/virtualization/hyper-v-on-windows/user-guide/enhanced-session-mode" target="_blank">
+<b>Compartir dispositivos con la máquina virtual</b></a><br>
+    <a href="https://www.youtube.com/watch?v=DS_256jbIS4" target="_blank">
+<b>Como conectar una unidad USB directamente a una máquina virtual Hyper-V</b> youtube</a><br>
+<br>
+Conexion máquina virtual para conectar USB<br>
+CMD (adm)  [desde el Host no desde la VM)<br>
+<b>vmconnect.exe</b><br>
+Servidor (nombre servidor aparece en Hyper-V)<br>
+Máquina virtual (nombre máquina virtual aparece en Hyper-V)<br>
+<br>
+
+
+<a href="http://pshyperv.codeplex.com/" target="_blank">
+PowerShell Management Library for Hyper-V</a><br>
+
+
+    <a href="http://pshyperv.codeplex.com/" target="_blank">
+PowerShell Management Library for Hyper-V</a><br>
+    <a href="http://pshyperv.codeplex.com/releases" target="_blank">
+PowerShell Management Library for Hyper-V -download</a><br>
+
+<br>
+Consola de <b>Hyper-V</b> (desde Herramientas Administrativas) Conmutadores virtuales (en la izquierda)<br><br>
+Si no esta instalada.:<br>
+<b>"Añadir Caracteristicas Windows"</b><br>
+<b>Hyper-V</b>, las Herramientas administrativas de <b>Hyper-V</b> <br><br>
+
+
+Eliminar redes virtuales.:<br>
+<br>
+<b>Powershell:</b> como Admin<br>
+<b>Get-VMNetworkAdapter -ManagementOS</b>
+
+<br>
+Los que te liste, intenta eliminarlos con<br>
+<b>remove-vmnetworkadapter</b><br>
+o<br>
+<b>Get-VMNetworkAdapter -ManagementOS | remove-VMNetworkAdapter</b>
+Y si esto no te funciona, solo queda una cosa: en una consola como admin:<br>
+
+<b>netcfg -d</b><br><br>
+
+Y reiniciar. Pero esto elimina absolutamente todos los adaptadores de red: <br>
+incluidos los reales, que serán de nuevo reconocidos al reinicar la maquina. <br>
+Las redes virtuales que VMware o VirtualBox también serán eliminadas por lo que tendrás que reinstalar.<br>
+<b>remove-networkadapter "NOMBRE -NAME- QUE TE MUESTRA EL COMANDO ANTERIOR"</b><br><br>
+Reiniciar el PC<br><br>
+
+
+<br>
+    <a href="https://www.veeam.com/blog/es/how-to-convert-physical-machine-hyper-v-virtual-machine-disk2vhd.html" target="_blank">
+<b>Cómo convertir máquinas físicas a virtuales — Disk2VHD</b></a><br>
+    <a href="https://docs.microsoft.com/es-es/previous-versions/windows/server/dn873998(v=ws.11)?redirectedfrom=MSDN" target="_blank">
+<b>Microsoft Virtual Machine Converter 3.0/3.1</b> | Microsoft Docs</a><br>
+    <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42497" target="_blank">
+<b>Microsoft Virtual Machine Converter 3.0/3.1</b> download</a><br>
+    <a href="https://www.experts-exchange.com/articles/17453/HOW-TO-P2V-V2V-for-FREE-to-Hyper-V-Microsoft-Virtual-Machine-Converter-3-1.html" target="_blank">
+<b>Microsoft Virtual Machine Converter 3.0/3.1</b> HOW TO: P2V, V2V for FREE to Hyper-V </a><br>
+    <a href="https://www.starwindsoftware.com/converter" target="_blank">
+StarWind V2V Converter</a><br>
+    <a href="https://windowserver.wordpress.com/2017/07/11/convertir-mquina-virtual-vmware-workstation-a-hyper-v/" target="_blank">
+<b>Convertir Máquina Virtual VMware Workstation a Hyper-V</b></a><br>
+    <a href="https://www.mysysadmintips.com/windows/servers/801-convertto-mvmcvirtualharddisk-the-entry-is-not-a-supported-disk-database-entry-for-the-descriptor" target="_blank">
+<b>Convertir Máquina Virtual VMware Workstation a Hyper-V</b> error descriptor</a><br>
+    <a href="https://programmerclick.com/article/39991356258/" target="_blank">
+<b>Convertir Máquina Virtual VMware Workstation a Hyper-V</b> error descriptor 2</a><br>
+    <a href="https://blog.ragasys.es/troubleshooting-convertir-vmdk-to-vhdx-the-entry-1-is-not-a-supported-disk-database-entry-for-the-descriptor" target="_blank">
+<b>Convertir Máquina Virtual VMware Workstation a Hyper-V</b> error descriptor 3</a><br>
+    <a href="https://www.mysysadmintips.com/-downloads-/Windows/Servers/dsfok.zip" target="_blank">
+<b>dsfok.zip</b> download</a><br>
+    <a href="https://kb.iweb.com/hc/es/articles/230239568-Virtualizaci%C3%B3n-lista-gu%C3%ADa-de-usuario-de-Hyper-V" target="_blank">
+<b>Virtualización lista: guía de usuario de Hyper-V</b></a><br>
+    <a href="https://www.sourceonetechnology.com/convert-vmware-vmdk-files-into-hyper-v-vhd/" target="_blank">
+<b>How to Convert VMware VMDK Files Into Hyper-V VHD Files</b></a><br>
+
+
+</font>
+<br><br>
+&#149; 
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <a name="contenedores"></a> <b>Contenedores/ Docker:</b> </font><br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+     <a href="https://www.docker.com/" target="_blank">
+Docker -sign in</a><br>
+     <a href="https://hub.docker.com/" target="_blank">
+Docker -Buscar Contenedores -hub.docker.com</a><br>
+     <a href="https://enmilocalfunciona.io/instalando-y-probando-docker-en-windows-10/" target="_blank">
+Docker -Instalando y Probando en W10</a><br>
+     <a href="https://github.com/artisticcheese/artisticcheesecontainer/wiki" target="_blank">
+Docker -Wiki -artisticcheesecontainer</a><br>
+     <a href="https://github.com/artisticcheese/artisticcheesecontainer/wiki" target="_blank">
+Docker -Wiki -artisticcheesecontainer</a><br>
+     <a href="https://download.docker.com/win/static/stable/x86_64/" target="_blank">
+Docker -download.docker.com/win/static/stable/x86_64/</a><br>
+
+<br>
+<b>Docker CE for Windows</b><br>
+<br>
+
+      <a href="https://deephacking.tech/kali-linux-en-docker/" target="_blank">
+<b>Kali Linux en Docker | WSL2 vs Docker basado en WSL2</b></a><br>
+
+
+
+
+
+ <a href="https://github.com/artisticcheese/artisticcheesecontainer/wiki" target="_blank">
+<b>Wiki Container</b></a><br>
+    <a href="https://download.docker.com/win/static/stable/x86_64/" target="_blank">
+<b>Docker</b></a><br>
+    <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank">
+<b>Docker Desktop Windows</b></a><br>
+    <a href="http://enmilocalfunciona.io/instalando-y-probando-docker-en-windows-10/" target="_blank">
+<b>Probando Docker en Windows</b></a><br>
+
+    <a href="https://rlodeiro.info/blog/pihole_docker/" target="_blank">
+<b>Pi-hole & Docker</b> solución para terminar con la publicidad intrusiva</a><br>
+
+
+<br>
+<b>
+
+      <a href="Containers1.html">
+Introducción a los Contenedores (containers). Su implementación en Windows 10 / Windows Server 2016. (página interior)</a><br>
+      <a href="Containers2.html"><br>
+Instalación de containers en Windows 10 / Server 2016. Ejemplos de contenedor web. (página interior)</a><br><br>
+
+    <a href="https://msdn.microsoft.com/es-ES/virtualization/windowscontainers/quick_start/quick_start_windows_server" target="_blank">
+Contenedores de Windows en Windows Server</a><br>
+    <a href="https://www.muylinux.com/2018/10/26/ebook-gratuito-contenedores-para-dummies/" target="_blank">
+Contenedores para Dummies</a><br>
+    <a href="https://colaboratorio.net/davidochobits/sysadmin/2018/gestion-grafica-docker-portainer/" target="_blank">
+Gestión gráfica de <b>Docker</b> con <b>Portainer</b></a><br>
+    <a href="https://www.portainer.io/" target="_blank">
+<b>Portainer Management</b> Docker User Interface, Container Software</a><br>
+
+
+</b>
+<br>
+
+
+</font>
+<br><br>
+
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">&#149; 
+    <a name="redhad"></a> <b>Red Had Enterprise Linux 7.1:</b> </font><br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+
+     <a href="ftp://ftp.redhat.com/pub/redhat/linux/enterprise/" target="_blank">
+<b>ftp.redhat.com</b></a><br>
+     <a href="https://www.centos.org/forums/" target="_blank">
+<b>Centos</b> -foro</a><br>
+     <a href="http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-rg-es-4/index.html" target="_blank">
+<b>Manual Red Hat Enterprise Linux 4</b></a><br>
+     <a href="http://www.tecmint.com/redhat-enterprise-linux-7-installation/" target="_blank">
+<b>Instalando RHEL 7</b> -tecmint.com</a><br>
+     <a href="http://install.lon-capa.org/RHEL7_install.html" target="_blank">
+<b>Instalando RHEL 7</b> -install.lon-capa.org</a><br>
+    <a href="https://access.redhat.com/documentation/es-es/red_hat_enterprise_linux/6/html/installation_guide/sn-switching-to-gui-login" target="_blank">
+Cambiando a Ingreso Gráfico <b>Red Hat Enterprise Linux 6</b> | Red Hat Customer Portal</a><br>
+
+
+     <a href="https://www.muylinux.com/2014/06/10/red-hat-enterprise-linux-7/" target="_blank">
+Red Hat Enterprise 7 -foro muylinux.com</a><br>
+     <a href="https://www.redhat.com/wapps/ugc/register.html;jsessionid=cuoRrJ4Rg9dTTUbN64NHMvpb.3839b12b?_flowId=register-flow&_flowExecutionKey=e1s1" target="_blank">
+Red Hat -registro</a><br>
+
+     <a href="https://access.redhat.com/login" target="_blank">
+redhat.com -login</a><br>
+
+
+<br><br>
+
+
+</td>
+
+  </tr>
+
+
+
+</font>
+</table>
+</body>
+</html>

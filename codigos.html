@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Powershell</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+<body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFAF2"   width="100%">
+  <tr>
+    <td bgcolor="#fffaf2" valign="top">
+
+
+  
+<hr>
+
+
+<a name="script"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+<b>Ejecutar cualquier script cmd o bat con permisos de Administrador</b></font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+Algunas veces necesitamos ejecutar script con permisos de administrador.<br>
+ El presente esqueleto, analiza si tenemos permisos y en caso de no tenerlos eleva los privilegios a Administrador.
+<br>
+Unicamente teneis que colocar vuestro codigo a partir de la etiqueta "<b>:cuerpo</b>"<br><br>
+
+<pre class="bbcode_code" style="margin-top: 0px; margin-bottom: 0px; padding: 6px; line-height: 12px; border: 1px inset;  direction: ltr; background: none repeat-x rgb(242, 246, 248); font-size: 12px; color: rgb(0, 0, 0); height: 648px;">
+@echo off
+cd /d &quot;%~dp0&quot;
+if NOT &quot;%cd%&quot;==&quot;%cd: =%&quot; (
+   echo El directorio actual contine espacios en el path.
+   echo Este comando debe estar en un path que no contenga espacios. 
+   rundll32.exe cmdext.dll,MessageBeepStub
+   pause
+   echo.
+   goto :EOF
+)
+
+if {%1} EQU {[adm]} goto :data
+REG QUERY HKU\S-1-5-19\Environment &gt;NUL 2&gt;&amp;1 &amp;&amp; goto :data
+
+set command=&quot;&quot;&quot;%~f0&quot;&quot;&quot; [adm] %*
+setlocal enabledelayedexpansion
+set &quot;command=!command:'=''!&quot;
+
+powershell -NoProfile Start-Process -FilePath '%COMSPEC%' ^
+-ArgumentList '/c &quot;&quot;&quot;!command!&quot;&quot;&quot;' -Verb RunAs 2&gt;NUL
+goto :EOF
+
+:data
+setlocal enabledelayedexpansion
+if {%1} EQU {[adm]} (
+   set adm=%1
+   shift
+) ELSE (set adm=)
+
+:cuerpo
+REM ==============================================
+REM Poner aqui el codigo a ejecutar
+REM ==============================================
+
+
+
+
+REM ==============================================
+:fin
+if {%adm%} EQU {[adm]} (
+   echo.
+   echo [Pulse 0 para salir]
+   choice /c 0 /n
+)</pre>
+</font>
+
+<hr>
+<br>
+<a name="driver"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+<b>Desactivar Update Drivers antes May 2020 Update</b></font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<br>
+
+Disable Driver updates.reg<b>:<br><br>
+
+
+<pre class="bbcode_code" style="margin-top: 0px; margin-bottom: 0px; padding: 6px; line-height: 10px; border: 1px inset;  direction: ltr; background: none repeat-x rgb(242, 246, 248); font-size: 12px; color: rgb(0, 0, 0); height: 200px">
+Windows Registry Editor Version 5.00
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Update]
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update]
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+</pre>
+
+<hr>
+<br>
+
+
+
+
+<br><br>
+</font>
+
+</td>
+</tr>
+
+</font>
+</table>
+</body>
+</html>

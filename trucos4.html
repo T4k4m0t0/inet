@@ -1,0 +1,560 @@
+<html>
+<head>
+<title>Trucos 4</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+<body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+
+
+  <tr>
+       <td width="50%" bgcolor="#fffaf2" valign="top" height="100%">
+       <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+
+<a name="dispositivos"></a>
+<hr>
+   <font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Dispositivos sistema ocultos</b><br>
+</font>
+   <font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>CMD</b> permisos administrativos <br>
+ <b>set devmgr_show_nonpresent_devices=1</b><br>
+ <b>start devmgmt.msc</b><br><br>
+marcar el ver dispositivo ocultos<br>
+
+<br>
+</font>
+
+<a name="smartscreen"></a>
+<hr>
+   <font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Matar Proceso y eliminar ejecutable [ejemplo Smart Screen]</b><br>
+</font>
+   <font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>CMD</b> permisos administrativos <br>
+<br>
+<b>takeown /f “%WinDir%\System32\smartscreen.exe” /a</b><br>
+<b>icacls “%WinDir%\System32\smartscreen.exe” /grant:r Administrators:F /c</b><br>
+<b>taskkill /im smartscreen.exe /f</b><br>
+<b>del “%WinDir%\System32\smartscreen.exe” /s /f /q</b><br>
+<br>
+<br>
+</font>
+
+
+
+<a name="Desactivar puntos restauracion"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Desactivar puntos restauracion</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+- Panel control<br>
+- Sistema<br>
+- Configuracion avanzada sistema<br>
+- Proteccion sistema<br>
+( desactivar casilla activa disco )<br>
+
+<br>
+</font>
+
+<a name="puntorestauracion"></a>
+<hr>
+    <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+<b>Crear punto restauración.:</b><br>
+</font>
+
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>Panel de control</b><br>
+Escribir "<b>System restore</b>" , crear punto restauración.<br>
+
+<br>
+</font>
+
+<a name="puntorestauracion2"></a>
+<hr>
+    <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+<b>Restaurar punto restauración.:</b><br>
+</font>
+
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>Panel de control</b><br>
+<b>Sistema y seguridad</b><br>
+<b>Revisar el estado del equipo</b><br>
+<b>Recuperación</b><br>
+<b>Abrir Restaurar Sistema</b><br>
+<b>Elige el Punto de Restauración que prefieras y haz click en Finalizar</b><br>
+
+
+<br>
+</font>
+
+<a name="disableupdtaedrivers"></a>
+<hr>
+    <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+<b>Desactivar Actualización Drivers</b><br>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+
+
+     <a href="https://www.ghacks.net/2020/10/29/new-windows-10-manual-driver-updates-process-starts-on-november-5-2020/" target="_blank">
+<b>Desactivar Actualización Drivers</b> ghacks.net</a><br>
+
+<br>
+</font>
+
+<a name="Cambiar MTU"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Cambiar MTU ( Maximum Transmission Unit )</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>CMD</b> permisos administrativos <br>
+<b>netsh interface ipv4 show subinterfaces</b><br>
+<br>o<br><br>
+<b>netsh interface ipv4 show interface</b><br>
+<br>
+esto nos da los valores e interfaces, para cambiar los valores <b>MTU:</b><br><br>
+<b>netsh interface ipv4 set subinterface "Local Area Connection" mtu=nnnn store=persistent</b><br><br>
+Donde:<br>
+
+    <b>Local Area Connection</b> es el nombre de la conexion de tu computador, nnnn es el valor <b>MTU</b><br>
+<br><br>
+Reiniciar<br><br>
+
+mas info:<br>
+
+     <a href="http://networking.nitecruzr.net/2007/11/setting-mtu-in-windows-vista.html" target="_blank">
+http://networking.nitecruzr.net/2007/11/setting-mtu-in-windows-vista.html</a><br>
+
+<br>
+</font>
+
+
+
+<a name="carpetas%secretas"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>CARPETAS SECRETAS</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+
+    <a href="CARPETAS_SECRETAS/"><b>CARPETAS SECRETAS</b> (pagina mia codigos)</a><br>
+[Crear enlace directo] <b>Action Center.{BB64F8A7-BEE7-4E1A-AB8D-7D8273F7FDB6}</b></a><br>
+
+<br>
+</font>
+
+<a name="accesocarpetas"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Accesos Carpeta</b><br>
+</font>
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+Powershell.:<br>
+
+<b>mkdir ~/MyVlmcsdContainer2</b>   (lo crea en C:\"users"\user\)<br>
+<b>mkdir /MyVlmcsdContainer2</b>    (lo crea en C:\)<br>
+
+<br>
+</font>
+
+
+
+<a name="mododios"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Modo Dios | GodMode</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+
+<b>Panel control con todas las opciones en una pagina ( valido VISTA )</b>
+<br><br>
+
+
+   1. Crea una nueva carpeta<br>
+   2. Llámala: <b>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</b><br>
+   3. Y ábrela<br>
+
+<br>
+
+<a name="panelcontrol"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Panel de Control link</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+
+<b>Panel Control acceso directo</b>
+<br><br>
+
+
+   1. Crea una nueva carpeta<br>
+   2. Llámala: <b>PanelControl.{BB06C0E4-D293-4f75-8A90-CB05B6477EEE}</b><br>
+           o.:  <b>Test System.{BB06C0E4-D293-4f75-8A90-CB05B6477EEE}</b><br>
+   3. Y ábrela<br>
+
+<br>
+
+Integrarlo nuevamente en el menú de WinX, pero no la he probado. Los pasos son:<br>
+<br>
+
+    Siendo administrador del equipo, crea un nuevo acceso directo en el escritorio y en la ruta copia y pega lo siguiente:<br> 
+     <b>%windir%\system32\control.exe</b> y de nombre le pones <b>Panel de Control</b><br>
+<br>
+    Esto creará un acceso directo al panel de control, ahora en el explorador de archivos, 
+    copia y pega la siguiente ruta y presionas enter: 
+    <br><b>%LocalAppData%\Microsoft\Windows\WinX</b>
+    <br><br>
+    Aquí verás tres carpetas, <b>Group1, Group2 y Group3</b>, arrastra el acceso directo que creaste en una de esas carpetas de grupos, 
+    donde quieres que se muestre el Panel de Control, 
+    en la carpeta del grupo 2 sería la opción ideal, donde se mostraba originalmente.<br>
+    <br>
+    Reinicia el equipo y deberá salir el acceso directo.<br>
+
+
+<br>
+
+
+</font>
+
+
+<a name="cookies"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Carpetas cookies</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+
+<b>C:\Users\NombreUsuario\AppData\Roaming\Microsoft\Windows\Cookies\Low</b><br>
+
+<br>
+</font>
+
+
+
+<a name="host"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Archivo Host</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+ %systemroot%\system32\drivers\etc <br><br>
+
+Y en el Path: <br><br>
+
+<b>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters - DataBasePath </b>
+<br><br>
+
+¿Cómo leer el archivo de Hosts con Powershell ?
+<b>Get-Content -Path 'C:\Windows\system32\drivers\etc\hosts'</b><br>
+
+
+
+</font>
+    <br><br>
+
+<a name="audio"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>El servicio de audio no se esta ejecutando (error 1068 despues activar)</b><br>
+</font>
+
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>services.msc</b><br> 
+activar servicios (se comprueba en -propiedades -dependencias audio)<br>
+-Compilador de extremo de audio (automatico luego iniciar)<br>
+-Llamada a procedimiento remoto (RPC) (automatico luego iniciar)<br>
+-Programador de aplicaciones multimedia (automatico luego iniciar)<br>
+
+<br>
+</font>
+
+<a name="impedir programa inicio"></a>
+<hr>
+
+   <font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Impedir que se ejecute un programa al iniciar Windows</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+<b>msconfig</b><br>
+Inicio de Windows<br>
+Administrador de tareas o <b>Taskmgr.exe</b> en <b>[Tecla de Windows + R]</b><br>
+Programas de Inicio - <br><br>
+Habilitar o Deshabilitar Programas<br><br>
+<br> o ir directamente al programador de Tareas.:<br>
+Atajo de teclado <b>Ctrl + Shift + Esc. </b><br>
+
+<br>
+</font>
+
+
+<a name="retailtovolume"></a>
+<hr>
+
+   <font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Como convertir W10 Retail a Volumen</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+Primero Elimina la Key De Windows Retail.:<br>
+<b>CMD</b> permisos administrativos <br>
+<b>slmgr /upk</b><br>
+<br>
+Elimina la Key del Registro.:<br>
+<b>CMD</b> permisos administrativos <br>
+<b>slmgr.vbs /cpky</b><br>
+<br>
+Ahora introduce la <b>Key GVLK de Windows 10 Pro Volume Edition</b>.:<br>
+<b>CMD</b> permisos administrativos <br>
+<b>slmgr.vbs -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</b><br>
+<br>
+<br>
+Ahora sólo te faltaría Activarlo con el Crack de tu preferencia<br>
+
+<a name="menu%oculto"></a>
+<hr>
+
+<font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Menu oculto</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+Tecla Windows + <b>X</b><br>
+
+<a name="menu%buscar"></a>
+<hr>
+
+<font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Menu Buscar</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+Tecla Windows + <b>S</b><br>
+</font>
+
+</td>
+
+       <td width="50%" bgcolor="#fffaf2" valign="top">
+
+
+<a name="fichero de hibernacion"></a>
+<hr>
+
+<font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Borrar el fichero de hibernacion (hiberfil.sys)</b><br>
+</font>
+<font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+
+Este TIP es útil para los sistemas de escritorio que nunca hibernan.<br><br>
+
+El fichero de hibernación (<b>hiberfil.sys</b>) tiene el mismo tamaño que la memoria física, por tanto, <br>
+si tenemos 2 GB de memoria, tendremos en la carpeta raíz de nuestro disco duro del sistema<br>
+ un archivo llamado <b>hiberfil.sys</b> (oculto y del sistema) de ese tamaño.<br><br>
+
+
+<a name="hibernacion"></a>
+<hr>
+    <font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Habilitar / Deshabilitar hibernación</b><br>
+</font>
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>CMD</b> permisos administrativos <br>
+
+Activar.:<br>
+<b>powercfg.exe /hibernate on</b><br>
+o<br>
+<b>powercfg -h on</b><br><br>
+
+Desactivar.:<br>
+<b>powercfg.exe /hibernate off</b><br>
+o<br>
+<b>powercfg -h off</b><br>
+
+<br>
+      <a href="https://support.microsoft.com/es-es/windows/apagar-suspender-o-hibernar-tu-pc-2941d165-7d0a-a5e8-c5ad-8c972e8e6eff" target="_blank">
+<b>Apagar, suspender o hibernar tu PC</b></a>
+
+
+<br>
+</font>
+
+<a name="energia"></a>
+<hr>
+    <font color="#fe0000" face="verdana,arial,helvetica" size="2">
+<b>Habilitar planes energia</b><br>
+</font>
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>CMD</b> permisos administrativos <br>
+
+Listado planes (muestra GUID).:<br>
+<b>powercfg /list</b><br>
+<br>
+Elimina planes.:<br>
+<b>poderdfg /delete GUID</b><br><br>
+<br>
+Importa planes.:<br>
+<b>powercfg /import "c:\….\nombre.pow"</b><br><br>
+<br>
+<br>
+(Power saver)<br>
+<b>powercfg -duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a</b><br>
+<br>
+(Balanced)<br>
+<b>powercfg -duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e</b><br>
+<br>
+(High Performance)<br>
+<b>powercfg -duplicatescheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</b><br>
+<br>
+(Ultimate Performance - Windows 10 build 17101 and later)<br>
+<b>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</b><br>
+<br>
+<b>powercfg /setactive GUID</b><br><br>
+siendo <b>GUID</b> al que quieras cambiar y que te de el comando<br>
+<br>
+
+<br>
+<b>powercfg -lastwake</b> (historial de activación)<br>
+<b>powercfg -Q > c:\test.txt</b><br>
+<b>powercfg AVAILABLESLEEPSTATES</b><br>
+<b>powercfg -energy</b> (Vea C:\WINDOWS\system32\energy-report.html (si desea obtener más detalles.)<br>
+<b>powercfg -a</b> (estados de suspensión están disponibles en este sistema)<br>
+<b>powercfg -getactivescheme</b>  (esquemas planes activos)<br>
+<b>powercfg -aliases</b>  (posibles planes)<br>
+<br>
+
+Planes.:<br>
+    <a href="https://jmtella.com/foro/forum/windows-10/33389-ha-pasado-algo-con-los-planes-de-energia-que-yo-no-me-he-dado-cuenta">
+jmtella.com</a>
+
+<br>
+</font>
+
+
+<a name="dumpregistro"></a>
+<hr>
+
+    <font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Crear archivo Dump registro.:</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+Como crear log proceso Dump
+<br>
+     <a href="http://support.microsoft.com/kb/931673/en-us">
+http://support.microsoft.com/kb/931673/en-us</a>
+
+</font>
+    <br><br>
+
+<a name="netframework"></a>
+<hr>
+
+    <font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Averiguar version .NET Framework.:</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+<b>reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full" /s</b>
+<br>
+
+     <a href="https://norfipc.com/utiles/como-saber-version-net-framework-tengo-instalada-windows.php">
+<b>Como saber que versión de .NET Framework tengo instalada en Windows</b></a>
+<br>
+     <a href="https://sourceforge.net/p/keepass/discussion/329220/">
+KeePass / Discussion / Open Discussion /netframework</a>
+
+
+
+
+
+<br>
+
+
+</font>
+    <br><br>
+
+
+
+<a name="instalarcab"></a>
+<hr>
+
+<font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+Comando instalar actualización <b>*.cab</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+<b>CMD</b> permisos administrativos<br>
+
+
+<br>
+Teniendo la ruta.:<br>
+<b>DISM.exe /Online /Add-Package /PackagePath:C:\windows10.0-kb4100375-x64_1df891e137e7b949c68013166ce2fdb6b28f230b.cab</b><br>
+<br>
+
+<b>Dism /Image:C:\test\offline /Get-PackageInfo /PackageName:Microsoft.Windows.Calc.Demo~6595b6144ccf1df~x86~en~1.0.0.0
+/Add-Package /PackagePath:C:\windows10.0-kb4100375-x64_1df891e137e7b949c68013166ce2fdb6b28f230b.cab</b><br>
+<br>
+
+<b>Dism /Image:C:\test\offline /Get-PackageInfo /PackagePath:PackagePath:C:\windows10.0-kb4100375-x64_1df891e137e7b949c68013166ce2fdb6b28f230b.cab</b><br>
+<br>
+<b>dism.exe /Online /Add-Package /PackagePath:C:\*.cab</b> o *.msu<br>
+       <a href="https://blogs.technet.microsoft.com/askcore/2011/02/15/how-to-use-dism-to-install-a-hotfix-from-within-windows/" target="_blank">
+Fuente.: technet.microsoft.com</a><br><br>
+
+C:\WINDOWS\Logs\DISM\dism.log<br>
+</font>
+
+<a name="asistencia%remota"></a>
+<hr>
+
+<font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>Asistencia remota</b><br>
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+Tecla Windows y escribir <b>Asistencia rápida</b><br>
+<br>
+Después, la aplicación te pregunta cuál va a ser tu rol. 
+Si vas a proporcionar ayuda haz clic sobre esa función e inicia sesión con tu cuenta de Microsoft,
+tras lo cual se te facilitará una <b>clave de acceso</b> que solo será válida durante unos minutos.
+<br>
+Envía esa <b>clave de acceso</b> a quien necesite tu ayuda, que habrá ejecutado la aplicación en su equipo y habrá seleccionado la opción <b>Obtener ayuda</b>
+<br>
+Quien recibe la ayuda solo tiene que escribir la contraseña que se te ha facilitado en el cuadro de acceso y se establecerá la comunicación
+ entre ambos equipos y podrás ver y controlar el equipo remoto para prestarle tu ayuda.
+
+<br><br>
+Ejecutable está en.: <b>C:\Windows\System32\quickassist.exe</b><br>
+
+<br>
+</td></tr>
+
+
+<br>
+</font>
+</table>
+</body>
+</html>

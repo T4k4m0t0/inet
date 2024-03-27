@@ -1,0 +1,37 @@
+ETIQUETAS
+
+CELDAS.:
+<tr>
+    <td>
+</td><tr>
+
+<link rel="stylesheet" href="hojaestilos.css" media="screen" />
+
+
+<div class="tipo3">
+</div>
+
+tipo3 en hojaestilos.css.:
+
+.tipo3
+{
+   font-family: "Verdana", Arial, Helvetica, Sans-Serif;
+   color: #3166b5;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 10px;
+   text-decoration: none;
+}
+
+<tr>
+    <td class=body td colspan="2" scope="rowgroup" align="center">
+</div>  (del estilo class=body td en  hojaestilos.css)
+<div class="tipo3">
+</div>
+
+</td>
+</tr>
+
+Fila completa debajo de celda.:
+      <th colspan="2" scope="rowgroup">
+</th>

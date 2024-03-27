@@ -1,0 +1,772 @@
+<html>
+<head>
+<title>Comandos TCP-IP para Windows</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+<body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%" height="100%">
+
+
+  <tr>
+    <td width="100%" bgcolor="#fffaf2" valign="top"> 
+
+    <font face="Verdana,Arial,Helvetica" size="1"><br>
+
+
+<h3><b>Comandos TCP/IP | Notas redes</b></h3> 
+							
+
+<br />A veces es necesario conocer los comandos IP, para analizar e incluso configurar nuestra red TCP/IP.
+<br />A continuación una lista de comandos a utilizar en una ventana DOS:
+<br />
+<br /><div id='toc' class='toc'>
+
+<ul>
+<li><a href='#ping'>Ping</a>
+</li><li><a href='#tracert'>Tracert</a>
+</li><li><a href='#ipconfig'>IpConfig</a>
+</li><li><a href='#netstat'>NetStat</a>
+</li><li><a href='#route'>Route</a>
+</li><li><a href='#arp'>Arp</a>
+</li><li><a href='#nbtstat'>NbtStat</a>
+</li><li><a href='#netsh'>Netsh</a>
+</li><li><a href='#hostname'>Hostname</a>
+</li><li><a href='#nslookup'>Nslookup </a>
+</li><li><a href='#pathping'>Pathping</a>
+</li><li><a href='#getmac'>Getmac</a>
+</li><li><a href='#netuse'>Net Use</a>
+</li><li><a href='#pktmon'>Pktmon</a>
+
+
+</li><li><a href='#ftp'>Ftp</a></li>
+</li><li><a href='#telnet'>Telnet (desactivado en W10)</a>
+</li><li><a href='#curl'>Curl</a>
+</ul>
+
+<br>
+
+    <a href='https://www.adslzone.net/esenciales/windows-10/comandos-cmd-redes-windows-10/' target='_blank'>
+Los comandos CMD que debes conocer para controlar tu red -adslzone.net</a> <br>
+
+    <a href='https://www.solvetic.com/tutoriales/article/4293-comandos-red-utiles-windows-powershell/' target="_blank">
+Comandos Red Powershell -solvetic.com</a><br>
+
+    <a href="https://www.ghacks.net/2018/04/20/display-all-tcp-and-udp-network-activity-on-windows/" target="_blank">
+<b>Display all TCP and UDP network activity on Windows</b></a><br>
+
+    <a href="http://www.nirsoft.net/utils/live_tcp_udp_watch.html" target="_blank">
+<b>LiveTcpUdpWatch: así puedes conocer todo tu tráfico de red en tiempo real en Windows 10</b></a><br>
+    <a href="http://www.advanced-ip-scanner.com/es/" target="_blank">
+<b>Advanced IP Scanner 2.5.3581</b></a><br>
+
+
+<br>
+<br>   <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"> 
+<b>ipconfig /all > c:\ip.txt</b><br>
+<b>route print > c:\rutas.txt</b><br>
+
+<br>
+<b>netcfg -d</b> (Y reiniciar. Pero esto elimina absolutamente todos los adaptadores de red: incluidos los reales, que serán de nuevo reconocidos al reinicar la maquina.
+<br>
+Las redes virtuales que VMware o VirtualBox también serán eliminadas por lo que tendrás que reinstalar.)<br>
+<br>
+
+
+
+<hr>
+
+<br /><a name='ipconfig'></a>
+
+
+
+
+
+
+
+<h3>
+		ipconfig
+	</h3>
+
+	<p>
+		Es uno de los comandos más útiles y utilizados, ya que nos ofrece información muy importante. Nada más ejecutar dicho comando, se nos mostrará en la línea de comandos información sobre los valores de configuración de red TCP/IP, dirección IP, puerta de enlace predeterminada, datos de nuestro adaptador de red, etc.
+Muestra o actualiza la configuración de red TCP/IP<br>
+Este comando ejecutado sin ninguna opción, muestra la dirección IP activa, la máscara de red así como la puerta de enlace predeterminada al nivel de las interfaces de red conocidas en el equipo local.	
+</p>
+
+
+		Opciones del comando:
+	</p>
+
+	<p>
+		 
+	</p>
+
+<ul><li><b>ipconfig /all</b> : Muestra toda la configuración de la red, incluyendo los servidores DNS, WINS, bail DHCP, etc ...
+</li><li><b>ipconfig /renew [tarjeta]</b> : Renueva la configuración DHCP de todas las tarjetas (si ninguna tarjeta es especificada) o de una tarjeta específica si utiliza el parámetro tarjeta. El nombre de la tarjeta, es el que aparece con ipconfig sin parámetros.
+</li><li><b>ipconfig /release [tarjeta]</b> : Envía un mensaje DHCPRELEASE al servidor DHCP para liberar la configuración DHCP actual y anular la configuración IP de todas las tarjetas (si ninguna tarjeta es especificada), o de sólo una tarjeta específica si utiliza el parámetro tarjeta. Este parámetro desactiva el TCP/IP de las tarjetas configuradas a fin de obtener automáticamente una dirección IP.
+</li><li><b>ipconfig /flushdns</b> : Vacía y reinicializa el caché de resolución del cliente DNS. Esta opción es útil para excluir las entradas de caché negativas así como todas las otras entradas agregadas de manera dinámica.
+</li><li><b>ipconfig /displaydns</b> : Muestra el caché de resolución del cliente DNS, que incluye las entradas pre cargadas desde el archivo de host local así como todos los registros de recursos recientemente obtenidos por las peticiones de nombres resueltas por el ordenador. El servicio Cliente DNS utiliza esta información para resolver rápidamente los nombres frecuentemente solicitados, antes de interrogar a sus servidores DNS configurados.
+</li><li><b>ipconfig /registerdns</b> : Actualiza todas las concesiones DHCP y vuelve a registrar los nombres DNS.</li></ul>
+</li><li><b>ipconfig /allcompartments</b> : Muestra información detallada sobre todos los compartimientos.</li></ul>
+
+</li><li><b>ipconfig /all | findstr /R "DNS"</b> : Muestra información detallada sobre el DNS que se utiliza</li></ul>
+
+<br />
+
+
+	<p>
+		<img alt="uYPQn.jpg" class="ipsImage" data-ratio="70.59" height="500" width="667" src="images/uYPQn.jpg">
+        </p>
+
+
+
+<br>
+
+<hr>
+<a name='ping'></a>
+<h3>
+		ping
+	</h3>
+
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+<b>Diagnostica la conexión entre la red y una dirección IP remota</b>
+
+	<p>
+		Es otro de los comandos de red más básicos y utilizados. Nos permite probar el estado de la comunicación del host local con uno o varios equipos remotos de una red IP. Por medio del envío de paquetes ICMP, diagnostica el estado, velocidad y calidad de una red determinada. Muy útil también para identificar problemas de red.
+	</p>
+
+
+	<p>
+		Al ejecutar este comando de red seguido de una dirección IP o URL de internet, veremos si el servidor de destino responde indicando la latencia y los paquetes perdidos.
+	</p>
+
+
+
+<br />
+</font><font face="Verdana,Arial,Helvetica" size="1">ping -t [IP o host]
+ping -l 1024 [IP o host]</font>
+
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+      <a href="https://www.xatakamovil.com/conectividad/ping-como-funciona-y-por-que-es-util-para-diagnosticar-problemas-de-red" target="_blank">
+<b>Ping:</b> Cómo funciona y por qué es útil para diagnosticar problemas de red</a> xatakamovil.com<br>
+
+
+<ul><li>La opción –t permite hacer pings de manera continua, para detenerlo pulsar Ctrl-C.</li></ul>
+<br />Este comando también es útil para generar una carga de red, especificando el tamaño del paquete con la opción –l y el tamaño del paquete en bytes.
+
+
+	<p>
+		<img alt="uYSxB.jpg" class="ipsImage" data-ratio="55.80" height="334" width="600" src="images/uYSxB.jpg"></p>
+
+	<p>
+		Su sintaxis es:
+	</p>
+
+
+	<p>
+		<strong>ping</strong> [-t] [-a] [-n count] [-l size] [-f] [-i TTL] [-v TOS] [-r count] [-s count] [[-j host-list] | [-k host-list]] [-w timeout] [-R] [-S srcaddr] [-c compartment] [-p] [-4] [-6] nombre_destino
+	</p>
+
+<hr>
+<a name='tracert'></a><h3> tracert</h3>
+
+
+
+<br /><b>Muestra todas las direcciones IP intermedias por las que pasa un paquete entre el equipo local y la dirección IP especificada.</b><br><br>
+</font>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+<br />Este comando es útil si el comando ping no da respuesta, para establecer cual es el grado de debilidad de la conexión.
+
+
+
+	<p>
+		Este comando permite determinar o conocer la ruta que toma un paquete de protocolo de Internet (IP) para llegar a su destino. TRACERT envía el primer paquete de eco con un TTL de 1 y aumenta el TTL en 1 en cada transmisión posterior, hasta que el destino responde o hasta que se alcanza el TTL máximo.
+	</p>
+
+	<p>
+		Su sintaxis es:
+	</p>
+
+
+
+	<p>
+		<strong>tracert</strong> [-d] [-h saltos_máximos] [-j lista_de_hosts] [-w tiempo_de_espera] [R] [-S srcaddr] [-4] [-6] nombre_destino
+	</p>
+<b>tracert</b> [@IP o nombre del host] o <b>tracert -d</b> [@IP o nombre del host]
+
+	<p>
+		 
+	</p>
+
+	<p>
+		Opciones del comando:
+	</p>
+
+
+	<ul>
+<li>
+			-d: No convierte direcciones en nombres de hosts.
+		</li>
+		<li>
+			-h: saltos_máximos Máxima cantidad de saltos en la búsqueda del objetivo.
+		</li>
+		<li>
+			-j: lista-host Enrutamiento relajado de origen a lo largo de la lista de hosts (solo IPv4).
+		</li>
+		<li>
+			-w: tiempo_espera Tiempo de espera en milisegundos para esperar cada respuesta.
+		</li>
+		<li>
+			-R: Seguir la ruta de retorno (solo IPv6).
+		</li>
+		<li>
+			-S srcaddr: Dirección de origen para utilizar (solo IPv6).
+		</li>
+		<li>
+			-4: Forzar usando IPv4.
+		</li>
+		<li>
+			-6: Forzar usando IPv6.
+		</li>
+	</ul>
+
+<hr>
+<a name='pathping'></a>
+<h3>
+		pathping
+	</h3>
+
+	<p>
+		Combina la utilidad de ping y tracert pero es más un comando informativo. Proporciona información sobre la latencia de la red y la pérdida de la red en saltos intermedios entre una fuente y un destino. Es decir, después de enviar los paquetes a un determinado destino, se analiza la ruta y se calcula la pérdida de paquetes.
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		Podríamos decir que, de manera similar a tracert, pathping envía ping de forma periódica a los enrutadores durante un tiempo determinados y calcula las estadísticas en función del número devuelto de cada uno.
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		La sintaxis es:
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		<strong>pathping</strong> [-g lista_host] [-h saltos_máx] [-i dirección] [-n] [-p período] [-q núm_consultas] [-w tiempo_espera] [-4] [-6] nombre_destino
+	</p>
+
+	<p>
+		Opciones del comando:
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<ul>
+<li>
+			-g lista_host: Ruta de origen no estricta en la lista de host.
+		</li>
+		<li>
+			-h saltos_máx: Número máximo de saltos para buscar en el destino.
+		</li>
+		<li>
+			-i dirección: Utilizar la dirección de origen especificada.
+		</li>
+		<li>
+			-n: No resolver direcciones como nombres de host.
+		</li>
+		<li>
+			-p período: Período de espera en milisegundos entre llamadas ping.
+		</li>
+		<li>
+			-q núm_consultas: Número de consultas por salto.
+		</li>
+		<li>
+			-w tiempo_espera: Tiempo de espera en milisegundos para cada respuesta.
+		</li>
+		<li>
+			-4: Fuerza utilizando IPv4.
+		</li>
+		<li>
+			-6: Fuerza utilizando IPv6.
+		</li>
+	</ul>
+
+<hr>
+<a name='getmac'></a>
+
+<h3>
+		getmac
+	</h3>
+
+	<p>
+		Como su propio nombre indica, este comando de red de CMD muestras las direcciones MAC de los adaptadores de red instalados en el sistema. Es decir, nos va a devolver la MAC del equipo donde lo ejecutamos. Recordemos que la dirección MAC es un identificador de 48 bits que corresponde de forma única a una tarjeta o dispositivo de red. También se la conoce como dirección física y es única para cada dispositivo.
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		Su sintaxis es:
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		<strong>getmac</strong> [/S sistema [/U nombre_usuario [/P [contraseña]]]] [/FO formato] [/NH] [/V]
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		Parámetros de getmac:
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<ul>
+<li>
+			<b>getmac /S sistema</b> Especifica el sistema remoto al que conectarse. /U [dominio\]usuario Especifica el  contexto de usuario con en el que el comando se debe ejecutar.
+		</li>
+		<li>
+			<b>getmac /P [contraseña]</b> Especifica la contraseña para el contexto de usuario dado. Pide entrada si se omite.
+		</li>
+		<li>
+			<b>getmac /FO formato</b> Especifica en qué formato se va a mostrar la salida. Valores válidos: «TABLE», «LIST» y «CSV».
+		</li>
+		<li>
+			<b>getmac /NH</b> Especifica que el «encabezado de columna» no debe mostrarse en la salida. Solo se usa con los formatos TABLE y CSV.
+		</li>
+		<li>
+			<b>getmac /V</b> Especifica que se muestra la salida detallada.
+		</li>
+	</ul>
+
+
+<hr>
+<a name='arp'></a>
+
+         <h3>
+		arp
+	</h3>
+
+	<p>
+Resolución de direcciones IP en direcciones MAC</b>. Muestra y modifica las tablas de traducción de direcciones IP a direcciones Físicas utilizadas 
+por el protocolo de resolución de dirección (ARP).<br>
+		Muestra y modifica las tablas de conversión de direcciones IP en direcciones físicas que utiliza el protocolo de resolución de direcciones (ARP). Resulta muy útil para visualizar la caché de resolución de direcciones.
+	</p>
+
+
+	<p>
+
+
+<br><br>
+Ejemplo.:<br>
+
+Limpiar Caché <b>ARP</b><br>
+<b>CMD</b> permisos administrativos <br>
+<b>arp -a</b>   Muestra caché ARP existente<br>
+<b>netsh interface ip delete arpcache</b>  Limpia Caché<br>
+<b>arp -a</b>   Comprueba caché ARP limpia<br>
+
+<br>
+Opciones del comando:<br>
+<ul><li><b>arp -a</b>       Muestra las entradas ARP activas interrogando al protocolo de datos activos. Si adr_inet es precisado, únicamente las direcciones IP y Físicas del ordenador especificado son mostrados. Si más de una interfaz de red utiliza ARP, las entradas de cada tabla ARP son mostradas.
+</li><li><b>arp -g</b>     Idéntico a –a.
+</li><li><b>arp adr_inet</b>  Especifica una dirección Internet.
+</li><li><b>arp -N adr_if</b> Muestra las entradas ARP para la interfaz de red especificada por adr_if.
+</li><li><b>arp -d</b>        Borra al host especificado por adr_inet.
+</li><li><b>arp -s</b>        Agrega al host y relaciona la dirección Internet adr_inet a la Física adr_eth. La dirección Física está dada bajo la forma de 6 bytes en hexadecimal separados por guiones. La entrada es permanente.
+</li><li><b>arp adr_eth</b>   Especifica una dirección física.
+</li><li><b>arp adr_if</b>    Precisado, especifica la dirección Internet de la interfaz cuya tabla de traducción de direcciones debería ser modificada. No precisada, la primera interfaz aplicable será utilizada.</li></ul>
+<br />
+
+
+<hr>
+<a name='nslookup'></a>
+
+
+	</p>
+
+	<h3>
+		nslookup
+	</h3>
+
+	<p>
+		El comando nslookup se utiliza para saber si el DNS está resolviendo correctamente los nombres y las IPs. Es decir, nos permite consultar de forma manual los servidores de nombres para resolver un nombre de host. Por lo tanto, permite conocer la dirección IP detrás de un determinado nombre de dominio.
+	</p>
+
+	<p>
+		Uso de nslookup:
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<ul>
+<li>
+			nslookup [-opt …] # modo interactivo que usa el servidor predeterminado.
+		</li>
+		<li>
+			nslookup [-opt …] – servidor # modo interactivo que usa ‘servidor’.
+		</li>
+		<li>
+			nslookup [-opt …] host # solo consulta ‘host’ mediante el servidor predeterminado.
+		</li>
+		<li>
+			nslookup [-opt …] host servidor # solo consulta ‘host’ mediante ‘servidor’.
+		</li>
+	</ul>
+
+<hr>
+<a name='route'></a>
+
+
+
+
+
+
+<h3>
+		route
+	</h3>
+
+	<p>
+                Muestra o modifica la tabla de enrutamiento<br>
+		Comando de red de CMD route nos permite visualizar y modificar la tabla de rutas en un servidor. De esta manera, podremos llevar un mejor control sobre la tabla de enrutamiento del sistema.
+	</p>
+
+        <p>
+		Opciones del comando más habituales:
+	</p>
+
+	<ul>
+<li>
+			<b>route -n:</b> Muestra la tabla de enrutamiento en formato numérico [dirección IP].
+		</li>
+		<li>
+			<b>route -e:</b> Muestra la tabla de enrutamiento en formato hostname.
+		</li>
+		<li>
+			<b>route add:</b> Añade una nueva ruta a la tabla de enrutamiento.
+		</li>
+		<li>
+			<b>route del:</b> Elimina una ruta de la tabla de enrutamiento
+		</li>
+	</ul>
+<br>
+
+Comandos.:<br>
+<ul><li><b>route -f</b>  Borra de las tablas de enrutamiento todas las entradas de las puertas de enlace. Utilizada conjuntamente con otro comando, las tablas son borradas antes de la ejecución del comando.
+</li><li><b>route -p</b>  Vuelve persistente la entrada en la tabla después de reiniciar el equipo.
+</li><li><b>route comando</b>  especifica uno de los cuatro comandos siguientes:
+</li><li><b>route delete</b> borra una ruta.
+</li><li><b>route print</b> Muestra una ruta.
+</li><li><b>route add</b> Agrega una ruta.
+</li><li><b>route change</b> Modifica una ruta existente.
+</li><li><b>route destino</b> Especifica el host.
+</li><li><b>route [MASK]</b> Si la clave MASK está presente, el parámetro que sigue es interpretado como el parámetro de la máscara de red.
+</li><li><b>route [máscara de red]</b>  Si se proporciona, especifica el valor de máscara de subred asociado con esta ruta.  Si no es así, éste toma el valor por defecto de 255.255.255.255.
+</li><li><b>route [puerta de enlace]</b> Especifica la puerta de enlace.
+</li><li><b>route [METRIC]</b> Especifica el coste métrico para el destino.</li></ul>
+
+
+
+
+
+
+	
+	<p>
+
+		route [-f] [-p] [-4|-6] comando [destino] [MASK máscara_red] [puerta_enlace] [METRIC métrica] [IF interfaz]
+	</p>
+
+<hr>
+<a name='netstat'></a>
+
+
+<h3>
+		netstat
+	</h3>
+
+	<p>
+		Comando de red del CMD que como su nombre indica, muestra estadísticas de protocolo y conexiones de red de TCP/IP actuales.<br>
+Muestra el estado de la pila TCP/IP en el equipo local
+
+
+
+		Concretamente, muestra un listado de las conexiones activas en nuestro ordenador, tanto entrantes como salientes, incluyendo datos como el protocolo utilizado, tablas de ruteo, estadísticas de las interfaces o el estados de la conexión.
+	</p>
+
+	<p>
+		 
+	</p>
+
+        <p>
+		Opciones del comando más habituales:
+	</p>
+
+
+
+
+<ul><li><b>netstat -a</b>         Muestra todas las conexiones y puertos de escucha. (Normalmente las conexiones del lado del servidor no se muestran).
+</li><li><b>netstat -e</b>        Muestra estadísticas Ethernet. Se puede combinar con la opción –s.
+</li><li><b>netstat -n</b>        Muestra direcciones y números de puerto en formato numérico.
+</li><li><b>netstat -p proto</b>  Muestra las conexiones del protocolo especificado por proto; proto puede ser tcp o udp. Utilizada con la opción –s para mostrar estadísticas por protocolo, proto puede ser tcp, udp, o ip.
+</li><li><b>netstat -r</b>        Muestra el contenido de la tabla de rutas.
+</li><li><b>netstat -s</b>        Muestra estadísticas por protocolo. Por defecto, se muestran las estadísticas para TCP, UDP e IP; la opción –p puede ser utilizada para especificar un sub conjunto de los valores por defecto.
+</li><li><b>netstat intervalo</b> Vuelve a mostrar las estadísticas seleccionadas, con una pausa de “intervalo” segundos entre cada muestra.</li></ul>
+
+<b>netstat -nr</b> Limpia caché<br><br>
+<b>netstat -abn</b><br><br>
+<b>netstat -ano</b> Mostrar todo el uso del puerto TCP y UDP y la ID del proceso:<br><br>
+
+<br />Presiona Ctrl+C para detener la presentación de las estadísticas.<br>
+
+
+<hr>
+<a name='nbtstat'></a>
+
+
+	<h3>
+		NBTStat
+	</h3>
+
+	<p>
+Actualización del caché del archivo Lmhosts. Muestra estadísticas del protocolo y las conexiones TCP/IP actuales utilizando NBT (NetBIOS en TCP/IP).<br>
+Comando devuelve el nombre NetBIOS, nombre del sistema, los usuarios conectados…del equipo remoto.<br>
+Muy útil para solucionar problemas con la resolución de nombres llevada a cabo por NetBIOS.
+	</p>
+
+<br>
+Comandos.:<br><br>
+
+<ul><li><b>NBTStat -a</b> (estado del adaptador) Lista la tabla de nombres del equipo remoto (nombre conocido).
+</li><li><b>NBTStat -A</b> (estado del adaptador) Lista la tabla de nombres del equipo remoto (dirección IP)
+</li><li><b>NBTStat -c</b> (caché) Lista el caché de nombres remotos incluyendo las direcciones IP.
+</li><li><b>NBTStat -n</b> (nombres) Lista los nombres NetBIOS locales.
+</li><li><b>NBTStat -r</b> (resueltos) Lista de nombres resueltos por difusión y vía WINS.
+</li><li><b>NBTStat -R</b> (recarga) Purga y recarga la tabla del caché de nombres remotos.
+</li><li><b>NBTStat -S</b> (sesión) Lista la tabla de sesiones con las direcciones de destino IP.
+</li><li><b>NBTStat -s</b> (sesión) Lista la tabla de sesiones establecidas convirtiendo las direcciones de destino IP en nombres de host a través del archivo host.</li></ul>
+
+<br />
+<br />Un ejemplo:
+<br />
+<b>nbtstat -A @IP</b>
+
+
+<hr>
+<a name='netsh'></a>
+
+<h3>
+		netsh
+	</h3>
+
+
+	<p>
+		Es un comando que nos ofrece varias opciones para la configuración de nuestra red, como modificar, administrar, 
+                diagnosticar la configuración de una red o cambiar la configuración de nuestros interfaces de red, tanto para IPv4 como para IPv6.
+
+Utilidad de línea de comandos que ofrece varias opciones para la configuración de una red.
+
+Entre las principales opciones que se pueden realizar, están la posibilidad de ver, modificar, administrar y diagnosticar la configuración de una red. 
+
+	</p>
+
+Comandos.:<br>
+<b>netsh wlan show networks</b><br>
+<b>netsh wlan show networks mode=bssid</b><br>
+<b>netsh interface ip show config</b> Aparece la configuración de red<br>
+<b>netsh interface ip set dns name="Wi-Fi" static 8.8.8.8</b> Cambia DNS Primario de "Wi-Fi" usa las de google<br>
+<b>netsh interface ip add dns name="Wi-Fi" addr=8.8.4.4 index=2</b> Cambia DNS Secundario de "Wi-Fi" usa las de google<br>
+<b>netsh interface ipv6 set dns name="Wi-Fi" static 2001:4860:4860::8888</b> Cambia DNS Primario de "Wi-Fi" usa las de google<br>
+<b>netsh interface ipv6 set dns name="Wi-Fi" static 2001:4860:4860::8844</b> Cambia DNS Secundario de "Wi-Fi" usa las de google<br>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		<span data-ttu-id="16ea1-109">Netsh también proporciona una característica de scripting que permite ejecutar un grupo de comandos en modo de lotes con un equipo concreto.</span>
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		Su sintaxis es:
+	</p>
+
+	<p>
+		 
+	</p>
+
+	<p>
+		<strong>netsh</strong> [-a ArchAlias] [-c Contexto] [-r EquipoRemoto] [-u [NombreDominio\]NombreUsuario] [-p ontraseña | *] [Comando | -f ArchivoScript]
+	</p>
+</div>
+
+    <a href='https://docs.microsoft.com/es-es/windows-server/networking/technologies/netsh/netsh-contexts' target="_blank">
+Netsh -docs.microsoft.com</a><br>
+
+
+<hr>
+
+
+<a name='telnet'></a>
+
+
+<h3> telnet</h3>
+
+
+
+<p>
+<br />El comando telnet permite acceder en modo Terminal (Pantalla pasiva) a un host remoto.<br>
+Este también permite ver si un cualquier servicio TCP funciona en un servidor remoto especificando después de la dirección IP el número de puerto TCP.
+<br />De este modo podemos verificar si el servicio SMTP, por ejemplo, funciona en un servidor Microsoft Exchange, utilizando la dirección IP del conector SMTP y luego 25 como número de puerto.<br>
+ Los puertos más comunes son:
+</p>
+
+
+
+<ul><li> ftp (21), 
+</li><li>telnet (23), 
+</li><li>smtp (25), 
+</li><li>www (80), 
+</li><li>kerberos (88), 
+</li><li>pop3 (110), 
+</li><li>nntp (119) 
+</li><li>et nbt (137-139).</li></ul>
+<br />
+
+
+      <a href="https://www.profesionalreview.com/2019/01/20/telnet-que-es/" target="_blank">
+<b>Telnet</b> qué es y para qué sirve [como activrlo en W10]</a>profesionalreview.com<br>
+
+
+<hr>
+
+<a name='hostname'></a><h3> hostname</h3>
+
+<br />Muestra el nombre del equipo<br>
+<br>
+
+Comando.:<br>
+<b>hostname</b>
+<br>
+
+<hr>
+
+
+
+<a name='netuse'></a><h3> net use</h3>
+
+<br />
+<p>
+Para conectar y desconectar de una unidad de red en Microsoft Windows, puede utilizar uno de los cuatro métodos que se describen en este artículo. 
+Puede asignar una letra de unidad a cualquier recurso compartido de una red. 
+Cuando hace esto, puede tener acceso rápidamente y con facilidad al recurso utilizando la interfaz de usuario de Windows o un símbolo del sistema.<br>
+</p>
+<br>
+
+Comando.:<br>
+<b>net use K: \\10.1.2.3\C$</b> ejemplo IP
+<br>
+
+<hr>
+
+<a name='ftp'></a><h3>ftp</h3>
+<br />Cliente de descarga de archivos
+<br />
+<br />
+
+Comando.:<br>
+<b>ftp –s [nombre archivo]</b> esta opción permite ejecutar un FTP en modo batch: especifica un archivo textual conteniendo los comandos FTP.
+</b><br>
+   
+<br>
+<hr>
+
+<a name='pktmon'></a><h3>pktmon</h3>
+<br />Función específica para controlar o monitorizar la propagación de paquetes de datos, lo cual nos puede ayudar a la hora de detectar ciertos problemas o un aumento de la latencia de nuestra red, identificar las aplicaciones afectadas, etc.
+<br />
+<br />
+
+Comando.:<br>
+For example, let’s capture <b>SSL traffic on port 443</b>, the filter will look like this:
+<br>
+<b>PktMon filter add -p 443</b><br>
+<br>
+To view the port filtered list:<br>
+<b>PktMon filter list</b><br>
+<br>
+To remove the same filter when done will look like this:<br>
+<b>PktMon filter remove -p 443</b><br>
+<br>
+To clear the packet port filtered list (capture all ports):<br>
+<b>PktMon filter remove list</b><br>
+<br>
+
+<a href='https://www.adslzone.net/esenciales/windows-10/sniffer-red-pktmon/'>
+<b>Pktmon</b> adslzone.net</a>
+ <a href='https://isc.sans.edu/forums/diary/Windows+10+Builtin+Packet+Sniffer+PktMon/26186/'>
+<b>Pktmon</b> adslzone.net</a>
+
+
+<br>
+<hr>
+
+<a name='curl'></a><h3>Curl</h3>
+<br />cURL es una herramienta de línea de comandos para obtener o enviar datos utilizando la sintaxis de URL.
+<br />
+<br />
+
+Comando.:<br>
+
+<br>
+<b>curl -I https://www.sepe.es/index.html</b><br>
+
+<br>
+   <a href='https://geekflare.com/es/curl-command-usage-with-example/'>
+<b>Uso del comando cURL con ejemplo en tiempo real</b></a>
+
+<br>
+</font>
+</td>
+
+
+
+</table>
+</body>
+</html>

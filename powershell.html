@@ -1,0 +1,904 @@
+<html>
+<head>
+  <title>Comandos Powershell</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+
+<body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="8" cellspacing="8" bgcolor="#fffaf2" width="100%" height="100%">
+
+  <tr>
+    <td width="50%" bgcolor="#fffaf2" valign="top">
+
+
+  <a name="defender"></a>
+
+<br>
+
+     <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+Activar o Desactivar <b>Defender</b> con <b>Powershell</b>.:<br></font>
+<br>
+
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<b>CMD</b> permisos administrativos <br>
+<b>Powershell</b><br>
+<b>Set-MpPreference -DisableRealtimeMonitoring $true</b> Desactiva<br>
+<b>Set-MpPreference -DisableRealtimeMonitoring $false</b> Activa<br>
+<br><br>
+    <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+Modo antiguo.:<br></font>
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+C:\Archivos de programa\Windows Defender\<b>MSASCui.exe</b><br><br>
+
+    <a href="https://www.hackplayers.com/2022/09/windows-defender-comandos.html" target="_blank">
+<b>Comandos Microsoft Defender Antivirus con PowerShell en Windows 10</b></a><br>
+<br>
+
+
+
+    <a href="https://winaero.com/how-to-disable-defender-in-windows-11/" target="_blank">
+<b>Disable Microsoft Defender in Windows 11</b></a><br>
+    <a href="https://winaero-com.translate.goog/how-to-disable-defender-in-windows-11/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp" target="_blank">
+<b>Disable Microsoft Defender in Windows 11</b> google traslate</a><br>
+
+    <a href="https://winaero.com/downloads/2022/01/disable_defender.zip" target="_blank">
+<b>Descarga reg Defender</b></a><br>
+
+    <a href="https://winaero.com/winaero-tweaker/" target="_blank">
+<b>Winaero Tweaker</b></a><br>
+
+<br>
+</font>
+
+<hr>
+
+  <a name="telemetria"></a>
+
+     <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+Activar o Desactivar <b>Telemetria</b> con <b>Powershell</b>.:<br></font>
+
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<b>CMD</b> permisos administrativos <br>
+<b>Powershell</b><br>
+
+<b>Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0</b> Desactiva<br><br>
+<b>Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0</b> Desactiva<br><br>
+<b>Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0</b> Desactiva<br><br>
+<br><br>
+
+En Caso de que Windows Update deje de funcionar  activar telemetria *solo / resto.:<br>
+	
+
+<b>Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 3</b> Activa<br><br>
+<b>Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 3</b> Activa<br><br>
+<b>Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -ErrorAction SilentlyContinue</b> Remueve policy Item<br><br>
+
+
+<br>
+<b>CMD</b><br>
+<b>sc delete DiagTrack</b><br>
+<b>sc delete dmwappushservice</b><br>
+<b>echo «» > C:\\ProgramData\\Microsoft\\Diagnosis\\ETLLogs\\AutoLogger\\AutoLogger-Diagtrack-Listener.etl</b><br>
+<b>reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection /v AllowTelemetry /t REG_DWORD /d 0 /f</b><br>
+<br>
+Programador de Tareas</b><br>
+<b>Biblioteca del Programador de tareas \ Microsoft \ Windows \ Application Experience</b><br>
+<b>Busca Microsoft Compatibility Appraiser (Evaluador de compatibilidad de Microsoft)</b><br>
+<b>Haz clic con el botón derecho y selecciona Deshabilitar.</b><br>
+Reinicia el equipo.<br>
+
+<br>
+No deja eliminar el archivo si no es como trustedinstaller.<br>
+del %SystemRoot%\system32\compattelrunner.exe<br>
+Usar nsudo.bat<br>
+del %SystemRoot%\system32\compattelrunner.exe<br>
+
+</font>
+
+<hr>
+
+<a name="sid"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+Obtener SID de Usuarios y viceversa en CMD y PowerShell</font><br>
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+
+
+
+<br>
+<b>Powershell</b><br>
+<b>get-localuser -Name </b> (user)    (nombre de usuario sin () )<br>
+<b>get-localuser -Name </b> (user)<b> | format-list </b>  (aparece SID, copiarlo)<br>
+<b>get-localuser -SID </b>    (SID copiado sin comillas)<br>
+<b>get-localuser -SID </b> S-1-EJEMPLO....    (aparece nombre usuario)<br>
+<b>get-localuser -Name </b>    (nombre usuario)<br>
+<b>get-localuser -Name Administrador </b>  (ejemplo)<br>
+<b>get-localuser -Name Administrador | format-list </b>  (ejemplo copiar SID)<br>
+<b>get-localuser -SID </b><br>
+
+<br>
+</font>
+
+<hr>
+
+<br>
+<a name="processor_affinity"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+PowerShell Processor affinity</font><br><br>
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<b> Get-Process</b><br>
+Ver el processo Firefox y todos los datos del proceso, ejecutamos:<br>
+<b>get-process firefox| select-object *</b><br>
+<br>
+Filtro ejemplo que se muestre el Nombre, el path y el ProcessAffinity.:<br>
+<b>Get-Process | Select-Object Name, Path, ProcessorAffinity</b><br>
+<br>
+
+Servicios.:<br>
+<b>TaskList</b><br>
+Matar un proceso.:<br>
+<b>Taskkill /PID nº /F</b><br>
+<br>
+
+
+
+<a name="kernelboot"></a>
+<hr>
+
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+<b>Cómo ha arrancado Windows</b></font><br><br>
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<b>Get-WinEvent -ProviderName Microsoft-Windows-Kernel-boot -MaxEvents 10 | Where-Object {$_.id -like “27”}</b><br>
+<br>
+La respuesta del mismo nos dirá el modo de arranque empleado la última vez.
+<br><br>
+
+0x0: arranque en frío desde el cierre total del PC.<br>
+0x1: arranque híbrido, inicio rápido.<br>
+0x2: arranque desde el estado de hibernación del equipo.<br>
+<br>
+
+
+
+<a name="firewall"></a>
+<hr>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+Activar o Desactivar <b>Firewall Defender</b> "Comodo" instalado</font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+El Servicio "Firewall de Windows Defender" <b>[mpssvc]</b> no deja el Sistema desactivarlo<br><br>
+
+<br>
+<b>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mpssvc\Start</b><br>
+"4" disable<br>
+<br>
+"1" active<br>
+<br>
+<br>
+"2" auto<br>
+<br>
+
+<b>GPO.:</b><br>
+-Configuración del Equipo > -Plantillas administrativa > -Red > -Conexiones de red ><br>
+    -Firewall de Windows Defender > -Perfil Estandar ><br>
+        - Firewall de Windows Defender:proteger todas las conexiones de red ><br>
+        - <b>Deshabilitada</b> [X]<br>
+<br>
+Comandos.:<br>
+<b>Powershell (adm)</b><br>
+<br>
+<b>Get-MpComputerStatus    (informa las signatures/base de datos tanto del Antispyware como del Antivirus)</b><br>
+<b>Update-MpSignature      (actualiza bases)</b><br>
+<b>Update-MpSignature -UpdateSource MicrosoftUpdateServer   (otra opción más completa de actualización bases)</b><br>
+<br>
+
+Desactivar
+<b>CMD</b><br>
+<b>netsh advfirewall set allprofiles state off</b>
+<br>
+<br>
+netsh advfirewall set allprofiles state on
+
+
+<b>Powershhell</b><br>
+<b>Set-NetFirewallProfile -Profile Private -Enabled False</b> (Desactiva Firewall Red Privada)<br>
+<b>Set-NetFirewallProfile -Profile Private -Enabled True</b> (Activa Firewall Red Privada)<br>
+<br>
+
+<b>Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False</b> (Desactiva Firewall)<br>
+<b>Set-NetFirewallProfile -Profile Private, Public -Enabled False</b> (Desactiva Firewall)<br>
+<b>Set-NetFirewallProfile -Profile Private, Public -Enabled True</b> (Activa Firewall)<br>
+
+
+<br>
+
+<b>net start sharedaccess</b><br>
+<b>net stop sharedaccess</b>
+
+</font>
+    <br><br>
+
+
+
+<br>
+
+
+
+       <a href="https://www.solvetic.com/tutoriales/article/8767-desactivar-firewall-windows-10-cmd-powershell-o-menu-permanentemente/" target="_blank">
+<b>Desactivar Firewall Windows 10 2020 CMD, PowerShell</b> solvetic.com</a><br>
+
+       <a href="https://www.solvetic.com/tutoriales/article/3610-configurar-administrar-firewall-windows-10-con-powershell/" target="_blank">
+<b>Configurar y administrar Firewall Windows 10 con PowerShell</b> | solvetic.com</a><br>
+       <a href="https://www.tenforums.com/tutorials/70699-how-turn-off-microsoft-defender-firewall-windows-10-a.html" target="_blank">
+<b>How to Turn On or Off Microsoft Defender Firewall in</b> tenforums.com</a><br>
+       <a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security-administration-with-windows-powershell" target="_blank">
+<b>Firewall de Windows Defender</b> | Microsoft Docs</a><br>
+<br>
+</font>
+<hr>
+
+<a name="adaptadorvm"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+Adaptadores <b>Hyper-V</b></font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<b>Get-VMNetworkAdapter -ManagementOS</b> (Aparecen adaptadores maquinas virtuales Hyper-V)<br>
+<b>remove-vmnetworkadapter  "NOMBRE -NAME- QUE TE MUESTRA EL COMANDO ANTERIOR"</b> (Elimina adaptadores maquinas virtuales Hyper-V)<br>
+<b>Get-VMNetworkAdapter -ManagementOS | remove-VMNetworkAdapter (name)</b> (Elimina adaptadores maquinas virtuales Hyper-V)<br>
+<br>
+</font>
+
+<hr>
+
+<a name="actualizacionessistema"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+<b>Versiones SO instaladas como actualizaciones con Powershell</b></font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+
+En el registro en sí, las entradas no están ordenadas por fecha, primero ordenarlo con.:<br>
+<br>
+<b>$AllBuilds = $(gci "HKLM:\System\Setup" | ? {$_.Name -match "\\Source\s"}) | % { $_ | Select @{n="UpdateTime";e={if ($_.Name -match "Updated\son\s(\d{1,2}\/\d{1,2}\/\d{4}\s\d{2}:\d{2}:\d{2})\)$") {[dateTime]::Parse($Matches[1],([Globalization.CultureInfo]::CreateSpecificCulture('en-US')))}}}, @{n="ReleaseID";e={$_.GetValue("ReleaseID")}},@{n="Branch";e={$_.GetValue("BuildBranch")}},@{n="Build";e={$_.GetValue("CurrentBuild")}},@{n="ProductName";e={$_.GetValue("ProductName")}},@{n="InstallTime";e={[datetime]::FromFileTime($_.GetValue("InstallTime"))}} };</b><br>
+<br><br>
+
+Consulta.:<br>
+<b>$AllBuilds | Sort UpdateTime | ft UpdateTime, ReleaseID, Branch, Build, ProductName</b><br>
+
+<br>
+     <a href="https://www.deskmodder.de/blog/2018/03/18/installierte-windows-versionen-mit-powershell-auslesen/" target="_blank">
+versiones de Windows instaladas con PowerShell</a> deskmodder.de<br><br>
+</font>
+
+<hr>
+
+<a name="version"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+<b>Version Windows instalada con Powershell</b></font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+
+<b>CMD</b> permisos administrativos <br>
+<b>Powershell</b><br>
+<b>Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion"</b><br>
+<br>
+
+<b>VMHostSupportedVersion</b><br>
+En la ultima build del Programa Insider aparece el nombre de la actualizacion.<br>
+Muestra una lista versiones de configuración de máquinas virtuales compatibles con un Host<br>
+</font>
+
+<hr>
+
+<a name="disableupdtaedrivers"></a>
+     <font color="#ff0000" face="verdana,arial,helvetica" size="2">
+<b>Desactivar Actualización Drivers con Powershell</b></font><br><br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+
+<b>CMD</b> permisos administrativos <br>
+<b>Powershell</b><br>
+
+<br>
+<b>
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ExcludeWUDriversInQualityUpdate /t REG_DWORD /d 1 /f<br><br>
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" /v SearchOrderConfig /t REG_DWORD /d 0 /f<br><br>
+reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Update" /v ExcludeWUDriversInQualityUpdate /t REG_DWORD /d 1 /f<br><br>
+reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\Update" /v ExcludeWUDriversInQualityUpdate /t REG_DWORD /d 1 /f<br><br>
+reg add "HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v ExcludeWUDriversInQualityUpdate /t REG_DWORD /d 1 /f<br><br>
+</b>
+<br>
+
+<br>
+disable Driver updates.reg.:<br>
+<br>
+Windows Registry Editor Version 5.00<br>
+<br>
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Update]<br>
+"ExcludeWUDriversInQualityUpdate"=dword:00000001<br>
+<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update]<br>
+"ExcludeWUDriversInQualityUpdate"=dword:00000001<br>
+<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate]<br>
+"value"=dword:00000001<br>
+<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]<br>
+"ExcludeWUDriversInQualityUpdate"=dword:00000001<br>
+<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]<br>
+"ExcludeWUDriversInQualityUpdate"=dword:00000001<br>
+<br>
+<br>
+
+
+<a name="eliminarpuntorestauracion"></a>
+<hr>
+    <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
+Eliminar  <b>punto restauración</b> individuales con <b>Powershell.:</b></font><br>
+<br>
+
+     <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+Powershell (Adm)<br>
+<b>vssadmin list shadows</b><br>
+Cada línea que ve con ID de instantánea es un punto de restauración.<br>
+<b>vssadmin delete shadows / Shadow = seguido de números largos según el ID de instantánea</b><br>
+<br>
+
+
+<a href="https://tecno-soluciones.net/windows/como-eliminar-puntos-de-restauracion-en-windows-10/" target="_blank">
+Cómo eliminar puntos de restauración en Windows 10</a><br>
+
+<br>
+
+
+    </font></td>
+
+    <td width="50%" bgcolor="#fffaf2" valign="top">
+
+<a name="comandospowershell"></a>
+   <font color="#ff0000" face="Verdana,Arial,Helvetica" size="2"><br>
+&#149; <b>Comandos Powershell.:</b> Como Administrador<br></font>
+   <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"> 
+<br>
+
+Información versión Powershell<br>
+<b>Get-Host</b><br><br>
+
+<br>
+Actualizar.:<br>
+<b>winget install --id Microsoft.Powershell --source winget</b><br>
+<b>winget list --id "Microsoft.PowerShell" --source winget</b> listado Powershell<br>
+Con <b>Get-Command -Name "pwsh"</b> compruebas versión<br>
+Pero tendrás los dos Powershell conviviendo, el antiguo <b>5.1.22621.1778</b> y el nuevo <v>7.3.6</b>
+ que se ejecuta con <b>pwsh.exe</b> localizado en <b>C:\Archivos de Programa/Powershell/</b><br>
+<br>
+        <a href="https://github.com/PowerShell/PowerShell/releases" target="_blank">
+<b>Releases · PowerShell/PowerShell · GitHub</b></a><br>
+
+
+<br>
+Forzar ejecución de scripts (editar tambien en *.ps1)<br>
+
+PS> <b>Set-ExecutionPolicy Unrestricted -Scope CurrentUser</b> Forzamos ejecución<br><br>
+
+Desbloquear los scripts y módulos de PowerShell dentro directorio:<br>
+PS> <b>ls -Recurse *.ps*1 | Unblock-File</b><br><br>
+
+Politicas en Ejecución<br>
+<b>Get-ExecutionPolicy</b> Politica en uso<br><br>
+<b>Get-ExecutionPolicy -List</b> Politicas en uso<br>
+
+<br>
+Desde DOS.:<br>
+<b>powershell -command "Get-ExecutionPolicy"</b><br>
+<br>
+
+         <a href="https://www.eltallerdesharepoint.com/net/permisos-de-ejecucion-de-scripts-en-powershell/" target="_blank">
+<b>Permisos de ejecución de scripts en PowerShell</b></a><br><br>
+
+<br>
+Ejecución de scripts como Administrador<br>
+<b>Start-Process powershell -Verb runAs</b><br><br>
+
+
+         <a href="https://4sysops.com/archives/use-powershell-to-execute-an-exe/" target="_blank">
+<b>Ejecutar *.exe PowerShell</b> 4sysops.com</a><br><br>
+         <a href="https://4sysops.com/tag/powershell/" target="_blank">
+<b>PowerShell</b> 4sysops.com</a><br><br>
+         <a href="https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Start-Process?view=powershell-5.1#syntax" target="_blank">
+<b>PowerShell</b> Sintasis -docs.microsoft.com</a><br><br>
+         <a href="https://qastack.mx/programming/7690994/running-a-command-as-administrator-using-powershell" target="_blank">
+<b>¿Ejecuta un comando como administrador con PowerShell?</b></a><br><br>
+
+
+
+
+<br>
+Deshabilitar Cortana a partir Windows 2004<br>
+<b>Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage</b> Administrador<br><br>
+
+
+       <a href="https://www.youtube.com/watch?v=UIxpx2Aohxs" target="_blank">
+25 Comandos de <b>PowerShell</b> -youtube</a><br>
+       <a href="https://www.solvetic.com/tutoriales/article/2077-25-comandos-de-powershell-que-todo-administrador-debe-saber/" target="_blank">
+25 Comandos de <b>PowerShell</b></a><br><br>
+       <a href="https://rakhesh.com/powershell/managing-network-interfaces-with-powershell-v3/" target="_blank">
+<b>Managing network interfaces</b> with PowerShell</a><br>
+       <a href="https://www.solvetic.com/tutoriales/article/4293-comandos-red-utiles-windows-powershell/" target="_blank">
+<b>Comandos Red Powershell</b> -solvetic.com</a><br>
+
+<br>
+
+Backup de drivers en Windows 10<br>
+<b>Export-WindowsDriver -Online -Destination G:\Respaldo_Drivers</b> permisos administrativos<br><br>
+
+Importarlos.:<br>
+<b>pnputil /add-driver "G:\Respaldo_Drivers\*.inf" /subdirs /install /reboot</b>  (como Administrador)<br><br>
+
+Lista de todos los controladores exportados en una forma conveniente, indicando la clase, el fabricante y la versión del controlador, debe exportar los controladores utilizando dos comandos: .:<br>
+<b>$BackupDrivers = Export-WindowsDriver -Online -Destination G:\Respaldo_Drivers</b>  (como Administrador)<br><br>
+
+<b>$BackupDrivers | Select-Object ClassName, ProviderName, Date, Version | Sort-Object ClassName</b><br><br>
+
+
+       <a href="https://www.solvetic.com/tutoriales/article/3103-como-hacer-backup-drivers-con-powershell-windows-10/" target="_blank">
+<b>Backup de drivers en Windows 10</b> -solvetic.com</a><br><br>
+
+Listado Drivers<br>
+<b>Get-WmiObject Win32_PnPSignedDriver| select DeviceName, Manufacturer, DriverVersion</b><br><br>
+<b>Get-CimInstance Win32_PnPSignedDriver| select DeviceName, Manufacturer, DriverVersion</b><br>
+       <a href="https://www.ipswitch.com/blog/get-ciminstance-vs-get-wmiobject-whats-the-difference" target="_blank">
+Get-CimInstance sustituye a Get-WmiObject (WMI/CIM)</a> ipswitch.com<br><br>
+
+
+
+Listado Servicios<br>
+<b>Get-Services</b><br><br>
+
+Información Sistema completa<br>
+<b>Get-ComputerInfo</b><br><br>
+
+
+Información Windows<br>
+<b>Get-ComputerInfo -Property Windows*</b><br><br>
+
+Si añadimos coma y despues una selección de lo que aparece en <b>Get-ComputerInfo</b> reducimos la info.:<br>
+<b>Get-ComputerInfo | select WindowsProductName, WindowsVersion, WindowsEditionId, WindowsInstallationType, OsHardwareAbstractionLayer, OsBuildNumber, OsProductType</b>
+  <br><br> 
+
+Información Windows hacia un archivo de texto<br>
+<b>Get-ComputerInfo >"$env:userprofile\Desktop\InformacionWindows.txt"</b>
+  <br><br> 
+
+
+
+Instalación versión Powershell más actual<br>
+<b>winget install Microsoft.PowerShell</b><br><br>
+
+     <a href="https://github.com/PowerShell/PowerShell/releases/" target="_blank">
+<b>Actualización Powershell</b> github.com</a><br><br>
+<br>
+Se lanza como <b>pwsh</b><br>
+<br>
+
+
+Informacíon caché DNS<br>
+<br>
+<b>"Get-DnsClientCache | Format-Table -AutoSize"</b><br>
+<b>"Get-DnsClientCache | Format-Table -AutoSize" >"$env:userprofile\Desktop\dns.txt"</b> salida archivo<br>
+
+    
+  <a href="https://stackoverflow.com/questions/7330187/how-to-find-the-windows-version-from-the-powershell-command-line" target="_blank">
+Como encontrar <b>Versión Windows</b> stackoverflow.com</a><br>
+<br>
+Averiguamos canal Volumen_MAK o Client<br>
+<b>slmgr /dli</b><br><br>
+
+
+
+
+Averigua Sistemas en la <b>ISO</b>  (ejemplo mio)   -Powershell sintasis.:<br>
+<b>Get-WindowsImage -ImagePath "x:\x64\sources\install.esd"</b><br><br>
+
+Averigua Sistemas en la <b>ISO</b>
+<b>Get-WindowsImage -ImagePath "k:\sources\install.wim"</b><br><br>
+
+Averigua Sistemas en la <b>ISO</b> #6 es para Pro<br>
+<b>dism /Get-WimInfo /WimFile:k:\sources\install.wim /index:6</b><br><br>
+
+
+Instala archivo *.CAB<br>
+<b>DISM.exe /Online /Add-Package /PackagePath:C:\*.cab</b><br><br>
+
+Instala archivo *.CAB<br>
+<b>Add-WindowsPackage -Online -PackagePath "C:\*.cab"</b><br><br>
+
+
+Averiguar Secure Boot Activado.:<br>
+<b>Get-SecureBootPolicy<br>
+Confirm-SecureBootUEFI</b><br><br>
+
+<b>Get-host</b> :averiguamos la versión instalada Powershell<br>
+<b>Get-Process</b> :averiguamos Procesos en memoria<br>
+<b>Get-Process -name lsass | Select-Object -property *</b> :averiguamos Proceso lsass<br>
+<br>
+
+
+
+IP Local<br>
+<b>gip</b><br><br>
+
+IP Pública -info JSON vía web service -registro PTR, ciudad, región, geolocalización, ISP<br>
+<b>Invoke-RestMethod http://ipinfo.io/json</b><br><br>
+
+  <a href="https://www.sysadmit.com/2019/01/windows-saber-ip-publica-PowerShell.html" target="_blank">
+<b>IP pública</b> | SYSADMIT</a><br><br>
+
+<b>Get-NetTCPConnection </b> :permite obtener información sobre las conexiones <b>TCP</b><br>
+<b>Get-DnsClientCache </b> :permite hacer búsquedas dentro del cache DNS<br>
+<b>Get-NetRoute </b> :permite ver dirección IP<br>
+<b>Get-NetIPInterface –Dhcp Enabled | Get-NetIPAddress </b> :permite ver dirección <b>IP y DHCP</b><br>
+
+
+<br>
+
+<b>schtasks.exe</b> Tareas programadas del sistema<br><br>
+<b>systeminfo | clip</b> System info al portapapeles<br><br>
+
+Windows: Saber versión instalada.:<br>
+<b>Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion"</b><br><br>
+
+
+<br>Comando Aplicaciones instaladas.: (DOS no Powershell)<br>
+<b>powershell -executionpolicy remotesigned Get-AppxPackage</b><br><br>
+
+
+
+<br>Comando Aplicaciones instaladas.: (Powershell)<br>
+<b>Get-AppxPackage -AllUsers | Select Name, PackageFullName | Sort Name</b>
+<br>
+<br>Comando Aplicaciones del Sistema instaladas (no se pueden borrar).: (Powershell)<br>
+<b>Get-AppxPackage -PackageTypeFilter Main | ? { $_.SignatureKind -eq "System" } | Sort Name | Format-Table Name, InstallLocation</b><br>
+<br>
+
+Cómo obtener un listado de todas las aplicaciones instaladas en el PC<br>
+<b>Get-AppxPackage –AllUsers| Select Name, PackageFullName >"$env:userprofile\Desktop\listadoAplicacionesInstaladas.txt"</b><br>
+<br>
+
+
+
+:actualizaciones de Windows instaladas (mejor que anterior)<br>
+<b>gwmi win32_quickfixengineering |sort installedon -desc</b><br>
+<br>
+
+
+<br>
+<b>:Desinstalar actualizaciones WU</b><br>
+<b>wusa /uninstall /kb:5003173</b> (despues de kb el nombre de la actualizacion KB<br>
+<br>
+
+<b>:Desinstalar actualizaciones con DISM</b><br>
+Averiguamos paquetes instalados.:<br>
+<b>dism /online /get-packages /format:table</b><br>
+<b>dism /Online /Remove-Package /PackageName:PackageName</b><br>
+Ejemplo: Para remover el paquete "Package_for_KB4058702~31bf3856ad364e35~amd64~~16299.188.1.0"<br>
+<b>dism /Online /Remove-Package /PackageName:Package_for_KB4058702~31bf3856ad364e35~amd64~~16299.188.1.0</b><br>
+<br>
+
+
+<b>: Apagar máquina remotamente</b><br>
+<b>Start-Sleep 60; Restart-Computer –Force –ComputerName TARGETMACHINE</b><br>
+<br>
+<b>Get-WmiObject</b>  con el tiempo será suplido por <b>Get-CIMInstance</b><br>
+<br>
+
+<b>Get-WmiObject -Class Win32_ComputerSystem</b>   :Version Sistema<br>
+<b>Get-WmiObject -Class Win32_BIOS -ComputerName</b>   :Informacion Bios<br>
+<br>
+<b>Get-WmiObject -Class Win32_QuickFixEngineering</b> <br>
+:actualizaciones de Windows instaladas en el sistema se incluyen QFES o archivos de Windows Update.<br>
+<br>
+<b>Get-WmiObject Win32_ComputerSystem</b> Características de mi ordenador<br><br>
+
+<b>Get-WmiObject -Class Win32_Product -ComputerName . | Format-Wide -Column 1</b>   :averiguamos la versión instalada Powershell<br>
+<b>Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Format-Table -Property IPAddress</b>   :Muestra IP<br>
+<b>Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Select-Object -Property [a-z]* -ExcludeProperty IPX*,WINS*</b>
+                       <br>   :información como la interfaz asociada y los DNS.<br><br>
+
+Comandos Licencias<br>
+<b>Get-WmiObject SoftwareLicensingProduct</b><br>
+
+<b>Get-CimInstance -ClassName SoftwareLicensingProduct | where PartialProductKey | select Name, LicenseStatus |Fl</b> <br>
+ Si el resultado de su ejecución es <b>1</b>, significa que está activado de forma permanente.<br>
+<br>
+
+<b>(Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey</b><br>
+o desde fuera Powershell.: <br>
+<b>powershell "(Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey"</b><br>
+<br><br>
+
+
+<b>Get-CIMInstance Win32_physicalmemory</b> Datos tecnicos de la memoria RAM<br><br>
+<br>
+
+<br>
+        <a href="https://www.reddit.com/r/PowerShell/comments/u18dtd/rename_host_to_laptopserialnumber/" target="_blank">
+<b>Rename Host to "Laptop-[SerialNumber]" : PowerShell</b></a><br>
+<br>
+$SN = Get-WmiObject -Class win32_bios | ForEach-Object{$_.SerialNumber}<br>
+Rename-Computer "NB-$SN"<br>
+CRP = CORPORATE<br>
+NB-CRP-SERIAL<br>
+LT = laptop<br>
+<br>
+
+
+
+</td>
+</tr>
+
+<tr>
+    <td width="50%" bgcolor="#fffaf2" valign="top">
+<hr>
+
+<a name="eliminarprogramas"></a>
+
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<b>Eliminar programas con Powershell.:</b><br>
+<br>
+
+<br>Ejemplo Calculadora.:<br>
+Buscamos las Aplicaciones instaladas: <br>
+<b>Get-AppxPackage –AllUsers| Select Name, PackageFullName >"$env:userprofile\Desktop\aplicacionesinstaladas.txt" </b>  <br>
+Una vez localizada buscandola en el archivo de texto (calculator)<br>
+<b>Remove-AppxPackage Microsoft.WindowsCalculator_10.1806.1821.0_x64__8wekyb3d8bbwe</b>  <br>
+<br>
+Remover Photos<br>
+<b>get-appxpackage *photos* | remove-appxpackage</b>
+<br>
+
+
+<br>
+Ahora si queremos reinstalar la Calculadora.: <br>
+<b>Get-AppxPackage -AllUsers *windowscalculator* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}</b>  <br>
+
+<br>
+        <a href="https://docs.microsoft.com/es-es/windows/application-management/apps-in-windows-10" target="_blank">
+<b>Aplicaciones instaladas y del Sistema que no se pueden desinstalar</b></a> docs.microsoft.com<br>
+<br>
+
+        <a href="https://www.softzone.es/windows-10/como-se-hace/formatear-usb-disco-duro-poweshell/" target="_blank">
+<b>Cómo formatear un USB o disco duro externo con Windows PoweShell</b></a> softzone.es<br>
+<br>
+
+
+
+<a name="reinstalarprogramas"></a>
+
+<br>
+
+Para reinstalar aplicaciones (<b>Ps</b> como administrador)<br>
+<b>Get-AppxPackage -AllUsers| Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}</b><br><br>
+
+<br>
+Para reinstalar Tienda Store (<b>Ps</b> como administrador)<br>
+<b>Get-AppXPackage *WindowsStore* -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}</b><br><br>
+
+o <br>
+Buscamos las Aplicaciones instaladas: <br>
+<b>Get-AppxPackage –AllUsers| Select Name, PackageFullName >"$env:userprofile\Desktop\aplicacionesinstaladas.txt" </b>  <br>
+Una vez localizada buscandola en el archivo de texto (calculator)<br>
+Ejemplo.: <b>Calculadora</b><br>
+<b>Get-AppxPackage -AllUsers *windowscalculator* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}</b>
+<br>
+Tener activo el servicio Firewall, en caso contrario, no deja.:<br>
+<br>
+<b>Set-NetFirewallProfile -Profile Private, Public -Enabled True</b> (Activa Firewall)<br>
+<b>Set-NetFirewallProfile -Profile Private, Public -Enabled False</b> (Desactiva Firewall)<br>
+Si da error el Firewall activar manualmente el servicio "Firewall de Windows Defender".:<br>
+
+
+
+<br><br>
+
+<br>
+Get-AppxPackage -name “Microsoft.ZuneMusic” | Remove-AppxPackage<br>
+<b>Get-AppxPackage *Microsoft.ZuneVideo* | remove-appxpackage</b><br>  
+Get-AppxPackage -name “Microsoft.Music.Preview” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.XboxGameCallableUI” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.XboxIdentityProvider” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingTravel” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingHealthAndFitness” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingFoodAndDrink” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.People” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingFinance” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.3DBuilder” | Remove-AppxPackage<br>
+
+Get-AppxPackage -name “Microsoft.WindowsCalculator” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingNews” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.XboxApp” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingSports” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.WindowsCamera” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.Getstarted” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.Office.OneNote” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.WindowsMaps” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.MicrosoftSolitaireCollection” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.MicrosoftOfficeHub” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BingWeather” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.BioEnrollment” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.WindowsStore” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.Windows.Photos” | Remove-AppxPackage<br>
+Get-AppxPackage -name “Microsoft.WindowsPhone” | Remove-AppxPackage<br>
+Get-AppxPackage *Microsoft. SkypeApp* | Remove-AppxPackage<br>
+<br><br>
+mayo2019<br>
+Get-AppxPackage *skypeapp* | Remove-AppxPackage<br>
+Get-AppxPackage *Print3D* | Remove-AppxPackage
+<br><br>
+
+</font>
+</td>
+    <td width="50%" bgcolor="#fffaf2" valign="top">
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+<hr>
+
+<br>Cómo desinstalar el reproductor Groove Music de Windows 10.:<br>
+<b>Powershell</b> como Administrador<br>
+<b>Get-AppxPackage *zunemusic* | Remove-AppxPackage</b><br><br>
+
+
+<br>Cómo desinstalar OneNote de Windows 10.:<br>
+<b>Powershell</b> como Administrador<br>
+<b>Get-AppxPackage *OneNote* | Remove-AppxPackage</b><br>
+
+<br>
+
+Uninstall Print3D:<br>
+<b>Get-AppxPackage *Print3D* | Remove-AppxPackage</b> Sustituye a 3DBuilder<br>
+<br>
+Uninstall Alarms and Clock:<br>
+<b>Get-AppxPackage *windowsalarms* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Calculator:<br>
+<b>Get-AppxPackage *windowscalculator* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Calendar and Mail:<br>
+<b>Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Camera:<br>
+<b>Get-AppxPackage *windowscamera* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Contact Support:<br>
+This app can't be removed.<br>
+<br>
+Uninstall Cortana:<br>
+This app can't be removed.<br>
+<br>
+Uninstall Get Office:<br>
+<b>Get-AppxPackage *officehub* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Get Skype:<br>
+<b>Get-AppxPackage *skypeapp* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Get Started:<br>
+<b>Get-AppxPackage *getstarted* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Groove Music:<br>
+<b>Get-AppxPackage *zunemusic* | Remove-AppxPackage</b>
+<br>
+Uninstall Maps:<br>
+<b>Get-AppxPackage *windowsmaps* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Microsoft Edge:<br>
+This app can't be removed.<br>
+<br>
+Uninstall Microsoft Solitaire Collection:<br>
+<b>Get-AppxPackage *solitairecollection* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Money:<br>
+<b>Get-AppxPackage *bingfinance* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Movies & TV:<br>
+<b>Get-AppxPackage *zunevideo* | Remove-AppxPackage</b><br>
+<b>Get-AppxPackage *Microsoft.ZuneVideo* | remove-appxpackage</b><br>  
+<br>
+Uninstall News:<br>
+<b>Get-AppxPackage *bingnews* | Remove-AppxPackage</b><br>
+<br>
+Uninstall OneNote:<br>
+<b>Get-AppxPackage *onenote* | Remove-AppxPackage</b><br>
+<br>
+Uninstall People:<br>
+<b>Get-AppxPackage *people* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Phone Companion:<br>
+<b>Get-AppxPackage *windowsphone* | Remove-AppxPackage</b><br>
+Uninstall Photos:<br>
+<b>Get-AppxPackage *photos* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Store:<br>
+<b>Get-AppxPackage *windowsstore* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Sports:<br>
+<b>Get-AppxPackage *bingsports* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Voice Recorder:<br>
+<b>Get-AppxPackage *soundrecorder* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Weather:
+<b>Get-AppxPackage *bingweather* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Windows Feedback:<br>
+This app can't be removed.<br>
+<br>
+Uninstall Xbox:<br>
+<b>Get-AppxPackage *xboxapp* | Remove-AppxPackage</b><br>
+<br>
+Uninstall Wallet:<br>
+<b>Get-AppxPackage *Wallet* | Remove-AppxPackage</b><br>
+Uninstall Photos:<br>
+<b>Get-AppxPackage *Windows.Photos* | Remove-AppxPackage</b><br>
+
+<br>
+
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*OneNote*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*3DBuilder*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*BingWeather*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *DesktopAppInstaller* | Remove-AppxPackage</b><br>
+
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*DesktopAppInstaller*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *Getstarted* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*Getstarted*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *Messaging* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*Messaging*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *OfficeHub* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*OfficeHub*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *SolitaireCollection* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*SolitaireCollection*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *StickyNotes* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*StickyNotes*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *XboxApp* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*XboxApp*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *SkypeApp* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*SkypeApp*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *OneConnect* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*OneConnect*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *XboxIdentityProvider* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*XboxIdentityProvider*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *FeedbackHub* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*FeedbackHub*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *Store* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*Store*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *ZuneVideo* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*ZuneVideo*"} | remove-appxprovisionedpackage –online</b><br><br>
+<b>Get-AppxPackage *ZuneMusic* | Remove-AppxPackage</b><br>
+<b>Get-appxprovisionedpackage –online | where-object {$_.packagename –like "*ZuneMusic*"} | remove-appxprovisionedpackage –online</b><br>
+
+bingfinance
+People
+phone
+StorePurchaseApp
+Photos
+Alarms
+Camera
+communicationsapps
+Maps
+SoundRecorder
+
+
+<br><br>
+</font>
+
+</td>
+</tr>
+
+</font>
+</table>
+</body>
+</html>

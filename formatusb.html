@@ -1,0 +1,102 @@
+﻿<html>
+
+<head>
+<title>pen USB booteable UEFI con Windows</title>
+<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+
+  <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFAF2" width="100%" height="100%">
+  
+
+<tr>
+
+    <td width="50%" bgcolor="#FFFAF2" valign="top">
+ &#149;
+
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <b>TIP: crear un pen USB booteable UEFI con Windows <br>(cuando windows ocupa más del tamaño de un DVD). Ej: Server 2016</b><br><br>
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Una imagen de Windows "customizado", o bien incluso el <b>Server 2016</b> que distribuye Microsoft, el <b>install.win</b> ocupa mas de <b>4 GB</b>
+ (el server 2016 ocupa 5,29 GB).<br><br>
+
+En este caso tenemos un problema: en un <b>DVD</b> normal no cabe. Y en un <b>PEN</b>, si lo queremos <b>UEFI</b>, debe ser <b>FAT32</b>, 
+y el limite de un archivo (en este caso el <b>install.wim</b>) en <b>FAT32</b> es <b>4 GB</b> por lo cual no podremos tampoco crearlo.<br><br>
+
+<b>Trampa:</b> partir el fichero <b>install.win</b> en trozos inferiores a <b>4GB</b> mediante la utilidad de Windows <b>DISM</b><br><br>
+
+El código <b>powershell</b> que dejo debajo, lo hace. (por favor, leer los comentarios en el codigo)<br><br>
+
+<b>Código:</b><br><br>
+
+# Tamaño minimo del pen USB stick 5.29GB<br>
+# Poner aquí donde tenemos el ISO de W2016<br><br>
+
+$iso = 'C:\Users\localuser\Downloads\en_windows_server_2016_x64_dvd_9327751.iso'<br><br>
+
+# Limpiar el USB.     <font color="#ff0000" face="Verdana,Arial,Helvetica" size="1">Poner en NN en la linea inferior el Numero de Disco del Pen que se ve en <b>DISKPART</b></font><br>
+#     <font color="#ff0000" face="Verdana,Arial,Helvetica" size="1">Ser cuidadoso con esto o borraremos un disco que no procede.</font><br><br>
+
+$disk=    <font color="#ff0000" face="Verdana,Arial,Helvetica" size="1">NN</font><br><br>
+
+Get-Disk | Where Number -eq $disk | Clear-Disk -RemoveData -Confirm:$true -PassThru<br><br>
+
+# Convertir a  GPT<br>
+if ((Get-Disk | Where Number -eq $disk).PartitionStyle -eq 'RAW') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;     Get-Disk | Where Numer -eq $disk |<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;    Initialize-Disk -PartitionStyle GPT<br>
+} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;     Get-Disk | Where Number -eq $disk |<br>
+&nbsp;&nbsp;&nbsp;&nbsp;     Set-Disk -PartitionStyle GPT<br>
+}<br><br>
+
+# Crear partition primaria y format a FAT32<br>
+$volume = Get-Disk | Where Number -eq $disk |<br>
+New-Partition -UseMaximumSize -AssignDriveLetter |<br>
+Format-Volume -FileSystem FAT32<br><br>
+
+if (Test-Path -Path "$($volume.DriveLetter):\") {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;     # Mount iso<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;   $miso = Mount-DiskImage -ImagePath $iso -StorageType ISO -PassThru<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;   # Driver letter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    $dl = ($miso | Get-Volume).DriveLetter<br>
+}<br><br>
+
+if (Test-Path -Path "$($dl):\sources\install.wim") {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    # Copiar ISO excepto el install.wim<br>
+&nbsp;&nbsp;&nbsp;&nbsp;   & (Get-Command "$($env:systemroot)\system32\robocopy.exe") @(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;        "$($dl):\",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;       "$($volume.DriveLetter):\"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;      ,'/S','/R:0','/Z','/XF','install.wim','/NP'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    )<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;   # Trocear el install.wim<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    & (Get-Command "$($env:systemroot)\system32\dism.exe") @(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;      '/split-image',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;       "/imagefile:$($dl):\sources\install.wim",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;       "/SWMFile:$($volume.DriveLetter):\sources\install.swm",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;      '/FileSize:4096'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    )<br>
+}<br><br><br>
+
+
+# Eject USB<br>
+(New-Object -comObject Shell.Application).NameSpace(17).<br>
+ParseName("$($volume.DriveLetter):").InvokeVerb('Eject')<br>
+<br>
+# Dismount ISO<br>
+Dismount-DiskImage -ImagePath $iso<br><br>
+
+Fuente.:<br><br>
+<a href="http://jmtella.com/foro/forum/ejercicios-y-ejemplos/28756-tip-crear-un-pen-usb-booteable-uefi-con-windows-cuando-windows-ocupa-m%C3%A1s-del-tama%C3%B1o-de-un-dvd-ej-server-2016" target="_blank">TIP: crear un <b>pen USB booteable UEFI</b> con Windows (cuando windows ocupa más del tamaño de un DVD). Ej: Server 2016</b></a><br>
+
+
+</td></tr>
+<br>
+
+</table>
+</html>

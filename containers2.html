@@ -1,0 +1,290 @@
+﻿<html>
+<head>
+<title>Containers 2</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+  <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFAF2" width="100%" height="100%">
+  
+
+<tr>
+
+    <td width="50%" bgcolor="#FFFAF2" valign="top"> &#149;
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <b>Articulo: Introducci&oacute;n a los Contenedores (containers). <br>
+    Su implementaci&oacute;n en Windows 10 / Windows Server 2016.</b><br><br>
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Articulo: Instalación de containers en Windows 10 / Server 2016. <br />
+Ejemplos de contenedor web. <br><br>
+
+
+INSTALACION Y USO DE LOS CONTAINERS<br><br>
+<strong>Windows 10 / Server 2016</strong>
+
+
+
+
+ traen la tecnolog&iacute;a de base, para ello hay que tener instalado el role de <strong>Hyper-V</strong>
+ as&iacute; como los "Containers" instalados. Esto crea la base de uso de <strong>DOCKER</strong>
+, as&iacute; como suministra el aislamiento b&aacute;sico a nivel de red para la comunicaci&oacute;n entre maquinas y la red usando los <em><strong>switchs</strong></em>, o <strong>redes virtuales</strong> de <strong>Hyper-V</strong>.<br /> <br /> La instalaci&oacute;n de <strong>DOCKER</strong> es diferente si se realiza en Windows 10 o en Server 2016. En ambos casos hay que hacerlo desde una <strong><span style="text-decoration: underline;">consola de PowerShell arrancada con derechos Administrativos</span>.</strong><br /> <br /> 
+
+</div>
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="2">
+    <b>En Windows 10:</b></font><br>
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container" style="font-family: Arial Black; font-size: 12px; color: black">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 186px;"><strong>Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing</strong>
+
+<strong>expand-archive -path "$env:TEMP\docker.zip" -DestinationPath $env:ProgramFiles</strong>
+
+<strong>[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)</strong>
+
+<strong>$env:path += ";c:\program files\docker"</strong>
+
+<strong>dockerd --register-service</strong>
+<strong>
+Start-Service Docker</strong></pre>
+</div>
+<br /> </div>
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="2">
+    <b>En Windows Server 2016.:</b></font><br>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap style="font-family: Arial Black; font-size: 12px; color: black"" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 102px;"><strong>Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+
+Install-Package -Name docker -ProviderName DockerMsftProvider
+
+Restart-Computer -Force</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+<strong>NOTA</strong>: Los comandos anteriores de PowerShell nos pueden solicitar confirmaci&oacute;n. Responder afirmativamente.<br /> <br /> Una vez instalado, podemos comprobar la version con el comando (siempre en <strong>PowerShell</strong>):</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker version</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+<strong>NOTA:</strong> Particularmente no me gusta que se tenga que descargar aparte del sistema operativo y encima que tengamos que preocuparnos de la version y que Windows no lo mantenga. Pero de momento esto es lo que hay.<br /> <br /> 
+Ahora, vamos a cargar las "Im&aacute;genes" del Sistema operativo (recordar el concepto de "imagen", que no es lo mismo que el contenedor, tal y como se vio en la <a href="Containers1.htm">Introducci&oacute;n  a los Contenedores (containers)</a> )<br /> <br /> Para la carga de im&aacute;genes se usa el comando <strong>docker pull</strong>, en este caso:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 74px;"><strong>docker pull microsoft/windowsservercore
+
+docker pull microsoft/nanoserver</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Con esto tendremos ya las im&aacute;genes base para su uso, tanto en <strong>Windows 10</strong>
+, como en <strong>Server 2016</strong>.<br /> <br /> Siempre podremos analizar las im&aacute;genes que tenemos en el repositorio local con el comando:
+
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker images</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Si una imagen no tiene containers asociados, siempre podremos borrarla, por ejemplo:
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker rmi microsoft/nanoserver</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+El comando <strong>docker</strong> admite muchos par&aacute;metros, para verlos, deb&eacute;is ejecutar:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker --help</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Comandos mas comunes:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 144px;"><strong>docker ps -a</strong>
+(nos muestra los containers creados en nuestro repositorio local)
+
+<strong>docker ps</strong>
+(nos muestra los containers que est&aacute;n en ejecuci&oacute;n)
+
+<strong>docker rm container_ID</strong>
+(nos borra un container enviando el "container_ID" que nos ha mostrado previamente el comando <strong>docker ps -a</strong>)</pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+<span style="text-decoration: underline;"><strong>EJERCICIO:</strong></span><br /> <strong>Crear un container con un servidor Web.</strong><br /> <br /> El comando <strong>docker run </strong>nos permite la creaci&oacute;n de un container a partir de una imagen. Este comando admite su subpar&aacute;metros, por ejemplo<strong> -it </strong>indica que voy a actuar con una consola interactiva en el nuevo container y por tanto ejecutar en &eacute;l el comando que le indique (que en general, un cmd o un powershell). El comando <strong>-p puerto_origen: puerto_destino</strong>, indica que vamos a hacer un <strong>NAT</strong> desde nuestra maquina real, puerto_origen, al contenedor, en el puerto_destino. En el caso de un server web, seria un <strong>-p 80:80</strong>.<br /> <br /> Por tanto, ejecutar&iacute;amos:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker run -it -p 80:80 microsoft/windowsservercore powershell</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+La primera vez, tarda un poco (dependiendo de nuestro disco, en un<strong> SSD</strong> es r&aacute;pido).<br /> <br /> Cuando finalice, parece que no ha hecho nada, ya que seguimos en la misma consola de <strong>PowerShell</strong>, pero no es as&iacute;, la consola, aunque sea la misma, es un powershell que ya se est&aacute; ejecutando "dentro" del nuevo contenedor, por lo que cualquier comando que demos, realmente se ejecuta dentro del contenedor, en este caso, dentro de un <strong>Windows 2016 ServerCore</strong> que es la imagen que hemos precargado.<br /> <br /> Como es un server "virgen" debemos instalarle el <strong>IIS</strong>. Como la consola es un powershell dentro del contenedor, ejecutamos para ello el comando:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>Install-WindowsFeature web-server</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Una vez finalizado, dentro de esa consola podemos ejecutar un <strong>IPCONFIG</strong> para ver la <strong>IP</strong> que tiene ese contenedor virtual. Ser&aacute; del rango 172.xx.xx.xx (mas adelante, veremos que realmente la maquina real, ha creado un servicio de <strong>NAT</strong> usando los switchs virtuales de <strong>Hyper-V</strong>)<br /> <br /> Desde nuestra maquina podemos lanzar ahora un navegador a esa <strong>IP</strong> y veremos que nos saca la pagina por defecto del <strong>server IIS</strong> reci&eacute;n instalado.<br /> <br /> Recordemos que en general, y una vez hayamos finalizado el container, realmente desde la red se lanzar&aacute; un acceso a nuestra ip del host. Pero como el container tiene la redirecci&oacute;n mediante <strong>NAT</strong> (<strong>-p 80:80</strong>) esta se redirigir&aacute; al container.<br /> <br /> Dentro del <strong>PowerShell</strong> del <strong>container</strong>, nos creamos una pagina de prueba. Para ello, ejecutamos:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>echo "Hola gente. Esto es desde un container de Windows" &gt; c:\inetpub\wwwroot\test.html</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Para "cerrar" el contenedor, simplemente salimos de la consola de <strong>PowerShell</strong> con el comando<strong> exit</strong>. Esto nos devuelve ahora al PowerShell de nuestra maquina.<br /> <br /> Ahora mismo, recordemos que con el comando <strong>docker ps -a </strong>podemos ver el container. Si nos hemos salido de forma normal, con el exit, el contenedor se cierra y no queda en ejecuci&oacute;n. Para ver que no est&aacute; en ejecuci&oacute;n, ejecutad <strong>docker ps</strong>. Si hubi&eacute;semos cerrado la consola, seguir&iacute;a en ejecuci&oacute;n.<br /> <br /> En ese caso, si quisi&eacute;ramos pararlo, simplemente con el comando:<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker stop container_ID</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Siendo <strong>container_ID</strong> el numero de identificaci&oacute;n que nos devuelve el comando <strong>docker ps</strong>.<br /> <br /> Evidentemente para iniciar un <strong>container</strong>, se puede hacer con el subcomando <strong>start</strong>:<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker start container_ID</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+* Podemos probar el container desde nuestra red. Para ello, verificad que tenemos abierto el <em><strong>puerto 80</strong></em> en el cortafuegos anfitri&oacute;n o bien crear una regla en el cortafuegos de nuestra maquina anfitri&oacute;n para permitir dicho puerto. Podemos hacerlo desde <em><strong>Herramientas Administrativas</strong></em>, o ya que estamos en <strong>PowerShell</strong> en nuestra maquina anfitri&oacute;n, mediante el comando:</div>
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>New-NetFirewallRule -Name "ServidorWeb" -DisplayName "ServidorWeb" -Protocol tcp -LocalPort 80 -Action Allow -Enabled True</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Ahora desde cualquier maquina de nuestra red, <strong><em>id</em></strong> a la pagina reci&eacute;n creada en nuestro contenedor:<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>http://ip_de_la_maquina_anfitrion/test.html</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+<br /> Estos containers son ya permanentes. Si reinici&aacute;semos la maquina los containers siguen existiendo pero estar&iacute;an apagados por lo que hay que arrancarlos con el comando <strong>start</strong>.<br /> <br /> El subcomando <strong>start</strong> admite subparametros. Es interesante el<strong> -i</strong> (interactive) ya que ejecutando, en nuestro caso:<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker start -i container_ID</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+entrar&iacute;amos en la consola de <strong>PowerShell</strong> del <em><strong>contendor</strong></em> con lo cual podr&iacute;amos seguir configur&aacute;ndolo (por ejemplo).<br /> <br /> Ese contenedor ya est&aacute; operativo. Pero si quisi&eacute;ramos crear una imagen del contenedor en nuestro repositorio local, puede hacerse con el comando:<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker commit Container_ID jmtella/servidorweb[:version1]</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Lo que va entre corchetes es opcional, y lo que hace es permitirnos guardar versiones de nuestro contenedor. (muy &uacute;til cuando estamos desarrollando o probando).<br /> <br /> Podemos comprobar que la imagen se ha a&ntilde;adido al repositorio con el comando <strong>docker images</strong>.<br /> <br /> Otras comandos &uacute;tiles:<br /> <br /> <strong>1) Exportar una imagen para usarla en otra maquina:</strong><br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker save -o c:\containers_imagenes\mi_servidor_web.tar jmtella/servidorweb</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Ese fichero <strong><em>.tar</em></strong> lo podemos llevar a otra maquina y all&iacute; importarlo.<br /> <br /> <strong>2) Importar una imagen desde fichero .tar:</strong><br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker load -i c:\containers_imagenes\mi_servidor_web.tar</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+En la nueva maquina, evidentemente deberemos lo primero crear un <strong><em>container</em></strong> a partir de esa imagen importada, se hace tal y como vimos al principio:<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker run -it -d -p 80:80 jmtella/servidorweb powershell</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Fijaros que igualmente podemos arrancar un segundo container en el puerto 8080 (por ejemplo).<br />
+<div class="js-post__content-text OLD__post-content-text restore h-wordwrap" style="font-family: Arial Black; font-size: 12px; color: black"><br />
+<div class="bbcode_container">
+<div class="bbcode_description">C&oacute;digo:</div>
+<pre class="bbcode_code" style="height: 46px;"><strong>docker run -it -d -p 8080:80 jmtella/servidorweb powershell</strong></pre>
+</div>
+
+    <font/>
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Y tendr&iacute;amos dos servidores web en ejecuci&oacute;n cada uno en un puerto. (si lo prob&aacute;is, acordaros de poner una regla en el cortafuegos permitiendo ese puerto).<br /> <br /> En pr&oacute;ximos art&iacute;culos veremos la red en los containers. En este caso hemos usado la caracter&iacute;stica de <strong>NAT</strong>, pero puede hacer en bridge, etc..</div>
+</div>
+<br>
+
+</td></tr>
+<br>
+
+</table>
+</html>

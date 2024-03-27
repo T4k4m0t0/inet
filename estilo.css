@@ -1,0 +1,58 @@
+<style>
+<!-- 
+A:LINK {text-decoration :  none;
+FONT-FAMILY: Verdana,Arial,Helvetica;
+COLOR: #3166B5; } 
+
+A:VISITED {text-decoration :  none;
+FONT-FAMILY: Verdana, Arial,Helvetica;
+color : #225678;} 
+ 
+A:HOVER {text-decoration : none; 
+FONT-FAMILY: Verdana,Arial,Helvetica;
+color : #00bb00;} 
+
+A:ACTIVE {text-decoration :  none;
+FONT-FAMILY: Verdana,Arial,Helvetica;
+COLOR: #ff0000; }  
+-->
+
+body {text-align:justify;}
+
+
+text:unknown {
+	
+}
+.textoazul {
+	COLOR: #0000aa;
+FONT-FAMILY: verdana, arial, Helvetica, sans-serif; 
+FONT-SIZE: 10pt;
+TEXT-DECORATION: none;
+font-weith: bold
+}
+.textoocre {
+	COLOR: #efefbd; FONT-FAMILY: verdana, arial, Helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-ALIGN: center; TEXT-DECORATION: none; font-weith: bold
+}
+.textorojo {
+	COLOR: #ff3333; FONT-FAMILY: verdana, arial, Helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-DECORATION: none; font-weith: bold
+}
+.textomarron {
+	COLOR: #880000; FONT-FAMILY: verdana, arial, Helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-DECORATION: none; font-weith: bold
+}
+
+.enlaceazul {
+	COLOR: #006699; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-DECORATION: none; font-weith: bold
+}
+.enlaceblanco {
+	COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-DECORATION: none; font-weith: bold
+}
+.enlacenegro {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-DECORATION: none; font-weith: bold
+}
+
+.justifyText {
+text-align : justify;
+}
+
+
+</style>

@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+<title>Containers 1</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+  <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFAF2" width="100%" height="100%">
+  
+
+<tr>
+
+    <td width="50%" bgcolor="#FFFAF2" valign="top">
+ &#149;
+
+    <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <b>Articulo: Introducci&oacute;n a los Contenedores (containers). <br>
+    Su implementaci&oacute;n en Windows 10 / Windows Server 2016.</b><br><br>
+
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Algunos lo ven como el futuro de la virtualizaci&oacute;n, un paso m&aacute;s alla de la virtualizacion. Veremos que nos depara...<br /> <br /> <strong>
+CONTENEDORES - INTRODUCCION.</strong><br /> <br /> Tanto windows 10 como Server 2016 traen un nuevo concepto (en windows), 
+pero viejo en informatica y muy extendido e implementado en otras plataformas que son los <em><strong>containers</strong></em> (contenedores).<br /> <br />
+ &iquest;Que son los contenedores?: son "algo" que est&aacute; aislados del sistema operativo base totalmente. 
+Recuerda por ejemplo a las aplicaciones virtualizados con Thinapp de Vmware. El ejemplo es sencillo: un programa o un servicio, por ejemplo un servidor web,
+ que est&aacute; totalmente aislado: "contenido" en una imagen que es ejecutable pero que nunca interfiere al sistema princpial: ni a los registros, 
+ni tan siquiera al sistema de archivos.<br /> <br /> El padre de los contenedores es un proyecto llamado Docker (de software libre) 
+<a href="http://www.docker.com/" target="_blank">www.docker.com</a> Contiene unas 100.000 imagenes, tanto para Linux, como para Mac, e incluso, 
+aunque menos, para windows.<br /> <br /> <strong>Docker, consiste en:</strong><br /> <br /> 
+1) Un repositorio de imagenes.<br /> 
+2) Un "daemon" (servicio) que usando esas imagenes es capaz de ejecutarlas aisladas del sistema operativo.<br /> 
+3) Un cliente Docker, el cual es capaz de usar los servicios ofrecidos por los contenedores. El cliente puede estar an la maquina servidora (que tiene el daemon), 
+o bien incluso en cualquier otra maquina accediendo a la servidora a traves de dicho cliente.
+ La comunicacion es lo mas estandar del mundo (trafico http).<br /> <br /> <strong>Por capas, consta de 4 conceptos:</strong><br /> <br /> 
+* 
+<strong>Engine</strong> (Docker Cliente y Docker Server). Se comunican via http.<br /> <br /> * <strong>Images</strong> (imagenes) 
+Son como piezas de Lego ... se puede ejecutar cualquier contenedor desde "esa" imagen. Son archivos por capas que usan un sistema de archivos 
+UFS -Union File System-<br /> <br /> * <strong>Registries.</strong> Es donde Docker almacena las imagenes. Hay de dos tipos: Publico y Privado. 
+Docker gestiona el publico: es lo que se llama Docker HUB. Podeis, y debeios quien vaya a trabajar con COntainers, crearos una cuenta (gratuita) en 
+<a href="http://hub.docker.com/" target="_blank">http://hub.docker.com</a> en donde estan todas las imagenes que otros han ido creando
+ (incluso las que el propio Microsoft ha creado y subido all&iacute;) y en odne podreis, si quereis compartirlo con la comunidad, 
+subir vuestras propias imagenes.<br /> <br /> 
+* <strong>Containers:</strong> Es un conjunto de "Imagenes", "Operaciones sobre ellas" y "Entorno de ejecucion (chroot)". 
+Docker nos crea dichos containers para paquetizar aplicaciones y servicios.<br /> <br /> <br /> 
+Microsoft, con la caracteristica de Containers, que debe instalarse como una <span style="text-decoration: underline;">
+<strong>caracter&iacute;stica</strong></span> en el sistema (Windows 10 / Server 2016), y 
+<span style="text-decoration: underline;">adem&aacute;s hay que instalar Hyper-V</span>
+, lo que hace es crear una infraestrucutra para que Docker. 
+Es decir, aparte de eso, deberemos instalar Docker. Ya veremos que version y como.<br /> <br /> 
+No es exclusivo de W10 / Server 2016: hay Deamon / Cliente de Docker para W7 y superiores (8, y 8.1), por ejemplo.<br /> <br />
+ Como anticipo: los contenedores son de dos tipos:<br /> <br /> 1) Los que se ejecutan directamente sobre el sistema operativo anfitrion.<br />
+ 2) Los que se ejecutan dentro de un entorino virtualizado (por ejemplo, Hyper-V, o bien Virtual Box en sistemas anteriores). 
+Esto ultimos proporcionan mayor nivel de aislamiento.<br /> <br /> 
+Windows 10 solo soporta el tipo 2). Windows Server 2016, tanto el 1) como el 2).<br /> <br /> 
+* El tipo 1) se ejecutan sobre el mismo anfitri&oacute;n compartiendo el mismo n&uacute;cleo com&uacute;n.<br /> 
+* El tipo 2) las diferentes instancias se ejecutan tambi&eacute;n sobre el anfitri&oacute;n, pero no comparten el mismo n&uacute;cleo ya que 
+se a&iacute;sla de cada uno usando la tecnolog&iacute;a de virtualizaci&oacute;n de Hyper-V (usa la tecnolog&iacute;a, 
+no quiere decir que sea realmente una maquina virtual.<br /> <br /> NOTA: Windows 10, debe ser el Anniversay Update (o superior).<br /> <br /> 
+Siguiente art&iacute;culo: <a href="Containers2.htm"">Instalaci&oacuten de containers en Windows 10 / Server 2016. Ejemplos de contenedor web.</a><br><br>
+
+
+</td></tr>
+<br>
+
+</table>
+</html>

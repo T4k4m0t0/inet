@@ -1,0 +1,1029 @@
+<html>
+<head>
+<title>Comandos Linux</title>
+
+<style>
+a {text-decoration: none;}
+</style>
+
+</head> 
+
+
+
+  <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+
+  <table border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFAF2" width="100%">
+   
+    <td width="50%" bgcolor="#FFFAF2" valign="top">&#149; 
+    <font color="#3166b5" face="Verdana,Arial,Helvetica" size="2">
+    <a name="comandoslinux"><b>Comandos Linux</b></a></font>
+
+    <font face="Verdana,Arial,Helvetica" size="1"><br><br>
+
+    <a href="#ubuntu" target="lateral"><b>Ubuntu</b> ruta notas</a><br>
+<br>
+
+<b>pwd</b> devuelve la ruta en la que estas situado<br>
+
+
+<br>
+
+<b>sudo apt-get install iw</b>   (tool for configuring Linux wireless devices )<br>
+<b>sudo apt-get install root-system-bin</b>  (si el programa «root» no está instalado actualmente)<br>
+<b>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</b> (Instala Unity)
+<b>sudo -apt-get install sysinfo</b> (Instala sysinfo)<br>
+<b>sudo apt-get install firefox </b>  (navegador)<br>
+<b>sudo apt-get install libreoffice</b>  (paquete ofimatico opcional)<br>
+<br><br>
+
+Como root<br>
+<b>$sudo su </b><br>
+<b>$su -s</b><br>
+<b>$su -</b><br>
+<b>$su</b><br>
+<b>$sudo /bin/bash/</b><br>
+
+<br>
+Cambio Pass root<br>
+<b>$sudo passwd root</b> (cambia pass root)<br>
+<b>$passwd</b> (cambia pass root)<br>
+o<br>
+<b>ubuntu config --default-user root</b> Desde DOS como adm<br>
+<b>ubuntu</b> entramos en ubuntu<br>
+<b>passwd "user"</b> cambiamos el pass al usuario<br>
+<b>exit</b><br>
+<br>
+
+
+
+    <b> # apt-get install gimp </b> (programa de edición de imágenes)<br>
+   <b>  # export DISPLAY=:0 </b> (conecta servidor grafico a Bash)<br>
+<b>$pwd </b> (donde estamos)    /home/noSign (ejemplo)<br>
+ <b>   ls -a</b> : nos muestra también los archivos o directorios ocultos.<br>
+  <b>  ls -l</b> : esto mostrara toda la información completa (permisos) de cada archivo.<br>
+  <b>  ls /media/</b> /media/ubuntu/  puntos montaje<br>
+  <b>  ls -R </b> : con este veremos también los subdirectorios que tenga cada directorio.<br>
+<b>ls -la </b> (archivos ocultos)<br>
+<b>ls -lah </b> Información completa archivos, ocultos y tamaño.<br>
+<b>ls -R | more</b> listado con pausas<br>
+<b>mkdir fotos </b> (crea directorio fotos)<br>
+<b>rd fotos</b> (borra directorio fotos)<br>
+<b>rd -r fotos</b> (borra directorio fotos y su contenido)<br><br>
+
+<b>$ cd /mnt/c</b> (lista archivos en C:)<br>
+
+<b>$sudo nano /etc/hosts</b> (Edita con editor nano el archivo hots)<br><br><br>
+
+<b># ps xa</b>  (Procesos)<br>
+<b>$ lspci -k </b>(controladores wifi)<br>
+<b># starx </b><br>   (servidor grafico, necesita.:<br>
+           Para tener X, vas a tener que instalar un servidor grafico y luego algun escritorio o manejador de ventanas. Yo por ejemplo hice:<br>
+          <b> $ sudo aptitude install xorg</b><br> (x-window-system-core)<br>
+          <b> $ sudo aptitude install xfce4</b><br> (gnome, kde, icewm, fluxbox, etc)<br>
+<b># kill -9 445</b><br>(proceso a matar) (killall "Process_name")<br>
+<b># uname -a</b><br>
+<b>$ uname -r</b> averigua kernel<br>
+<b># lsb_release -a</b> (compilacion de Ubuntu actual)<br> 
+<b># apt-get update</b><br>
+<b># apt-get upgrade</b><br>
+  <b> $ sudo apt-get update</b><br>
+  <b> $ sudo apt-get upgrade</b><br>
+<b># apt-cache search ncurses</b><br>
+<b># whois</b><br>
+<b># whereis snake</b><br>
+<br>
+
+<b>dmesg</b> : Imprime los mensajes desplegados por el "kernel" al inicio.<br>
+<b>depmod -a</b> : Genera un archivo que contiene las dependencias de los módulos que son cargados para el "Kernel"<br>
+
+<b>free</b> : Estadísticas de uso de Memoria.<br>
+<b>init q</b> : Comando que vuelve a leer los parámetros que se encuentran en <b>inittab</b>.<br>
+<b>insmod</b> : Habilita ("loads") el modulo que se especifica en la linea, para que el "kernel" sea capaz de utilizarlo.(ejemplo: <b>insmod ip_alias.o</b>).<br>
+<b>ldconfig</b> : Actualiza las librerías utilizadas por el sistema, recomendable ejecutarlo cada vez que se instale un programa.<br>
+<b>lsmod</b> : Despliega la información referente a los módulos que están habilitados por el "kernel".<br>
+<b>mount</b> : Permite que particiones del sistemas,CD-ROMs, floppys puedan ser leídas en el sistema.<br> 
+Su formato: mount -t <file system(ext2,vfat)> <partición (/dev/hda1,/dev/cdrom)> <punto de lecutra"mount point" (/mnt/home/ /mnt/cdrom)>. Vea también <b>/etc/fstab</b><br>
+<b>smbmount</b> : Similar al comando mount , excepto que este comando es utilizado para montar particiones en Samba.<br>
+<b>smbumount</b> : Utilizado para desactivar las particiones activadas con smbmount.<br>
+<b>slocate</b> : Actualiza la base de información que es utilizada para encontrar archivos con el comando <b>locate</b><br>
+<b>source</b> : Recarga el archivo de configuración indicado al ambiente de Shell.<br>
+<b>stat</b> : Despliega información detallada sobre el archivo especificado como: fechas de modificación y cambio, dueño del archivo..etc.<br>
+<b>sudo</b> : Ejecuta un comando como usuario raíz ("root"), significa "super user do"(Super usuario hacer). 
+Vea el archivo /etc/sudoers/ para configuraciones relacionadas con este comando.<br>
+<b>umount</b> : Desactiva la partición que se indicada, los parámetros que toma este comando son similares a los de mount.<br>
+<b>uname -a</b> : Información completa sobre el "Host".<br>
+<b>uptime</b> : Hora actual, tiempo que lleva el sistema corriendo desde el ultimo "reboot", usuarios conectados al servidor, 
+carga del sistema en los últimos 1,5 y 15 minutos.<br>
+<b>hostname</b> : El nombre del "Host".<br>
+<b>chkconfig</b> : Este comando despliega la información sobre los niveles de ejecución de los "scripts" ubicados en el directorio /etc/rc.d/init.d<br>
+<b>chkconfig --list httpd</b> : Este comando despliega: httpd 0:off 1:off 2:off 3:on 4:on 5:on 6:off<br>
+
+
+
+<br>
+
+ <b>iw dev wlan0 station dump</b><br>
+    <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration_(Espa%C3%B1ol)" target="lateral">
+Wireless network configuration (Español)</a><br>
+<br>
+
+<b>$ su</b><br>
+
+
+<b># exit</b><br>
+<b>$ exit </b>(salimos de bash) <br>
+Para apagar el sistema tenemos tres comandos distintos (halt, poweroff y shutdown), el tercero bastante configurable.<br>
+<b>$ sudo halt</b><br>
+<b>$ sudo poweroff</b><br>
+
+shutdown tiene distintas opciones, por ejemplo podemos decirle que lo apague ahora mismo:<br>
+<b>$ sudo shutdown -h now</b><br>
+
+o en x tiempo, siendo x el número de minutos que tiene que esperar para apagarlo, por ejemplo en 5 minutos:<br>
+<b>$ sudo shutdown -h +5</b><br>
+
+También podemos decirle que se apague a una hora determinada (reloj en sistema de 24 horas, es decir, de 0 a 23), por ejemplo a las 22:30:<br>
+<b>$ sudo shutdown -h 22:30</b><br>
+
+Para reiniciar el sistema tenemos dos: reboot y de nuevo shutdown, con todas las opciones mencionadas antes sólo que en lugar de usar el argumento <b>-h</b> (de halt),
+ usaremos el <b>-r</b> (de reboot). Manteniendo los mismos ejemplos de antes:
+<br>
+<b>$ sudo reboot</b><br>
+<b>$ sudo shutdown -r now</b><br>
+<b>$ sudo shutdown -r +5</b><br>
+<b>$ sudo shutdown -r 22:30</b><br>
+<br>
+
+    <a href="https://www.sputniklab.net/root-sin-conocer-la-contrasena/" target="_blank">
+Root sin conocer la contraseña -sputniklab.net</a><br>
+En sistemas con systemd.:<br>
+En lugar de el<br>
+init=/bin/bash<br>
+hay que poner un<br>
+rd.break <br>
+
+<br>
+
+
+<hr>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Actualizar Kernel</b></font><br>
+<br>
+<b>uname -r</b>  (saber kernel instalado)<br>
+<b>uname -m</b> (version x86 o x64)<br>
+    <a href="https://www.genbeta.com/linux/linux-paso-a-paso-como-actualizar-el-kernel-linux-en-ubuntu-y-sus-derivados" target="_blank">
+Paso a paso -genbeta.com</a><br><br>
+    <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/" target="_blank">
+PPA Kernel</a><br><br>
+Es conveniente mirar el Administracion actualizaciones tanto para Kernel como version Sistema.
+
+
+<hr>
+
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Creacion archivo SWAP (no partición)</b></font><br>
+<br>
+
+
+Por comodidad se suele crear en la raiz. Ejemplo, para crear un fichero de 2 GB:<br><br>
+<b>
+# dd if=/dev/zero of=/swapfile bs=1M count=2048 <br>
+# chmod 600 /swapfile <br>
+# mkswap /swapfile <br>
+# swapon /swapfile <br> </b>
+
+Y ya está. Como puedes ver, los dos últimos pasos son similares a cuando usas una partición. Luego se puede añadir una línea al fstab para hacerlo persistente:
+/swapfile none swap defaults 0 0
+
+
+
+<hr>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<a name="InstalarKDEPLASMA"><b>Instalar KDE PLASMA 5.8 en Linux Mint 18.1 CIANNANON</b></a>
+</font>
+
+<br>
+
+
+http://www.tecmint.com/install-kde-plasma-5-in-linux/<br>
+https://www.kde.org/<br><br>
+
+<b>
+$ sudo add-apt-repository ppa:kubuntu-ppa/backports<br>
+$ sudo apt-get update && sudo apt-get dist-upgrade<br>
+$ sudo apt-get install kubuntu-desktop<br>
+</b>
+Apagar/Reiniciar <br>
+Pulsar panatalla inicio icono CI (CIANANAMON) y elegir PLASMA<br>
+
+
+
+<hr>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<a name="accesoSHAREaWindows"><b>LINUX acceso SHARE a Windows</b></a>
+</font><br>
+
+<br>
+
+<b>
+sudo apt-get install cifs-utils<br>
+sudo apt install samba<br>
+smbd start<br>
+smbd restart<br>
+<br>
+sudo mkdir /mnt/share</b><br>
+<br>
+
+Sumar las siguientes lineas.:<br>
+<br>
+Mio.:<br>
+<b>sudo nano /etc/fstab</b> (Editor)<br>
+<b>//192.168.146.1/d       /mnt/share  cifs        user=cehona@outlook.com,pass=(mi pass) 0 0 </b><br>
+ (ctrl+X para salir y S para guardar)<br>
+<br>
+
+<b>sudo mount -t cifs -o user=//192.168.146.1/d /mnt/share</b><br>
+<br>
+
+<br>
+
+<br>
+Otra forma de editarlos.: <br>
+<b>//192.168.5.5/comon / /mnt/windows cifs noserverino,rw,iocharset=utf8,</b><br>
+<b> //serverIP/dir /mnt/dir cifs noserverino,ro,iocharset=utf8,password=,username= ,uid 0 0</b> <br>
+
+Paso 3. montar.:
+<b>mount -a</b> Si no da errores , todo correcto<br>
+<br>
+Creacion acceso directo (mio).: <br>
+
+<b> ln -s /mnt/share /home/cehona/Escritorio</b> <br>
+
+<hr>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Grabador CD/DVD  Kb3</b><br></font>
+
+<font face="Verdana,Arial,Helvetica" size="1">
+-Sotware Manager<br><br>
+   -Buscar -Kb3<br>
+-Install<br>
+-Launch<br>
+
+<br>
+
+</font>
+
+ <td width="50%" bgcolor="#fffaf2" valign="top"> 
+
+    <font face="Verdana,Arial,Helvetica" size="1"><br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+Montar disco duro <b>NTFS</b> en <b>Ubuntu Live CD</b> :<br><br></font>
+ <b>sudo mount -t ntfs-3g /dev/hd1 /media/disk</b><br><br>
+
+Comando a comando.:<br>
+creas punto de montaje<br>
+<b>sudo mkdir /media/disk</b><br>
+averiguas el nombre del dispositivos que hace refencia a tu particion, puede ser <b>hda1, hda2....sda1, sda2...</b><br>
+con esto<br>
+<b>sudo fdisk -l</b><br>
+te sacará la lista de particiones, por el tamaño y el sistema de archivos ve cual es la tuya.<br>
+ Si sólo tienes 1, será <b>sda1 o hda1</b><br>
+
+después basta con hacer (donde <b>sda1</b> es el nombre que hayas sacado del paso anterior)<br>
+<b>sudo mount /dev/sda1 /media/disk</b><br><br>
+
+voy a aclarar qué es lo que hace cada cosa:
+<br>
+</b>sudo</b> --> te da permisos de administrador<br>
+<b>mount</b> --> el comando para montar<br>
+<b>-t</b>---> es el parametro type, es decir, tipo de partición, si es <b>ext3 ext4, ntfs </b>, solo que para <b>ntfs</b> se utiliza el driver <b>ntfs-3g</b><br>
+<b>/dev/hd1</b> ---> se corresponde con tu disco duro, los discos duros en linux se nombran de la siguiente manera:<br>
+<br>
+hdX, donde hd hace mención a que el disco duro es <b>IDE y X</b al número de partición, X€[1,4] (esto es lenguaje matemático,
+para quien no lo sepa significa, Para X perteneciente al intervalo 1 , 4 incluyendo tanto el 1 como el 4)
+son para las particiones primarias. para X€ >= 5 es para las particiones lógicas.<br>
+<br>
+sdX sería igual que en hdX solo que para los discos duros sata<br>
+<br>
+<b>/media/disk</b> --> punto de montaje, directorio donde quieres montar el disco duro<br>
+
+Y ya no te harían falta mas cosas. El problema en tu caso es que lo has escrito todo sin espacios, 
+y <b>ntfs-3g</b> está con un espacio entre la s de <b>ntfs</b> y el <b>-3g</b> cuando se escribe junto, es decir, el comando sería:<br>
+
+<b>sudo</b> [espacio] <b>mount</b> [espacio] <b>-t</b> [espacio] <b>ntfs-3g</b> [espacio] <b>/dev/hd1</b> [espacio] <b>/media/disk</b><br>
+<br>
+escrito mas claramente:<br>
+Código:<br>
+<b> sudo mount -t ntfs-3g /dev/hd1 /media/disk</b><br>
+<br>
+<hr>
+
+<br><font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+    This will install the base packages required for a minimal <b>MATE desktop</b></font><br>
+<font face="Verdana,Arial,Helvetica" size="1">
+  <b>  sudo apt-get install mate-desktop-environment-core</b><br>
+    This will install the complete MATE desktop<br>
+   <b> sudo apt-get install mate-desktop-environment</b><br>
+    This will install the complete MATE desktop including a few extras (Most Users Will Want This)<br>
+   <b> sudo apt-get install mate-desktop-environment-extras</b><br>
+   This will install the complete MATE Desktop Environment as well as LightDM and numerous other applications to provide a full and well rounded desktop.<br>
+  <b>  sudo apt-get install ubuntu-mate-core ubuntu-mate-desktop</b><br><br>
+
+Once it's installed, make sure the X window is up, then simply run<br>
+<b>exec mate-session</b><br>
+
+<hr>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Ubuntu LiveCD</b><br>
+Problema "NTFS PARTITION IS IN AN UNSAFE STATE"<br></font>
+<font face="Verdana,Arial,Helvetica" size="1">
+Windows en Hibernacion, deja montadas las unidades<br>
+Desactivar Opciones Energia<br>
+Elegir comportamiento Boton inicio/apagado rápido<br>
+Cambiar la configuracion<br>
+ <a href="http://windowsespanol.about.com/od/OptimizaWindows/ss/Inicio-Rapido-Windows10.htm" target="lateral">
+Desactivar "Activar Inicio rapido" </a><br>
+<br>
+   
+<br>
+
+
+
+<hr>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Ubuntu LiveCD</b></b><br>
+
+WIFI no enciende (falta Driver)</font><br>
+Buscar driver.:<br>
+lspci -vvnn | grep -A 9 Network<br>
+lspci | grep Network (tambien valido para comprobar)
+inxi-Nnxx<br>
+<br>
+Instalar Driver BCM43142 80211 b/g/n<br>
+<b>$ sudo apt-get install bcmwl-kernel-source</b><br>
+<br> o probar mejor desde el Administrdor archivos<br>
+-Computer/Media/CDrom/Ubuntu/Pool<br>
+  -Pool/Main/D/Dkms/*.deb  ---> Copy to Home/<br>
+  -Pool/Restricted/b/bcmwl/*.deb  ---> Copy to Home/<br>
+
+Terminal (arriba icono primero -buscar teclear ter..)<br>
+<b>home/ $sudo dpkg -i *.deb</b>  simbolo * teclado ingles es ( +flecha arriba<br>
+Panel Driver Manager -activar bcmwl-kernel-source*<br>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Linux Mint LiveCD</b></font><br>
+
+Login.: <b>Mint</b> / Pass.: (en blanco)<br>
+
+Buscar driver.:<br>
+lspci -vnn | grep -14e4<br>
+inxi-Nnxx<br>
+-Computer/Media/CDrom/Ubuntu/Pool<br>
+  -Pool/Main/b/bcmwl/*.deb  ---> Copy to Home/<br>
+  
+Terminal (arriba icono primero -buscar teclear ter..)<br>
+<b>home/ $sudo dpkg -i *.deb</b>  simbolo * teclado ingles es ( +flecha arriba<br>
+Panel Driver Manager -activar bcmwl-kernel-source*<br><br><br>
+
+
+apt-get update && apt-get upgrade<br>
+apt-get install module-assistant-wireless-tools broadcom-sta-common<br>
+</font>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Montar USB liveCD</b></font><br><br>
+
+
+<b>sudo fdisk -l</b> (averigua letra)<br>
+<b>sudo mkdir /media/disk</b><br>
+
+
+<b>sudo blkid</b><br>
+<b>sudo parted -l </b>(particiones)<br>
+<b>sudo lshw -C disk</b> (discos)<br>
+<b>sudo su</b><br>
+<b>mkdir /media/data</b><br>
+<b>chmod -Rf 777 /media/data</b><br>
+<b>mound /dev/sdb1  /media/data</b><br>
+<b>sudo passwd root</b> (cambia pass)<br>
+<b>$passwd</b> (cambia pass root)<br>
+</font>
+<br>
+
+  <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Linux KALI LiveCD</b></font><br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+Programas  (Alt+F1)<br>
+Grabacion. "K3" <br><br>
+
+
+  <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Download Compact Wireless:</b></font><br><br>
+
+<br>
+<b>compact-wireless-2010-6-26.p.tarbz2<br>
+#tar -jxvf compact-wireless-2010-6-26.p.tarbz2<br>
+#ls <br>
+#cd compact-wireless-2010-6-26.p.tarbz2br>
+#make unload<br>
+#make load <br>
+#iwconfig wlan0</b>  (mira datos wifi)
+<b>#airmon-ng</b>
+<br>
+
+<b>#service network-manager restart</b>
+<br><br>
+    <a href="https://www.youtube.com/watch?v=JL2_fnzCZbE#t=10.123583" target="_blank">
+Configurar Network Adapter en <b>Kali Linux</b> usando Command Line Interface (CLI)</a><br>
+    <a href="https://www.youtube.com/watch?v=b6vPbwsPcc4" target="_blank">
+Instalar Broadcom BCM43142 wireless drivers <b>Kali Linux</b></a><br>
+
+
+
+<br>
+
+  <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Comandos.:</b></font><br><br>
+
+<b>uname -v</b><br>
+<b>uname -r</b><br>
+<b>uname -a</b><br>
+anulado  <b>apt-get update && apt -y full upgrade</b> Actualizar distro<br>
+<b>sudo apt update && sudo apt-get upgrade</b> Actualizar distro<br>
+<b>sudo apt-get update && sudo apt-get upgrade</b> Actualizar distro<br>
+
+<b>sudo dpkg-reconfigure kali-grant-root</b> Root anterior distros 2020<br>
+<br>
+
+  <font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Cómo actualizar a Kali Linux.:</b></font><br><br>
+
+
+<br>
+<b>uname -v</b><br>
+<b>cat </etc/apt/sources.list</b><br>
+<b>deb http://http.kali.org/kali kali-rolling main non-free contrib</b><br>
+<b>EOF</b><br>
+<b>apt update && apt -y full-upgrade</b><br>
+<br>
+</b>
+Cuando termine, pulsaremos el atajo de teclado <b>«CTRL+ALT+F11»</b> para abrir un <b>TTY</b><br>
+iniciamos sesión en él y ejecutaremos el siguiente comando para eliminar todos los directorios y archivos temporales creados durante la actualización:
+<br>
+<b>[ -f /var/run/reboot-required ] && reboot -f</b><br>
+<br>
+Kali Linux se reiniciará automáticamente y, cuando vuelva a arrancar, ya tendremos nuestra distro lista y actualizada.
+<br>
+<b>grep VERSION /etc/os-release</b> Comprobamos la version instalada<br>
+<br>
+<b>apt -y install kali-desktop-xfce</b> Instalar nuevo escritorio Xfce<br>
+<br>
+
+
+
+    <a href="https://www.softzone.es/noticias/open-source/kali-linux-2019-4-tema-windows-novedades/" target="_blank">
+Cómo actualizar a Kali Linux 2019.4</a><br>
+<br>
+
+</font>
+<hr>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+    <a href="http://www.preguntaslinux.org/guia-ejecutables-tipos-de-archivos-en-linux-t-4686.html" target="_blank">
+Guia ejecutables tipos de archivos</a><br>
+    <a href="http://osl.uca.es/wikiunix/index.php/P%C3%A1gina_principal" target="_blank">
+Wikiunix</a><br>
+    <a href="http://osl.uca.es/wikiunix/index.php/Nivel:Principiante" target="_blank">
+Comandos Linux -Nivel:Principiante</a><br>
+    <a href="http://osl.uca.es/wikiunix/index.php/Nivel:Usuario_iniciado" target="_blank">
+Comandos Linux -Nivel:Usuario_iniciado</a><br>
+    <a href="http://osl.uca.es/wikiunix/index.php/Nivel:Usuario_habitual" target="_blank">
+Comandos Linux -Nivel:Usuario_habitual</a><br>
+    <a href="http://osl.uca.es/wikiunix/index.php/Nivel:Unixero_profesional" target="_blank">
+Comandos Linux -Nivel:Unixero_profesional</a><br>
+    <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html" target="_blank">
+Filesystem Hierarchy Standard</a><br>
+
+<br>
+</font>
+
+<font face="Verdana,Arial,Helvetica" size="1">
+Shell Windows 10 Aniversary Update<br>
+<b># /mnt/c//windows/system32#</b> (ruta archivos en Windows desde shell)<br>
+<br>
+
+
+Teclado Inglés.:<br>
+Simbolo <b>|</b> tecla flecha arriba + Ç <br>
+Simbolo <b>*</b> tecla flecha arriba + ( <br>
+Simbolo * teclado ingles es ( +flecha arriba<br>
+Simbolo <b>/</b> tecla _<br>
+</font>
+<br>
+    <font face="Verdana,Arial,Helvetica" size="1">
+CMD Como Administrador <b>lxrun /update</b> Actualiza <br>
+
+
+    <a href="https://msdn.microsoft.com/es-es/commandline/wsl/reference" target="_blank">
+Referencia comandos instalacion WSL</a><br>
+ <b>LxRun.exe /install</b> Instala <br>
+    <a href="https://www.slightfuture.com/technote/lxss-lxrun" target="_blank">
+Referencia comandos instalacion lxss-lxrun</a><br>
+    <a href="http://www.codigobit.info/2016/04/como-habilitar-bash-en-windows-10-build.html" target="_blank">
+Cómo habilitar Bash en Windows 10</a><br>
+
+
+<br>
+
+The commands <b>bash.exe</b> y <b>lxrun.exe</b> are used to interact with the Windows Subsystem for Linux (<b>WSL</b>).<br>
+ These commands are installed into the <b>\Windows\System32</b> directory and may be run within a Windows command prompt or in PowerShell.<br>
+<br>
+<b>C:\Users\USER\AppData\Local\lxss</b> Directorio oculto instalacion<br>
+</font>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+    <a href="https://github.com/Microsoft/BashOnWindows/issues/449" target="_blank">
+moving Linux filesystem <b>WSL</b></a><br>
+</font>
+
+<hr>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+Error boot.:<br>
+Piix4_smbus SMBus 0000:00:07.3: Host Controller not enabled!
+On Ubuntu MATE 16.10 [VMWare Workstation]
+</font>
+<br>
+<font face="Verdana,Arial,Helvetica" size="1">
+Editar con VMware desconectado maquina virtual*.vmx<br>
+
+colocar linea final.:<br>
+<b>cpuid.1.eax = "0000:0000:0000:0001:0000:0110:1010:0101"</b><br>
+
+guardar<br>
+reiniciar <br>
+</font>
+
+<hr>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Que hacer después de instalar Ubuntu 17.10.:</b><br>
+</font>
+<br>
+<font face="Verdana,Arial,Helvetica" size="1">
+Actualización del sistema:<br>
+<b>sudo apt update sudo apt upgrade</b><br>
+Instalación por completo del idioma: <br>
+Buscar icono soporte idioma<br>
+Instalación de codecs multimedia: <br>
+<b>sudo apt install ubuntu-restricted-extras</b> <br>
+Instalación de software de compresión de archivos<br>
+<b> sudo apt-get install rar unace p7zip p7zip-full p7zip-rar unrar lzip lhasa arj sharutils mpack lzma lzop cabextract </b><br>
+Instalación de Gnome Tweak tool: <br>
+<b>sudo apt install gnome-tweak-tool</b>
+Instalación de chromium browser (si queremos)<br>
+<b> sudo apt install chromium-browser</b><br>
+Instalación de Chrome desde la página oficial <br>
+(se descarga en carpeta \Descargas\)<br>
+<b>sudo dpkg -i google-crome*.deb</b><br>
+Si sale error dependencias<br>
+<b>sudo -f install</b><br>
+Instalación de reproductores de audio y vídeo: <br>
+<b>sudo apt install vlc sudo apt install audacious</b><br>
+Instalación de un visor pdf: <br>
+<b>Foxit reader pdf</b><br>
+
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Instalar Adobe Flash.:</b><br>
+</font>
+<font face="Verdana,Arial,Helvetica" size="1">
+
+<b>sudo apt-get install flashplugin-installer</b><br>
+<b>sudo apt-get update</b><br>
+<b>sudo apt-get install adobe-flashplugin</b><br>
+</font>
+
+</td>
+</tr>
+
+<tr>
+    <td width="50%" bgcolor="#FFFAF2" valign="top">
+
+
+<br>    <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="2">
+<a name="windowswsl"></a>&#149;<b>Instalar Linux en Windows WSL</b></font></b>
+<br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+<br>
+
+<b>Powershell</b><br>
+<b>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</b><br>
+<br>
+
+    <a href="https://docs.microsoft.com/es-es/windows/wsl/wsl2-install" target="_blank">
+<b>Instalación de WSL 2</b>  | Microsoft Docs</a><br>
+    <a href="https://docs.microsoft.com/es-es/windows/wsl/tutorials/gui-apps" target="_blank">
+<b>Ejecución de aplicaciones GUI de Linux</b> | Microsoft Docs</a><br>
+    <a href="https://github.com/microsoft/wslg" target="_blank">
+<b>WSLG (modo Gráfico) Enabling the Windows Subsystem for Linux</a><br>
+    <a href="https://jmtella.com/foro/forum/ejercicios-y-ejemplos/40352-tip-instalar-gui-en-linux-wsl-2" target="_blank">
+<b>Instalar GUI en linux WSL 2</b> - jmtella</a><br>
+
+
+<br>
+<b>Powershell</b><br>
+<b>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</b><br>
+<b>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</b><br>
+<br>
+
+
+<b>wsl --set-default 2</b> si no instala ninguna disto , ir a la tienda (Store)<br>
+<b>wsl --list --online</b> Lista distribuciones avalables<br>
+<b>wsl --update --pre-release</b> actualiza WSL<br>
+<br>
+
+<b>wsl.exe –install</b> Instala WSL (a partir Insider 20150)<br>
+<b>wsl.exe -–install</b> Instala WSL (a partir W2004)<br>
+<b>wsl.exe -–install wsl -d</b> Instala WSL (a partir Insider 21364)<br>
+
+<b>wsl --list --online</b> Lista avalable distribuciones<br>
+<br>
+    <a href="https://www.ghacks.net/2021/08/01/install-windows-subsystem-for-linux-with-a-single-command/" target="_blank">
+<b>Install Windows Subsystem for Linux with a single command</b></a><br>
+
+
+
+<br>
+
+<b>wsl.exe –update</b> Actualiza Kernel (a partir Insider 20150)<br>
+<br>
+
+<b>wsl.exe –update –rollback</b> revertir a versiones previas Kernel (a partir Insider 20150)<br>
+<br>
+
+<b>wsl -l -v</b> Aparecen las distros instaladas<br>
+<b>wsl --set-version ubuntu 2</b> Pasa a version <b>WSL2</b><br>
+<br>
+<b>wsl --set-default-version 2</b><br>
+<b>wsl --update</b><br>
+<br>
+
+Desde W11<br><br>
+wslg ... es decir grafico directo<br>
+Por ejemplo en un Ubuntu,:<br>
+<br>
+<b>sudo apt update</b><br>
+<b>sudo apt upgrade</b><br>
+<b>sudo apt install gedit</b><br>
+<b>sudo apt install firefox</b><br>
+<br>
+Y luego, sin exportar display y siin hacer nada... directamente podeis ejecutar:<br>
+<br>
+<b>gedit</b><br>
+<br>
+o bien:
+<br>
+<b>firefox</b><br>
+<br>
+
+
+<b>wsl --shutdown</b> salida desde DOS<br>
+
+<br>
+<b>DOS (adm)</b><br>
+Entrar en distro dos formas.:<br>
+<b>wsl</b> entra en la configurada por defecto<br>
+
+wsl cat /proc/version
+<b>pwd</b> ejemplo dir user  /home/hal9100<br><br>
+
+<b>ubuntu</b> entra en ubuntu como distro instalada<br>
+<b>pwd</b> dir /mnt/c/windows/system32$<br>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Averiguar que versión de Linux tengo instalada</b><br></font>
+<b>cat /etc/os-release</b>  version dentro de la distro<br>
+o<br>
+
+<b>uname -r</b> version dentro de la distro<br>
+<b>uname -a</b> version dentro de la distro<br>
+<b>wsl cat /proc/version</b> version fuera de la distro<br>
+
+<br>
+<b>clear</b>     limpia texto en pantalla<br>
+<b>ifconfig</b>  configuracion red<br>
+
+<br>
+En caso de funcionar, instalar<br>
+<b>sudo apt-get update</b><br>
+<b>sudo apt-get dist-upgrade</b><br>
+<b>sudo apt-get install lsb-release</b><br>
+</font>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Edición con Vim</b><br></font>
+<font face="Verdana,Arial,Helvetica" size="1">
+Vim salir.: <b>:wq</b><br>
+Vim salir sin guardar.: <b>:qa!</b><br>
+</font>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Cómo acceder a los archivos Linux de WSL</b><br></font>
+<font face="Verdana,Arial,Helvetica" size="1">
+Inicio -ejecutar<br>
+<b>\\wsl$\ubuntu</b><br>
+<br>
+Ruta archivos (no tocar por corromper Linux)<br>
+<b>C:\Users\cehon\AppData\Local\Packages\KaliLinux.54290C8133FEE_ey8k8hqnwqnmg</b>
+</font>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Averiguar IP wsl</b><br></font>
+<font face="Verdana,Arial,Helvetica" size="1">
+<b>DOS</b> (adm)<br>
+<b>wsl ip addr ^| grep -Ee 'inet.*eth0'</b><br>
+<b>Powershell</b> (adm)<br>
+<b>wsl ip addr `| grep -Ee 'inet.*eth0'</b><br>
+</font>
+<br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+<b>Desinstalar distro en wsl wsl</b><br></font>
+<font face="Verdana,Arial,Helvetica" size="1">
+<b>DOS</b> (adm)<br>
+<b>wslconfig /u fedoraremix</b> (comando deprecated, en desuso) ejemplo para fedoraremix<br>
+
+o<br><br>
+<b>wsl  --terminate  <Distro></b><br>
+<b>wsl  --unregister <Distro></b><br>
+o<br><br>
+Averiguar el paquete <Distro>.:<br>
+<b>PS> Get-AppxPackage –AllUsers| Select Name, PackageFullName >"$env:userprofile\Desktop\listadoAplicacionesInstaladas.txt"</b><br>
+Luego <Distro>.:<br>
+<b>PS> Remove-AppxPackage Fedoraremix*__8wekyb3d8bbwe</b> Para Fedoraremix<br>
+
+</font>
+<br>
+
+<br>
+
+
+</td>
+    <td width="50%" bgcolor="#FFFAF2" valign="top"> 
+
+<br>    <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="2">
+<a name="wsl"></a>&#149;<b>WSL -Linux en Windows 10</b></font></b>
+<br><br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+      <a href="https://www.muycomputer.com/2019/06/23/windows-subsystem-for-linux-2/" target="_blank">
+Consola <b>Bash</b> de <b>Ubuntu</b> en Windows 10 -Instalación</a><br>
+      <a href="https://msdn.microsoft.com/es-es/commandline/wsl/install_guide" target="_blank">
+Cómo probar el <b>WSL2 -Windows Subsystem for Linux 2 </b> en Windows 10</a><br>
+      <a href="https://jmtella.com/foro/forum/ejercicios-y-ejemplos/40352-tip-instalar-gui-en-linux-wsl-2" target="_blank">
+<b>[TIP] Instalar GUI en linux WSL 2 - jmtella</b></a><br>
+      <a href="https://docs.microsoft.com/es-es/windows/wsl/wsl-config" target="_blank">
+<b>Administrar distribuciones de Linux</b> | Microsoft Docs</a><br>
+      <a href="https://universo-digital.net/como-acceder-a-los-archivos-linux-de-wsl-en-windows-10/" target="_blank">
+<b>Cómo acceder a los archivos Linux de WSL</b>  en Windows 10 | Universo Digital</a><br>
+    <a href="https://winaero.com/blog/reset-password-wsl-linux-distro-windows-10/" target="_blank">
+<b>Reset Password for WSL Linux Distro in Windows 10</b></a><br>
+      <a href="http://www.xataka.com/aplicaciones/asi-es-usar-la-consola-bash-de-ubuntu-en-windows-10" target="_blank">
+Consola <b>Bash</b> de <b>Ubuntu</b> en Windows 10</a><br>
+      <a href="trucos.html#bashlinux">
+Consola <b>Bash</b> de <b>Ubuntu</b> en Windows 10 -manual mio</a><br>
+      <a href="https://www.youtube.com/watch?v=M9p7QeaaA-s" target="_blank">
+Ejecutar aplicaciones gráficas de <b>Bash</b> en el escritorio</a><br>
+      <a href="https://spr.com/two-steps-and-one-script-to-run-linux-on-windows-via-wsl/" target="_blank">
+Two Steps and One Script to Run <b>Linux</b> on Windows Via <b>WSL</b></a><br>
+    <a href="https://forums.mydigitallife.info/threads/70500-DISCUSSION-Windows-Subsystem-for-Linux-(WSL)" target="_blank">
+Windows Subsystem for Linux <b>WSL</b> -forums.mydigitallife.info</a><br>
+    <a href="http://planetadiego.com/2011/09/17/recuperar-grub2-en-ubuntu-despues-de-instalar-windows-8/" target="_blank">
+Recuperar Grub2 en Ubuntu después de instalar Windows 8</a><br>
+<br>
+</font
+
+
+<br>    <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="2">
+<a name="wslkali"></a>&#149;<b>Kali en WSL</b></font><br>
+
+<font face="Verdana,Arial,Helvetica" size="1">
+    <a href="https://www.solvetic.com/tutoriales/article/7673-como-instalar-usar-kali-linux-windows-10/" target="_blank">
+Instalar <b>Kali en WSL</b></a><br>
+
+<br>
+PS (adm) <b>wsl --set-version kali-linux 2</b> Pasa a version WSL2<br>
+<b>kali</b> inicio<br>
+<b>sudo apt-get update</b> actualiza<br>
+<b>sudo apt-get dist-upgrade</b> actualiza paso 2<br>
+<b>sudo apt-get clean</b> libera espacio disco<br>
+
+<br> <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="1">
+<b>Ruta archivos (no tocar por corromper Linux)</b><br></font>
+<b>C:\Users\cehon\AppData\Local\Packages\KaliLinux.54290C8133FEE_ey8k8hqnwqnmg</b><br>
+<br>
+
+ <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="1">
+<b>Instalar las herramientas de Kali Linux en Windows 10</b></font><br>
+<font face="Verdana,Arial,Helvetica" size="1">
+<b>sudo apt-get install metasploit-framework</b><br>
+<br>
+
+    <a href="https://www.youtube.com/watch?v=oTD8cYluUgk" target="_blank">
+<b>Kali Linux: WSL 2 install and GUI setup</b></a><br>
+    <a href="https://jmtella.com/foro/forum/ejercicios-y-ejemplos/40352-tip-instalar-gui-en-linux-wsl-2" target="_blank">
+<b>Instalar GUI en linux WSL 2</b> - jmtella</a><br>
+
+
+
+<br>
+Session XRDP/xorg.:<br><br>
+
+
+<b>sudo apt install xfce4</b><br>
+<b>sudo apt install xrdp</b><br>
+<b>sudo /etc/init.d/xrdp start</b><br>
+<b>ip add</b>  (apuntar eth0: /inet 172.31.6.208/20)<br>
+en windows run: <b>mstsc</b><br>
+
+<br>
+    <a href="https://www.kali.org/docs/wsl/win-kex/" target="_blank">
+<b>Instalar GUI | Win-KeX</b></a><br>
+<br>
+<b>sudo apt update && sudo apt install kali-win-kex</b><br>
+
+<br>
+en kalix run: <b>kex</b><br>
+
+<b>Desinstalar GUI | Win-KeX</b></a><br>
+ <b>sudo apt-get --purge remove kali-win-kex</b><br>
+<br>
+
+
+
+    <a href="https://www.kali.org/docs/wsl/win-kex/" target="_blank">
+<b>Win-KeX | Kali Linux</b> Documentation</a><br>
+
+    <a href="https://www.youtube.com/watch?v=f8_nvJzuaSU&t=2s" target="_blank">
+<b>Introducing Linux GUI apps running on Windows using the Windows Subsystem for Linux (WSL)</a><br>
+
+
+
+
+    <a href="https://www.youtube.com/watch?v=Oe2JQPLyhp4" target="_blank">
+<b>Windows Subsystem for Linux GUI Applications</b> en Windows 10 Build 21364</a><br>
+    <a href="https://aka.ms/WSLg" target="_blank">
+<b>official repository</a><br>
+    <a href="https://www.reddit.com/r/bashonubuntuonwindows/" target="_blank">
+<b>The Windows Subsystem for Linux Subreddit</a> reddit<br>
+
+<br>
+1) Desde la Tienda instala el <b>Windows Subsystem Linux</b> (insisto, desde la tienda),<br>
+2) Abres una consola windows y ejecutas a continuacion:<br>
+[code]
+<b>wsl --set-default-version 2</b><br>
+[/code]<br>
+<br>
+
+Por defecto, Linux no da la pantalla como "enhanced"... hay que activar el RDP y además dar el socket RDP a la virtual.
+
+Es decir, al crear la virtual, con ella apagada, en una consola powershell ejecutar:
+
+[code]<br>
+<b>Set-VM -VMName <your_vm_name> -EnhancedSessionTransportType HvSocket</b><br>
+[/code]<br>
+<br>
+cambiando <your_vm_name> por el nombre de tu máquina virtual (entrecomillada)<br>
+
+Luego instalar, y montar el XRDP en Linux. Apagar Linux, y al reiniciar ya te pedirá el escritorio enhanced.<br>
+<br>
+
+
+    <a href="https://achirou.com/kali-linux-purple/" target="_blank">
+<b>Kali Linux Purple</b> achirou.com</a><br>
+    <a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank">
+<b>Kali Linux | images virtual</b> kali.org/get-kali</a><br>
+    <a href="https://jmtella.com/foro/forum/ejercicios-y-ejemplos/49596-tip-wsl2-usar-una-red-bridge-en-vez-de-usar-el-virtual-switch-wsl-nateado" target="_blank">
+<b>[TIP] WSL2, usar una red bridge en vez de usar el virtual switch WSL (nateado)</b></a><br>
+    <a href="https://jmtella.com/foro/forum/ejercicios-y-ejemplos/49620-tip-kali-kex-soluci%C3%B3n-a-los-fallos-con-las-ultimas-versiones-de-wsl" target="_blank">
+<b>[TIP] Kali KEX - solución a los fallos con las ultimas versiones de WSL</b></a><br>
+
+
+    <a href="https://jmtella.com/foro/forum/novedades-software/hardware/50666-intel-xeon-sin-vt-x?p=50706#post50706" target="_blank">
+<b>[TIP] Kali Instalación.:</b> jmtella.com</a><br>
+<br>
+
+      <a href="https://deephacking.tech/kali-linux-en-docker/" target="_blank">
+<b>Kali Linux en Docker | WSL2 vs Docker basado en WSL2</b></a><br>
+
+<br>
+</font>
+</td>
+</tr>
+
+
+<tr>
+
+<td width="50%" bgcolor="#FFFAF2" valign="top"> 
+
+<br>    <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="2">
+<a name="ubuntu"></a>&#149;<b>Ubuntu</b></font></b>
+<br><br>
+
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+
+Lenguaje español Ubuntu SD :<br>
+</font>
+<font face="Verdana,Arial,Helvetica" size="1">
+
+<b>sudo apt-get clean</b><br>
+ instala language-support-es y language-pack-es<br>
+System, Administration, Languaje support<br>
+
+<b> terminal</b> (Ctrl+Alt+t)<br>
+<b>seahorse</b> (deposito claves/passwords)<br>
+<b>free</b> Memoria disponible <br>
+</font>
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+Actualizar.: </font><br>
+
+<font face="Verdana,Arial,Helvetica" size="1">
+<b>sudo update-manager -d</b><br>
+<b>sudo apt-get update && sudo apt-get -y dist-upgrade</b><br>
+<br>Otro sistema.:<br>
+
+<b>sudo dpkg -i *.deb</b>
+Reiniciar<br>
+<b>sudo username -r </b><br>
+y verificar que arranque con el ultimo kernel<br>
+ <b>sudo update-grub</b> <br>
+<b>sudo reboot</b><br>
+
+
+<br><br>
+
+<b>sudo apt-get install iw</b>   (tool for configuring Linux wireless devices )<br>
+<b>sudo apt-get install root-system-bin</b>  (si el programa «root» no está instalado actualmente)<br>
+<b>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</b> (Instala Unity)
+<b>sudo -apt-get install sysinfo</b> (Instala sysinfo)<br>
+<b>sudo apt-get install firefox </b>  (navegador)<br>
+<b>sudo apt-get install libreoffice</b>  (paquete ofimatico opcional)<br>
+<br><br>
+
+</font>
+</td>
+
+<td width="50%" bgcolor="#FFFAF2" valign="top"> 
+
+<br>    <font color="#3166b5" font face="Verdana,Arial,Helvetica" size="1">
+
+<br>
+Cambio Pass root</font><br>
+<font face="Verdana,Arial,Helvetica" size="1">
+<b>ubuntu config --default-user root</b> Desde DOS como adm<br>
+<b>ubuntu</b> entramos en ubuntu<br>
+<b>passwd "user"</b> cambiamos el pass al usuario<br>
+<b>exit</b><br>
+<br>
+</font>
+
+<br>
+<font color="#3166b5" face="Verdana,Arial,Helvetica" size="1">
+Fichero hots en ubuntu</font><br>
+
+<font face="Verdana,Arial,Helvetica" size="1">
+<b>sudo nano /private/etc/hosts</b><br>
+e ir añadiendo:<br>
+<b>127.0.0.1 www.elmundo.es</b><br>
+etc...<br>
+luego cuando termines de añadir todos las direcciones, haces: <b>sudo</b><br>
+<b>dscacheutil -flushcache</b> y a volar, <br>
+<br>
+
+</td>
+</tr>
+
+
+</font>
+</table>
+</body>
+</html>
