@@ -7,13 +7,15 @@ a {text-decoration: none;}
 </style>
 
 </head> 
-  
+
+
 
 <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
 
   <table border="0" cellpadding="8" cellspacing="8" bgcolor="#fffaf2" width="100%" height="100%">
 
 <tr>
+
     <td width="50%" bgcolor="#fffaf2" valign="top">
     <font face="Verdana,Arial,Helvetica" size="2">
     <a name="windows11"></a> <b>Windows 11:</b><br>
@@ -367,9 +369,9 @@ Windows Registry Editor Version 5.00<br>
 
 <br>
 CMD (adm)<br>
-<code><b>reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f<code></b><br>
-<code><b>reg add "HKLM\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f<code></b><br>
-<code><b>reg add "HKLM\Software\Microsoft\PolicyManager\default\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f<code></b><br>
+<code><b>reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
+<code><b>reg add "HKLM\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
+<code><b>reg add "HKLM\Software\Microsoft\PolicyManager\default\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
 <br>
 
 CSP	./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis<br>
@@ -380,6 +382,13 @@ Group Policy Editor (gpedit.msc)	Configuración de usuario > Plantillas Administ
 
 Actualización GPO sin reiniciar Sistema:<br>
 <b>gpupdate /force</b><br>
+<br>
+
+         <a href="https://www.makeuseof.com/remove-the-home-page-from-settings-windows-11/" target="_blank">
+<b>Cómo eliminar página de inicio de la aplicación de configuración</b></a><br>
+<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]<br>
+"SettingsPageVisibility"="hide:home"<br>
 <br>
 
 <br><br>
@@ -413,8 +422,10 @@ Kenji Mouri (Mouri Naruto) ahora está en el proceso de archivar NSudo y lanzar 
 Pero todavía pasará un tiempo antes de que NSudo quede suspendido. La primera vista previa de NanaRun 1.0 ya está disponible para descargar. 
 Y sólo con Stable 1.0 NanaRun se hará cargo por completo de las tareas de NSudo. 
 “Es la primera versión de NanaRun que utiliza MinSudo. MinSudo es una implementación Sudo ligera similar a POSIX para Windows. 
-Permite al usuario utilizar aplicaciones elevadas en entornos no elevados”.
+Permite al usuario utilizar aplicaciones elevadas en entornos no elevados”.<br>
 <br>
+
+
          <a href="https://github.com/M2TeamArchived/NSudo/releases" target="_blank">
 <b>NSudo 9.0 Preview 1 (9.0.2676.0)</b></a><br>
          <a href="https://www.deskmodder.de/blog/2022/05/22/nanarun-wird-nsudo-ersetzen/" target="_blank">
@@ -425,7 +436,8 @@ Permite al usuario utilizar aplicaciones elevadas en entornos no elevados”.
 <b>Nanarun</b> Releases</a><br>
          <a href="https://github.com/M2Team/NanaRun/releases/tag/1.0.18.0" target="_blank">
 <b>NanaRun 1.0 Preview 2 (1.0.18.0)  Jun 2022</b> Releases</a><br>
-
+         <a href="https://github.com/Raphire/Win11Debloat/tree/master/Regfiles" target="_blank">
+<b>Win11Debloat</b></a><br>
 
 
 <br>
@@ -457,8 +469,9 @@ Permite al usuario utilizar aplicaciones elevadas en entornos no elevados”.
 <b>Comandos Powershell</b> (pagina mia manuales)</a><br>
 <br>
 
+
       <a href="http://powershell-guru.com/faq-powershell-en-espanol/">
-FAQ <b>Powershell en Español</b> - Powershell Guru</a><br>
+<b>Powershell en Español</b> - Powershell Guru</a><br>
 
 
 
@@ -925,6 +938,9 @@ elegir Microsoft.Paint_11.2304.30.0_neutral_8wekyb3d8bbwe.Msixbundle</a><br>
 
          <a href="https://technet.microsoft.com/es-es/scriptcenter/dd919274.aspx" target="_blank">
 <b>Log Parser 2.2</b> -Lector archivos de registro, archivos <b>XML</b> y archivos <b>CSV</b></a><br>
+         <a href="https://br0wsers.com/blog/detail/registrychangesview-1920-3861.html" target="_blank">
+<b>RegistryChangesView 1.30</b> -Instantánea del Registro de Windows y luego compararla con una instantánea de otro Registro</a><br>
+<br>
 
     <a href="http://www.softzone.es/2016/08/20/stordiag-la-nueva-herramienta-analisis-discos-windows-10/" target="_blank">
 <b>StorDiag</b> -Herramienta de análisis de discos de Windows 10</a><br>
@@ -1046,6 +1062,13 @@ Generic Volume License Key (GVLK) (Volumen)</b> los KMS no activan licencias ret
 
     <a href="https://learn.microsoft.com/en-us/officeupdates/update-history-office-2021" target="_blank">
 <b>Office 2021</b> Builds</a><br>
+    <a href="https://support.microsoft.com/es-es/office/desinstalar-office-de-un-equipo-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8" target="_blank">
+<b>Office | Desinstalar Office de un equipo PC</b> herramienta <b>SaRA</b></a><br>
+    <a href="https://support.microsoft.com/es-es/office/desinstalar-office-de-un-equipo-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8" target="_blank">
+<b>Office | Outllook</b> copia correos archivos *.ost<br>
+C:\Users\"User"\AppData\Local\Microsoft\Outlook\*.ost (uno por cada cuenta)</a><br>
+<br>
+
     <a href="https://es.libreoffice.org/descarga/libreoffice/" target="_blank">
 <b>LibreOffice | LibreOffice en español 24.2</b></a><br>
 
@@ -1721,6 +1744,18 @@ RunDll32 advpack.dll,LaunchINFSection %windir%\INF\msmsgs.inf,BLC.Remove<br>
 <br><br>
 </font>
 
+
+    &#149; <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
+    <a name="windows10ltsc"></a> <b>Windows 10 LTSC:</b><br>
+    </font><font face="Verdana,Arial,Helvetica" size="1"><br> 
+
+    <a href="https://github.com/muradbu/winget-script/blob/main/README.md" target="_blank">
+Installing <b>Winget on Windows 10 LTSC (IoT)</b> manually</a><br>
+
+
+
+</font>
+<br>
 
     &#149; <font color="#3166B5" face="Verdana,Arial,Helvetica" size="2">
     <a name="windows8"></a> <b>Windows 8:</b><br>
