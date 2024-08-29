@@ -550,6 +550,75 @@ Quien recibe la ayuda solo tiene que escribir la contraseña que se te ha facilit
 Ejecutable está en.: <b>C:\Windows\System32\quickassist.exe</b><br>
 
 <br>
+<a name="oobe"></a>
+<hr>
+
+<font color="#ff0000" face="Verdana,Arial,Helvetica" size="2">
+<b>¿Cómo omitir el inicio de sesión forzado de la cuenta Microsoft OOBE (Out Of Box Experience) de Windows 11 para 2024?</b>
+
+</font>
+    <font color="#0000ff" face="Verdana,Arial,Helvetica" size="1"><br>
+
+<b>Bypassnro</b> no funciona para todos. El método ANTIGUO era escribir <b>oobe\bypassnro</b>, pero ya no se reconoce como comando. 
+En su lugar, acceda a la estructura de archivos haciendo lo siguiente:<br>
+
+Nota: asegúrarse de que no tener Internet.<br>
+<br>
+Mayús + F10 (abre la ventana de CMD)<br>
+Escribir cd OOBE y presionar Enter/Return<br>
+Luego escribir BYPASSNRO y presione Enter/Return, lo que reiniciará de inmediato.<br>
+Cuando se reinicie y llegues al paso que requiere que elijas tu país, presiona la tecla F10 nuevamente y esta vez ingresa ipconfig /release *.<br> 
+Confirma que no tienes una dirección IP y luego continúa.<br>
+Luego puedes elegir "No tengo Internet" y continuar con la configuración limitada.<br>
+<br>
+Este sistema funcionaba antes tambien<br>
+<br>
+Al iniciar la ISO instalación<br>
+SHIFT (Mayús) +F10 (acceso CMD) y luego regedit para eliminar el valor LaunchUserOOBE en la clave de registro<br>
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE<br>
+LaunchUserOOBE valor en 0<br>
+Pero no cerrar regedit todavía.<br>
+<br>
+Además, para crear usuario y convertirlo en administrador:<br>
+<br>
+<b>
+<pre>
+net user /add tester
+net localgroup administrators tester /add
+</pre>
+</b><br>
+
+El primer comando crea un usuario llamado <b>"tester"</b><br>
+<br>
+El segundo comando lo convierte en administrador.<br>
+<br>
+Esto no se hace en Regedit.<br>
+No se pueden crear usuarios desde regedit. Para eso están los comandos net. <br>
+Los registros se almacenan en archivos Hive (colmenas, subdirectorios) y los usuarios se almacenan en una base de datos SAM.<br>
+Se puede minimizar la ventana de Regedit y el símbolo del sistema aparecerá allí: <br>
+simplemente escribir esos dos comandos en esa ventana.<br>
+<br>
+Luego, para desactivar el inicio de sesión automático como defaultuser0, vaya a <br>
+<b><i>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</i></b><br>
+<br>
+establecer <b>AutoAdminLogon</b> en "0"<br>
+establecer <b>AutoLogonSID</b> en blanco<br>
+establecer <b>DefaultUserName</b> en blanco<br>
+establecer <b>EnableFirstLogonAnimation</b> en 0<br>
+<br>
+Luego, ni siquiera necesita reiniciar, puede hacer shutp /L en el símbolo del sistema para cerrar sesión. <br>
+Aún tendrá un <b>defaultuser0</b> restante que se puede eliminar más tarde.<br>
+<br>
+Esto debería funcionar, pero creo que el nuevo problema está en las preinstalaciones del modo S (equipos OEM), donde se desea conservar la configuración de fábrica del fabricante, y el símbolo del sistema se desactiva durante y después de la configuración original.<br>
+<br>
+Con la Home Edition normal, se puede usar <b>oobe\bypassnro</b> y "<b>netsh wlan disconnect</b>" para volver a la cuenta de <b>usuario local</b>.<br>
+<br>
+
+       <a href="https://www.reddit.com/r/WindowsHelp/comments/1byuyu6/how_to_bypass_windows_11_oobe_forced_microsoft/" target="_blank">
+<b>How to bypass Windows 11 OOBE forced Microsoft account sign-in for 2024? : r/WindowsHelp</b></a><br><br>
+
+
+<br>
 </td></tr>
 
 
