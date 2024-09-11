@@ -8,6 +8,8 @@ a {text-decoration: none;}
 
 </head> 
 
+
+
 <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
 
   <table border="0" cellpadding="8" cellspacing="8" bgcolor="#fffaf2" width="100%" height="100%">
@@ -279,7 +281,7 @@ clave genérica sin internet para instalar, luego KMS</a><br>
 <b>3 formas de habilitar el proceso de Autoridad de seguridad local (LSA)</b></a><br>
 
 
-<b>Tengo a 10/05/2023 WINDOWS 11 22H2 22621.1702 1 KB5026372 | MBR/NTFS</b><br>
+<b>Tengo a 03/09/2024 WINDOWS 11 22H2 22631.4112 1 KB5041587 | MBR/NTFS</b><br>
 <br>
 <b>Windows 11 23H2 Enterprise SKU 22631. 2428 "Moment 4" ISO</b> última build 2506<br>
 <br>
@@ -359,7 +361,7 @@ La nueva función <b>Recall</b> de Microsoft, que se implementa con <b>Windows 1
 <br>
 Las empresas deben abordar estos riesgos deshabilitando la recuperación a través de políticas de grupo y adelantándose a las solicitudes de los usuarios finales para utilizar esta función en las máquinas de la empresa. Garantizar un cumplimiento estricto y salvaguardar los datos confidenciales es crucial.
 <br>
-Desactivar en Registry entries to disable Copilot+ Recall feature.:<br>
+Desactivar en Registry entries to <b>disable Copilot+ Recall</b> feature.:<br>
 <br>
 Windows Registry Editor Version 5.00<br>
 <br>
@@ -387,6 +389,11 @@ Group Policy Editor (gpedit.msc)	Configuración de usuario > Plantillas Administ
 Actualización GPO sin reiniciar Sistema:<br>
 <b>gpupdate /force</b><br>
 <br>
+
+         <a href="https://www.deskmodder.de/wiki/index.php?title=Momentaufnahmen_(Recall)_deaktivieren_Windows_11" target="_blank">
+Desactivar instantáneas <b>Recall</b> -alemán</a><br>
+         <a href="https://www-deskmodder-de.translate.goog/wiki/index.php?title=Momentaufnahmen_(Recall)_deaktivieren_Windows_11&_x_tr_sl=de&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp" target="_blank">
+Desactivar instantáneas <b>Recall</b> -traducido (comprobar comandos)</a><br>
 
          <a href="https://www.makeuseof.com/remove-the-home-page-from-settings-windows-11/" target="_blank">
 <b>Cómo eliminar página de inicio de la aplicación de configuración</b></a><br>
@@ -611,6 +618,18 @@ Activar <b>gpedit.msc</b> en Windows 10 Home</a><br>
 Cómo buscar políticas de grupo <b>GPO</b> en Windows 10</a><br>
     <a href="https://gpsearch.azurewebsites.net/#10937" target="_blank">
 Detalles <b>gpedit.msc</b> Web explicativa templates</a><br>
+    <a href="https://learn.microsoft.com/es-es/windows-server/identity/ad-ds/manage/group-policy/group-policy-overview" target="_blank">
+ la <b>Directivas de Grupo</b> se incluye en un <b>objeto de directiva de grupo (GPO)</b><br>
+ Un <b>GPO</b> es una <b>colección virtual de configuración de directivas, permisos de seguridad y ámbito de administración (SOM)</b><br>
+que se puede aplicar a usuarios y equipos de <b>Active Directory</b>. Un <b>GPO</b> tiene un nombre único, como un <b>GUID</b>. </a><br>
+<br>
+
+Actualiza la configuración de directiva de grupo.<br>
+Para forzar una actualización en segundo plano de todas las <b>configuraciones de directiva de grupo</b>
+independientemente de si han cambiado, escriba:<br>
+<br>
+<b>gpupdate /force</b><br>
+<br>
 
 <br>
     <a href="https://rlodeiro.info/blog/pihole_docker/" target="_blank">
@@ -1077,7 +1096,13 @@ Instalar modo Ohook<br>
 
 
     <a href="https://learn.microsoft.com/en-us/officeupdates/update-history-office-2021" target="_blank">
-<b>Office 2021</b> Builds</a><br>
+<b>Office 2021</b> descarga imagen oficial en inglé (se cambia en Language)</a><br>
+
+
+
+    <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2024Retail.img" target="_blank">
+<b>Office Profesional Plus 2024</b> Builds</a><br>
+
     <a href="https://support.microsoft.com/es-es/office/desinstalar-office-de-un-equipo-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8" target="_blank">
 <b>Office | Desinstalar Office de un equipo PC</b> herramienta <b>SaRA</b></a><br>
 
@@ -1085,11 +1110,14 @@ Instalar modo Ohook<br>
 <b>Office | Outllook</b> copia correos archivos *.ost<br>
 C:\Users\"User"\AppData\Local\Microsoft\Outlook\*.ost (uno por cada cuenta)</a><br>
 <br>
+    <a href="https://erwinbierens.com/switch-office-2016-to-monthly-targeted-channel/" target="_blank">
+<b>Office | Cambiar Office 2016 al canal mensual específico</b>  | Erwin Bierens</a><br>
+
     <a href="https://www.adslzone.net/noticias/windows/errores-actualizaciones-microsoft-365-office-solucionarlo/" target="_blank">
 <b>Los usuarios de Windows están recibiendo errores de actualizaciones en Microsoft 365 y Office: así puedes solucionarlo</b></a><br>
 
 
-
+<br>
     <a href="https://es.libreoffice.org/descarga/libreoffice/" target="_blank">
 <b>LibreOffice | LibreOffice en español 24.2</b></a><br>
 

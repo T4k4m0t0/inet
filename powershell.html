@@ -17,9 +17,9 @@ a {text-decoration: none;}
     <td width="50%" bgcolor="#fffaf2" valign="top">
 
 
-  <a name="defender"></a>
+  <a name="defender"></a><br>
 
-<br>
+
 
      <font color="#DF0101" face="Verdana,Arial,Helvetica" size="2">
 Activar o Desactivar <b>Defender</b> con <b>Powershell</b>.:<br></font>
@@ -361,10 +361,16 @@ Cómo eliminar puntos de restauración en Windows 10</a><br>
 
     <td width="50%" bgcolor="#fffaf2" valign="top">
 
-<a name="comandospowershell"></a>
+     <a name="comandospowershell"></a>
+<hr>
    <font color="#ff0000" face="Verdana,Arial,Helvetica" size="2"><br>
 &#149; <b>Comandos Powershell.:</b> Como Administrador<br></font>
    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"> 
+<br>
+
+<br>
+<b>Powershell 7.4</b><br>
+Icono W+R   <b>pwsh</b><br>
 <br>
 
 Información versión Powershell<br>
@@ -636,6 +642,34 @@ Rename-Computer "NB-$SN"<br>
 CRP = CORPORATE<br>
 NB-CRP-SERIAL<br>
 LT = laptop<br>
+<br>
+
+<hr>
+<br>
+
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="2">
+Eliminar directorios de aplicaciones de Windows<br>
+<br>
+    <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1">
+dir "C:\Program Files\WindowsApps"<br>
+<br>
+Ejemplo.: Al terminal actual:<br>
+Aplicaciones\Microsoft.WindowsTerminal_3001.20. 11381.0 _neutral_~_8wekyb3d8bbwe<br>
+incluye los directorios actuales:<br>
+- Microsoft.UI.Xaml.2.8_8.2310.30001.0_x64__8wekyb3d8bbwe<br>
+- Microsoft.UI.Xaml.2.8_8.2310.30001.0_x86__8wekyb3d8bbwe<br>
+<br>
+Se puede encontrar en.:<br>
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows \CurrentVersion \Appx\AppxAllUserStore\Applications\Microsoft.WindowsTerminal_3001.20.11381.0_neutral_~_8wekyb3d8bbwe
+<br>
+<br>
+Sin embargo, debes verificar todas las aplicaciones instaladas de antemano con respecto a sus dependencias::<br>
+Y no elimine las carpetas, desinstale la aplicación a través de DISM o PowerShell. De lo contrario, tendrás que limpiar aquí y allá manualmente.
+<br>
+<br>
+</font>
+    <font face="Arial" size="3" color="#d91dc5">
+    <b><code>Get-AppxPackage|?{$_.Dependencies -like 'Microsoft.UI.Xaml*'}|fl Name, Dependencies</code></b>
 <br>
 
 
