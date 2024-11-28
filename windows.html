@@ -8,6 +8,8 @@ a {text-decoration: none;}
 
 </head> 
 
+
+
 <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
 
   <table border="0" cellpadding="8" cellspacing="8" bgcolor="#fffaf2" width="100%" height="100%">
@@ -174,7 +176,8 @@ Los nuevos <b>Snapdragon X Plus & Elite | GPU Qualcomm Adreno | NPU Qualcomm Hex
 <b>Winaero</b> -twitter</a><br>
        <a href="https://twitter.com/thebookisclosed" target="_blank">
 <b>Albacore</b> @thebookisclosed -twitter</a><br>
-
+       <a href="https://bsky.app/profile/fbl.fun" target="_blank">
+<b>Albacore</b> @fbl.fun -BlueSky</a><br>
 
 
        <a href="https://www.windowslatest.com/" target="_blank">
@@ -205,6 +208,9 @@ Los nuevos <b>Snapdragon X Plus & Elite | GPU Qualcomm Adreno | NPU Qualcomm Hex
        <a href="https://www.ghacks.net/2024/10/08/how-to-upgrade-to-windows-11-24h2-on-unsupported-hardware/" target="_blank">
 <b>Cómo actualizar a Windows 11 24H2 en hardware no compatible</b> ghacks.net<br>
 Si no funcione con regedit, probar con gpedit.msc</a><br>
+<br>
+       <a href="https://github.com/AveYo/MediaCreationTool.bat/tree/main/bypass11" target="_blank">
+<b>MediaCreationTool.bat/bypass11</b> @AveYo GitHub</a><br>
 
 <br>
 Bypass the system requirements with the '/product server' command line<br>
@@ -420,10 +426,14 @@ Windows Registry Editor Version 5.00<br>
 
 <br>
 CMD (adm)<br>
+    <font face="Verdana,Arial,Helvetica" size="3">
 <code><b>reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
 <code><b>reg add "HKLM\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
+<code><b>reg add "HKC\Software\Microsoft\PolicyManager\default\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
 <code><b>reg add "HKLM\Software\Microsoft\PolicyManager\default\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f</code></b><br>
 <br>
+</font>
+    <font face="Verdana,Arial,Helvetica" size="1">
 
 CSP	./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis<br>
 Group Policy Editor (gpedit.msc)	User Configuration > Administrative Templates > Windows Components > Windows AI > Turn off saving snapshots for Windows<br>
