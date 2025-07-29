@@ -9,6 +9,8 @@ a {text-decoration: none;}
 
 </head> 
 
+
+
 <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
 
   <table border="0" cellpadding="8" cellspacing="8" bgcolor="#fffaf2" width="100%" height="100%">
@@ -65,7 +67,7 @@ colocar en C:\Windows\System32\</a><br>
 
 
       <a href="https://forums.mydigitallife.net/threads/win-11-boot-and-upgrade-fix-kit.83724/" target="_blank">
-<b>Win 11 Boot And Upgrade FiX KiT v5.1f</b></a><br>
+<b>Win 11 Boot And Upgrade FiX KiT v6</b></a><br>
 
       <a href="https://uupdump.net/" target="_blank">
 <b>UUP (Unified Update Platform)</b> uupdump.net/</a><br>
@@ -164,8 +166,10 @@ Los nuevos <b>Snapdragon X Plus & Elite | GPU Qualcomm Adreno | NPU Qualcomm Hex
 <b>Use Memory Integrity System Readiness Scan Tool in Windows 11</b></a><br>
 <br>
 
-       <a href="https://forums.mydigitallife.net/threads/windows-11-tweaks-fixes-and-modifications-overview.83744/page-77 " target="_blank">
+       <a href="https://forums.mydigitallife.net/threads/windows-11-tweaks-fixes-and-modifications-overview.83744/page-77" target="_blank">
 <b>Windows 11 Tweaks, Fixes and Modifications</b> | My Digital Life Forums</a><br>
+       <a href="https://www.elevenforum.com/tutorials/" target="_blank">
+<b>Windows 11 Tutoriales, trucos</b> | elevenforum.com</a><br>
 
 <br>
        <a href="https://forums.mydigitallife.net/forums/windows-11.64/" target="_blank">
@@ -227,8 +231,15 @@ Microsoft ahora dice que no se deben instalar manualmente las actualizaciones de
        <a href="https://github.com/AveYo/MediaCreationTool.bat/tree/main/bypass11" target="_blank">
 <b>Certificado Windows UEFI CA 2023 ya integrado en Windows ADK de diciembre</b><br></a><br>
 <br>
-
-
+       <a href="https://jmtella.com/foro/forum/windows/windows-11/56253-8-de-julio-de-2025%E2%80%94kb5062553-compilaci%C3%B3n-del-sistema-operativo-26100-4652" target="_blank">
+<b>Windows Secure Boot | Certificado Windows UEFI CA 2023</b> jmtella.com<br></a><br>
+<br>
+       <a href="https://learn.microsoft.com/es-es/windows-hardware/manufacture/desktop/windows-secure-boot-key-creation-and-management-guidance?view=windows-11#14-signature-databases-db-and-dbx" target="_blank">
+<b>Guía de creación y administración de claves de arranque seguro (Secure Boot) de Windows | Microsoft Learn</b><br></a><br>
+<br>
+       <a href="https://support.microsoft.com/en-gb/topic/july-8-2025-kb5062553-os-build-26100-4652-523e69cb-051b-43c6-8376-6a76d6caeefd" target="_blank">
+<b>Windows Secure Boot certificate expiration July 8, 2025—KB5062553 (OS Build 26100.4652)</b><br></a><br>
+<br>
 
 
 
@@ -327,6 +338,16 @@ Desinstalar <b>Copilot PowerShell</b> (adm)<br>
 <b>Get-AppxPackage -Name "Microsoft.Windows.Ai.Copilot.Provider" | Remove-AppxPackage</b><br>
 <br>
 
+<b>Eliminar Copilot menú contextual</b><br>
+<br>
+
+Windows Registry Editor Version 5.00<br>
+<br>
+ [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]<br>
+ "{CB3B0003-8088-4EDE-8769-8B354AB2FF8C}"=-<br>
+<br>
+Guardarlo como EliminarmenuCopilot.reg<br>
+<br>
 
        <a href="https://jmtella.com/foro/forum/ejercicios-y-ejemplos/52993-tip-instalacion-cambios-en-windows-para-el-cumplimiento-de-la-dma-en-la-ue-y-otros-mercados-copilot-etc" target="_blank">
 <b>Instalacion Copilot in Windows 10 /11 con ooboe/sysprep</b></a><br>
@@ -420,7 +441,7 @@ clave genérica sin internet para instalar, luego KMS</a><br>
 
 
 <b>Tengo a 15/01/2025 WINDOWS 11 24H2 26100.2894  | MBR/NTFS</b><br>
-<b>Tengo a 23/10/2024 WINDOWS 11 23H2 22631.4317  | MBR/NTFS</b><br>
+<b>Photoshop 2019 v20.0.1 20181029.r.41 1197484 x64 Español Preactivado</b><br>
 <br>
 en <b>Hyper-V | Windows 10 Enterprise 21H2 IoT LTSC 19044.1288</b><br>
 en <b>Hyper-V | Windows 11 Enterprise 24H2 IoT LTSC 26100.2894</b> borrado<br>
@@ -458,8 +479,67 @@ Windows 11 24H2 error 'Missing entry PcaWallpaperAppDetect'<br>
 <pre><code><b>schtasks /Change /TN “Microsoft\Windows\Application Experience\PcaWallpaperAppDetect” /Disable</b></code></pre> lineas conjuntas<br>
 </font>
 <br>
+
+    <font face="Verdana,Arial,Helvetica" size="1">
+
+         <a href="https://microsofters.com/software/windows-11/windows-11-24h2-actualizacion-kb504308-novedades/" target="_blank">
+<b>KB5043080</b> El Control de Cuentas de Usuario (UAC) ahora pedirá tus credenciales al reparar aplicaciones con Windows Installer. Esto requiere que actualices scripts de automatización. Los desarrolladores deben agregar un ícono de escudo para indicar que la tarea necesita permisos de administrador. Se puede desactivar esta solicitud de UAC ajustando un valor en el registro.</a><br>
 <br>
-<font face="Verdana,Arial,Helvetica" size="1">
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer\DisableLUAInRepair]<br>
+ registry value to 1<br>
+<br>
+
+<br>
+
+    <a href="https://www.jmsolanes.net/es/almacen-de-credenciales-de-windows/" target="_blank">
+<b>Almacén de credenciales de Windows</b></a><br>
+<b>Powershell</b> (adm) <br>
+<b>$Credential = export-CliXml Creds.xml</b> mejor estando en C:\<br>
+<b>$Credential = Import-CliXml Creds.xml</b><br>
+<br>
+
+
+<br><br>
+<b>Comandos Sudo</b> en Windows (sistemas x64 no x32)<br>
+<br>
+Descarga y descomprime sudo.zip<br>
+Copie sudo.exe a la carpeta C:\Windows\System32<br>
+Inicie la terminal (administrador) e ingrese estos comandos<br>
+<b>sudo config --enable enable</b>                   Enter <br>
+<b>sudo config --enable forceNewWindow</b>     Enter<br>
+
+<br>
+C:\Windows\System32<br>
+<br>
+
+<b>sudo config --enable</b><br>
+<b>sudo netstat -ab</b><br>
+<b>sudo config --enable enable</b><br>
+<b>sudo config --enable forceNewWindow</b><br>
+<b>sudo --help</b><br>
+<br>
+         <a href="https://github.com/microsoft/sudo" target="_blank">
+<b>Sudo</b> Microsoft</a><br>
+<br>
+Sin embargo, el Sudo de Microsoft no será tan potente como, por ejemplo, NanaRun o su predecesor NSudo . 
+Aquí también se pueden ejecutar comandos como TrustedInstaller o System, que luego tienen mayor acceso a archivos o funciones del sistema.
+<br>
+Kenji Mouri (Mouri Naruto) ahora está en el proceso de archivar NSudo y lanzar NanaRun. <br>
+<br>
+
+Pero todavía pasará un tiempo antes de que NSudo quede suspendido. La primera vista previa de NanaRun 1.0 ya está disponible para descargar. 
+Y sólo con Stable 1.0 NanaRun se hará cargo por completo de las tareas de NSudo. 
+“Es la primera versión de NanaRun que utiliza MinSudo. MinSudo es una implementación Sudo ligera similar a POSIX para Windows. 
+Permite al usuario utilizar aplicaciones elevadas en entornos no elevados”.<br>
+<br>
+
+<br>
+</td>
+</tr>
+
+<tr>
+    <td width="50%" bgcolor="#fffaf2" valign="top">
+    <font face="Verdana,Arial,Helvetica" size="1">
 
 <br>
 <b>Consideraciones Instalación W11 24H2.:</b><br>
@@ -530,6 +610,12 @@ La nueva función <b>Recall</b> de Microsoft, que se implementa con <b>Windows 1
 Las empresas deben abordar estos riesgos deshabilitando la recuperación a través de políticas de grupo y adelantándose a las solicitudes de los usuarios finales para utilizar esta función en las máquinas de la empresa. Garantizar un cumplimiento estricto y salvaguardar los datos confidenciales es crucial.
 <br>
 
+<br>
+</td>
+    <td width="50%" bgcolor="#fffaf2" valign="top">
+    <font face="Verdana,Arial,Helvetica" size="1">
+<br>
+
          <a href="https://notfake.vip/index.php?/topic/67465-activardesactivar-recall-quitar-el-men%C3%BA-de-inicio-en-win11-24h2/" target="_blank">
 <b>Activar/desactivar Recall - Quitar el menú de inicio en WIN11 24H2</b> notfake.vip</a><br>
 <br>
@@ -555,7 +641,7 @@ Usando Powershell.:<br>
 <br>
 
 
-Desactivar en Registro entradas a<b>disable Copilot+ Recall</b> feature.:<br>
+Desactivar en Registro entradas <b>disable Copilot+ Recall</b> feature.:<br>
 <br>
 Windows Registry Editor Version 5.00<br>
 <br>
@@ -621,56 +707,6 @@ Desactivar instantáneas <b>Recall</b> -traducido (comprobar comandos)</a><br>
 <br>
 
 
-         <a href="https://microsofters.com/software/windows-11/windows-11-24h2-actualizacion-kb504308-novedades/" target="_blank">
-<b>KB5043080</b> El Control de Cuentas de Usuario (UAC) ahora pedirá tus credenciales al reparar aplicaciones con Windows Installer. Esto requiere que actualices scripts de automatización. Los desarrolladores deben agregar un ícono de escudo para indicar que la tarea necesita permisos de administrador. Se puede desactivar esta solicitud de UAC ajustando un valor en el registro.</a><br>
-<br>
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer\DisableLUAInRepair]<br>
- registry value to 1<br>
-<br>
-
-<br>
-
-    <a href="https://www.jmsolanes.net/es/almacen-de-credenciales-de-windows/" target="_blank">
-<b>Almacén de credenciales de Windows</b></a><br>
-<b>Powershell</b> (adm) <br>
-<b>$Credential = export-CliXml Creds.xml</b> mejor estando en C:\<br>
-<b>$Credential = Import-CliXml Creds.xml</b><br>
-<br>
-
-
-<br><br>
-<b>Comandos Sudo</b> en Windows (sistemas x64 no x32)<br>
-<br>
-Descarga y descomprime sudo.zip<br>
-Copie sudo.exe a la carpeta C:\Windows\System32<br>
-Inicie la terminal (administrador) e ingrese estos comandos<br>
-<b>sudo config --enable enable</b>                   Enter <br>
-<b>sudo config --enable forceNewWindow</b>     Enter<br>
-
-<br>
-C:\Windows\System32<br>
-<br>
-
-<b>sudo config --enable</b><br>
-<b>sudo netstat -ab</b><br>
-<b>sudo config --enable enable</b><br>
-<b>sudo config --enable forceNewWindow</b><br>
-<b>sudo --help</b><br>
-<br>
-         <a href="https://github.com/microsoft/sudo" target="_blank">
-<b>Sudo</b> Microsoft</a><br>
-<br>
-Sin embargo, el Sudo de Microsoft no será tan potente como, por ejemplo, NanaRun o su predecesor NSudo . 
-Aquí también se pueden ejecutar comandos como TrustedInstaller o System, que luego tienen mayor acceso a archivos o funciones del sistema.
-<br>
-Kenji Mouri (Mouri Naruto) ahora está en el proceso de archivar NSudo y lanzar NanaRun. <br>
-<br>
-
-Pero todavía pasará un tiempo antes de que NSudo quede suspendido. La primera vista previa de NanaRun 1.0 ya está disponible para descargar. 
-Y sólo con Stable 1.0 NanaRun se hará cargo por completo de las tareas de NSudo. 
-“Es la primera versión de NanaRun que utiliza MinSudo. MinSudo es una implementación Sudo ligera similar a POSIX para Windows. 
-Permite al usuario utilizar aplicaciones elevadas en entornos no elevados”.<br>
-<br>
 
 <br>
 </td>
@@ -744,7 +780,10 @@ Resolución Pantalla (en VMware ASUS) 1920x1080<br>
 
          <a href="https://forums.mydigitallife.net/threads/discussion-windows-11-enterprise-iot-enterprise-n-ltsc-2024-24h2-26100-x.88280/page-114" target="_blank">
 <b>Windows 11 Enterprise/IoT Enterprise (N) LTSC 2024 (24H2 / 26100.x)</b><br>
-Cambio lenguage a español   -mydigitallife.net</a><br>
+Cambio lenguage a español (Install language pack)  -mydigitallife.net</a><br>
+<br>
+         <a href="https://www.zentinels.net/cambiar-idioma-en-windows-11-ltsc-2024/" target="_blank">
+<b>Cambiar idioma en Windows 11 LTSC 2024</b> zentinels.net<br></a><br>
 <br>
 
 
@@ -773,22 +812,10 @@ Code:<br>
 <b>wsreset -i</b></a><br>
 <br>
 
-Ejemplo instalación calculadora con winget.:<br>
-Powershell (adm)<br>
-<b>winget download Calculator -s msstore</b><br>
-<br>
 
-         <a href="https://x.com/TheBobPony/status/1839570726875001038" target="_blank">
-<b>Microsoft has released updated EVALUATION ISO files (KB5043080 integrated, x64 ONLY) for the upcoming Windows releases:</b>
-<b>
-- Windows 11 Enterprise Version 24H2
-- Windows 11 Enterprise LTSC 2024
-- Windows Server 2025 (based on version 24H2)
-- Azure Stack HCI, version 24H2
-</b>
-Here's the list to download them: @TheBobPony</a><br>
-<br>
 
+<a href="windows10.html#store"> <b>Instalar Store en Windows 10/11 EnterpriseS</b></a><br>
+<br>
 
 
          <a href="https://massgrave.dev/windows_ltsc_links" target="_blank">
