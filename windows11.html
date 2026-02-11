@@ -6,7 +6,7 @@
 <style>
 a {text-decoration: none;}
 </style>
-  
+
 </head> 
 
 <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
@@ -88,7 +88,7 @@ colocar en C:\Windows\System32\</a><br>
 
 
       <a href="https://forums.mydigitallife.net/threads/win-11-boot-and-upgrade-fix-kit.83724/" target="_blank">
-<b>Win 11 Boot And Upgrade FiX KiT v6</b></a><br>
+<b>Win 11 Boot And Upgrade FiX KiT v6.1f2</b></a><br>
 
       <a href="https://uupdump.net/" target="_blank">
 <b>UUP (Unified Update Platform)</b> uupdump.net/</a><br>
@@ -316,6 +316,31 @@ Solución de problemas de actualización de <b>Windows 11 24H2</b></a><br>
 
        <a href="https://github.com/zoicware/RemoveWindowsAI" target="_blank">
 <b>script "RemoveWindowsAI" elimina toda la IA de Windows 11</b> github.com</a><br>
+<br>
+       <a href="https://www.neowin.net/news/this-app-promises-to-remove-all-the-ai-bloat-from-windows-11-with-a-single-click/" target="_blank">
+<b>script "RemoveWindowsAI" elimina toda la IA de Windows 11</b> neowin.net</a><br>
+<br>
+
+      <a href="https://www.neowin.net/news/new-tool-removes-ai-from-windows-11-and-gives-users-more-control-over-system/" target="_blank">
+<b>Winslop  | New tool removes AI from Windows 11 and gives users more control over system</b></a><br>
+<br>
+      <a href="https://github.com/builtbybel/Winslop" target="_blank">
+<b>Winslop</b> builtbybel/Winslop · GitHub<br>
+Slop describe componentes del sistema innecesarios y de bajo valor que se agregan de manera predeterminada, consumen recursos y reducen el control del usuario sin brindar un beneficio significativo.</a><br>
+<br>
+      <a href="https://github.com/builtbybel/Winslop/releases/tag/0.25" target="_blank">
+<b>Winslop 0.50.125</b> Download.:<br></a><br>
+<br>
+
+    <a href="https://www.oo-software.com/en/shutup10" target="_blank">
+<b>O&O ShutUp10++ 2.2.1024</b> Disable Windows Copilot+ Recall (04/02/2026)</a><br>
+
+      <a href="https://github.com/ChrisTitusTech/winutil" target="_blank">
+<b>Chris Titus Tech's Windows Utility Release 26.01.27</b> Version<br>
+Powershell (adm) (Stable Branch (Recommended))<br>
+<b>irm "https://christitus.com/win" | iex</b></a><br>
+<br>
+
 
 <br>
 <b>Desactivar COPILOT por gpedit.msc</b><br>
@@ -589,9 +614,7 @@ La desactivación solo esté disponible en un Office 365 E5​ corporativo de pr
 <b>Recall</b> para poder utilizarlo tendremos que tener un ordenador del tipo <b>Copilot+</b> 
 que nuestro hardware incluya una NPU de al menos <b>45 TOPS</b></a><br>
 <br>
-         <a href="https://notfake.vip/index.php?/topic/67465-activardesactivar-recall-quitar-el-men%C3%BA-de-inicio-en-win11-24h2/" target="_blank">
-<b>Activar/desactivar Recall - Quitar el menú de inicio en WIN11 24H2</b> notfake.vip</a><br>
-<br>
+
 
 
          <a href="https://hipertextual.com/2024/06/recall-es-una-pesadilla-seguridad-datos-windows-11" target="_blank">
@@ -646,8 +669,11 @@ Usando el Registro<br>
 <li>Haga doble clic en el valor recién creado y configúrelo.<strong>Value Data</strong> a <strong>0</strong>. Mantener la base como <strong>Hexadecimal</strong><br /></li>
 <li>Cierre el editor de registro y restart PC para plicar cambios.</li>
 </ol>
-Usando Powershell.:<br>
+Usando Powershell (adm).:<br>
 <b>Disable-WindowsOptionalFeature -Online -FeatureName "Recall" -Remove</b><br>
+<br>
+Usando Dism (adm).:<br>
+<b>Dism /online /Disable-Feature /FeatureName:”Recall”</b><br>
 <br>
 
 
@@ -966,6 +992,4 @@ PS>  <b>Uninstall-Language</b><br>
 </tr>
 
 </body>
-
 </html>
-
