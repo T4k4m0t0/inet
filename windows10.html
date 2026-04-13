@@ -8,8 +8,6 @@
 a {text-decoration: none;}
 </style>
 
-
- 
  <style>
             section {
   box-sizing: border-box;
@@ -234,6 +232,15 @@ Para forzar una actualización en segundo plano de todas las <b>configuraciones 
 independientemente de si han cambiado, escriba:<br>
 <br>
 <b>gpupdate /force</b><br>
+<br>
+
+ 
+<b>Smart App Control (SAC) | Control Inteligente de Aplicaciones</b> activar / desactivar<br>
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy\VerifiedAndReputablePolicyState<br>
+1 activa / 0 desactiva / 2  evaluación<br>
+<br>
+
+Manual.: Para activar o desactivar el Control Inteligente de Aplicaciones (Smart App Control) en Windows 11, ve a Configuración > Privacidad y seguridad > Seguridad de Windows > Control de aplicaciones y exploradores y selecciona Configuración de Control Inteligente de Aplicaciones. Selecciona "Activado" para protección máxima, "Evaluación" para modo de aprendizaje, o "Desactivado<br>
 <br>
 
 <br>
@@ -524,6 +531,12 @@ Crear un <b>Keylogger</b> con Bloc de Notas</a><br>
     <a href="https://www.solvetic.com/tutoriales/article/3648-como-abrir-carpeta-windowsapp-en-windows/" target="_blank">
 Cómo abrir carpeta <b>WindowsApps</b> en Windows 10 - Solvetic</a><br>
 <br>
+
+    <a href="https://www.zentinels.net/eliminar-aplicaciones-en-windows-11-de-forma-muy-rapida/" target="_blank">
+<b>Eliminar aplicaciones en Windows 11</b> de forma muy rápida<br>
+TECLA Windows + R <b>shell:AppsFolder</b></a><br>
+<br>
+
     <a href="https://answers.microsoft.com/es-es/windows/forum/windows_10-networking/windows-10-el-wifi-se-desconecta/984dfa6a-05d4-42cc-99c2-aa57de7b9965" target="_blank">
 <b>WiFi se desconecta</b> </a><br>
 
@@ -1700,14 +1713,42 @@ muradbu/winget-script: una lista de programas que puedo instalar y una guía de 
 Instalar <b>Winget</b> (Instalador de aplicaciones de escritorio) para versiones de <b>Windows sin Store</b><br>
 Descargar e instalar Frameworks.:<br>
 <b>Powershell</b> (adm) <br>
-
-
-<b>Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile .\Microsoft.VCLibs.x64.14.00.Desktop.appx</b><br>
-<b>Invoke-WebRequest -Uri https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.6 -OutFile .\microsoft.ui.xaml.2.8.6.nupkg.zip</b><br>
-<b>Expand-Archive -Path .\microsoft.ui.xaml.2.8.6.nupkg.zip -Force</b><br>
-<b>Add-AppXPackage -Path .\microsoft.ui.xaml.2.8.6.nupkg\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx</b><br>
-<b>Add-AppXPackage -Path .\Microsoft.VCLibs.x64.14.00.Desktop.appx</b><br>
 <br>
+<----script instalación><br>
+<b>
+@echo off<br>
+echo Script instalacion Winget<br>
+<br>
+
+@echo off<br>
+powershell Start-BitsTransfer -Source "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -Destination "~\WinGet.msixbundle"<br>
+<br>
+pause<br>
+@echo off<br>
+powershell Start-BitsTransfer -Source "https://github.com/microsoft/winget-cli/releases/latest/download/DesktopAppInstaller_Dependencies.zip" -Destination "~\DesktopAppInstaller_Dependencies.zip"<br>
+<br>
+powershell Start-BitsTransfer -Source "https://github.com/microsoft/winget-cli/releases/latest/download/e53e159d00e04f729cc2180cffd1c02e_License1.xml" -Destination "~\license1.xml"<br>
+<br>
+powershell Expand-Archive -Path "~\DesktopAppInstaller_Dependencies.zip -Destination "~\."<br>
+<br>
+powershell Add-AppxPackage -Path "~\x64\Microsoft.UI.Xaml*x64.appx"<br>
+<br>
+powershell Add-AppxPackage -Path "~\x64\Microsoft.VCLibs*x64.appx"<br>
+<br>
+powershell Add-AppxPackage "~\x64\Microsoft.WindowsAppRuntime*x64.appx"<br>
+<br>
+powershell Add-AppxProvisionedPackage -Online -PackagePath "~\WinGet.msixbundle" -LicensePath "~\license1.xml"<br>
+<br>
+powershell Get-AppxPackage *Microsoft.DesktopAppInstaller*<br>
+<br>
+powershell winget --info<br>
+<br>
+powershell Remove-Item -Path "~\WinGet.msixbundle", "~\DesktopAppInstaller_Dependencies.zip", "~\DesktopAppInstaller_Dependencies", "~\license.xml" -Recurse -Force<br>
+<br>
+exit<br></b>
+<------------------------><br>
+<br>
+
 Instalador Winget<br>
 <b>md C:\Apps</b><br>
 <b>Invoke-webrequest https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile C:\Apps\DesktopAppInstaller.msixbundle</b><br>
@@ -2128,6 +2169,4 @@ Windows Server 2012 - Crear VPN sencilla y conectar cliente Windows 10</a><br>
 
 
 </body>
-
 </html>
-
