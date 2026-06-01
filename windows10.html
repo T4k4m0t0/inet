@@ -3,7 +3,7 @@
 <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8" />
 <title>Windows</title>
 
- 
+
 <style>
 a {text-decoration: none;}
 </style>
@@ -1416,6 +1416,16 @@ Cómo logré resolver el error 0x80070643 en actualizaciones KB5034441 o KB50xxx
     <a href="https://support.microsoft.com/es-es/topic/kb5028997-instrucciones-para-redimensionar-manualmente-la-partici%C3%B3n-para-instalar-la-actualizaci%C3%B3n-de-winre-400faa27-9343-461c-ada9-24c8229763bf" target="_blank">
 KB5028997: Instrucciones para <b>redimensionar manualmente la partición para instalar la actualización de WinRE</b></a><br>
 <br>
+    <a href="https://2pintsoftware.com/news/details/format-and-partition-disk---a-reusable-ts-module" target="_blank">
+<b>Format and Partition Disk - a Reusable TS Module</b> script  By Mike Terrill OS Deployment, ConfigMgr, Windows<br>
+En 2019, algunos de nosotros tuvimos una discusión sobre la forma correcta de crear y dimensionar las distintas particiones de disco que utiliza Windows.<br>
+El resultado está en un blog que <b>Gary Blok</b> escribió llamado <b>Configuración de particiones OSD, edición de Mike Terrill</b> (la forma optimizada). 
+Si ha estado siguiendo este método, es probable que no haya tenido ningún problema con los parches que han tocado la partición del Sistema o la partición de Recuperación.<br>
+Quienes hayan bloqueado la telemetría pueden intervenir manualmente modificando el registro. Este comando se ejecuta en la línea de comandos (como administrador) y, a continuación, se reinicia el equipo.<br>
+<br>
+<b>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Bfsvc /v EspPaddingPercent /t REG_DWORD /d 0 /f"</b></a><br>
+<br>
+
 
     <a href="https://www.muycomputer.com/2020/02/22/compartir-carpeta-windows-10-smb/" target="_blank">
 Cómo compartir una carpeta desde Windows 10 con <b>SMB y CIFS</b></a><br>
