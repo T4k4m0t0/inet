@@ -7,8 +7,6 @@
 a {text-decoration: none;}
 </style>
 
-	
-	
 </head> 
 
 <body topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
@@ -366,6 +364,18 @@ Slop describe componentes del sistema innecesarios y de bajo valor que se agrega
 Powershell (adm) (Stable Branch (Recommended))<br>
 <b>irm "https://christitus.com/win" | iex</b></a><br>
 <br>
+
+    <a href="https://www.deskmodder.de/blog/2026/04/28/sioni-secure-boot-zertifikat-pruefer-windows-uefi-ca-2023-mit-einem-tool-testen/" target="_blank">
+<b>Sioni Windows Toolkit Pro 1.6.3 SWT Pro 1.6.3</b> Foro alemán</a><br>
+<br>
+    <a href="https://www-deskmodder-de.translate.goog/phpBB3/viewtopic.php?t=34381&sid=757beb74922760c566923e8ba5c9efdc&_x_tr_sl=de&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp" target="_blank">
+<b>Sioni Windows Toolkit Pro 1.6.3 SWT Pro 1.6.3</b> Foro traducido</a><br>
+<br>
+    <a href="https://drive.usercontent.google.com/download?id=1BVjrZrOArX_DydIuiSclKn3dK8mXU4DE&export=download&authuser=0&confirm=t&uuid=4052175b-6cb7-43dd-9566-28c11c164ae2&at=AAINaII2AwqTr4cT1AAAg48ctWr1%3A1780757258375" target="_blank">
+<b>Sioni Windows Toolkit Pro 1.6.3 SWT Pro 1.6.3 by Chris Von</b> Descarga</a><br>
+<br>
+
+
 
       <a href="https://flyoobe.com/es" target="_blank">
 <b>FlyOOBE Version 2.2 - Released November 2025</b> FlyOOBE te ayuda a instalar y ejecutar Windows 11 en hardware antiguo o no compatible. Simplifica la configuración del sistema, elimina las verificaciones de compatibilidad y da nueva vida a los PCs que ya no cumplen con los estrictos requisitos de Microsoft.<br></a><br>
@@ -1017,6 +1027,21 @@ Powershell (adm) (Línea continua)<br>
 <b>Actualizaciones de claves del Registro para arranque seguro: dispositivos Windows con actualizaciones administradas por TI</b> - Soporte técnico de Microsoft<br>
 Fecha de publicación original: 14 de octubre de 2025</a><br>
 <br>
+
+<br>
+         <a href="https://jmtella.com/foro/forum/windows/windows-11/57768-consejo-%C2%BFqu%C3%A9-versi%C3%B3n-de-windows-11-instalar" target="_blank">
+Ir al post nº 10>><br>
+Comprobamos <b>Secure Boot</b> activo<br>
+PowerShell como administrador y ejecuta:<br>
+<b>Confirm-SecureBootUEFI</b><br>
+Debería devolver:<br>
+True<br>
+<br>
+También puedes comprobar que la tarea de Windows encargada de aplicar esto exista y esté habilitada:<br>
+<b>schtasks.exe /Query /TN "\Microsoft\Windows\PI\Secure-Boot-Update" /FO LIST /V</b><br>
+<br>
+
+
 
        <a href="https://jmtella.com/foro/forum/windows/windows-11/56253-8-de-julio-de-2025%E2%80%94kb5062553-compilaci%C3%B3n-del-sistema-operativo-26100-4652" target="_blank">
 <b>Secure Boot visor de eventos TPM-WMI id 1801</b> jmtella.com<br></a><br>
