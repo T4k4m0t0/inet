@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv=îContent-Typeî content=îtext/html; charset=UTF-8" />
+<meta http-equiv=‚ÄùContent-Type‚Äù content=‚Äùtext/html; charset=UTF-8" />
 <title>Comandos Defender</title>
 
 <link rel="stylesheet" href="hojaestilos.css" media="screen" />
@@ -9,6 +9,7 @@
 a {text-decoration: none;}
 </style>
 
+ 
  <style>
             section {
   box-sizing: border-box;
@@ -46,7 +47,7 @@ a {text-decoration: none;}
  <a name="defender3"></a><br>
 
  <a href="defender.html" target="_blank">
-<b>Defender.:</b> p·gina extendida</a><br>
+<b>Defender.:</b> p√°gina extendida</a><br>
 <br></font>
 
 
@@ -55,17 +56,17 @@ a {text-decoration: none;}
 <b>Powershell</b> (adm)<br>
 <b>Get-MpComputerStatus</b> vemos la info<br>
 <br>
-Para ver la versiÛn Defender buscar <b>AMProductVersion</b>   Ejemplo: 4.18.26070.9<br>
+Para ver la versi√≥n Defender buscar <b>AMProductVersion</b>   Ejemplo: 4.18.26070.9<br>
 O con el comando.:<br>
 <b>(Get-MpComputerStatus).AMProductVersion</b><br>
 <br>
 Problema Defender desactivado<br>
 En su forma actual, solo el 4,18.26080.3 se ve afectado, no el 4,18.26070.9<br>
 <br>
-archivos de registro de an·lisis en.:<br>
- ìC:\ProgramData\Microsoft\Windows Defender\Support\î<br>
+archivos de registro de an√°lisis en.:<br>
+ ‚ÄúC:\ProgramData\Microsoft\Windows Defender\Support\‚Äù<br>
 <br>
-Solo los archivos .log son de interÈs. Conmigo, son cuatro.:<br>
+Solo los archivos .log son de inter√©s. Conmigo, son cuatro.:<br>
 MPDetection-###.log<br>
 MPDeviceControl-###.log<br>
 MPLog-###.log<br>
@@ -94,7 +95,7 @@ Activar o Desactivar <b>Defender</b> con <b>Powershell</b>.:<br></font>
 <br><br>
 
 
-<b>Get-MpComputerStatus | select AMRunningMode</b> Si la respuesta es <b>Not running</b> es que est· apagado, mientras que si es <b>Normal</b> es que sÌ est· en marcha<br>
+<b>Get-MpComputerStatus | select AMRunningMode</b> Si la respuesta es <b>Not running</b> es que est√° apagado, mientras que si es <b>Normal</b> es que s√≠ est√° en marcha<br>
 <br>
 <b>Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows Defender\Features" -Name TamperProtection</b><br>
 TamperProtection DWORD<br>
@@ -112,24 +113,24 @@ TamperProtection DWORD<br>
 <br>
 
       <a href="https://www.elevenforum.com/t/turn-on-or-off-tamper-protection-for-microsoft-defender-antivirus-in-windows-11.3973/" target="_blank">
-Activar o desactivar la <b>protecciÛn contra manipulaciones (Tamper Protection)</b> para el antivirus <b>Microsoft Defender en Windows 11</b>
-Debes iniciar sesiÛn como <b>administrador para activar o desactivar la protecciÛn contra manipulaciones (Tamper Protection)</b>.
-Si la configuraciÛn de protecciÛn contra manipulaciones est· activada, no podr·s desactivar el servicio antivirus <b>Microsoft Defender</b> 
-mediante la clave de polÌtica de grupo <b><i>DisableAntiSpyware</i></b><br>
+Activar o desactivar la <b>protecci√≥n contra manipulaciones (Tamper Protection)</b> para el antivirus <b>Microsoft Defender en Windows 11</b>
+Debes iniciar sesi√≥n como <b>administrador para activar o desactivar la protecci√≥n contra manipulaciones (Tamper Protection)</b>.
+Si la configuraci√≥n de protecci√≥n contra manipulaciones est√° activada, no podr√°s desactivar el servicio antivirus <b>Microsoft Defender</b> 
+mediante la clave de pol√≠tica de grupo <b><i>DisableAntiSpyware</i></b><br>
 <br>
-Esta es una <b>clave de registro protegida</b> por lo que no te permitir· cambiarla manualmente ni usar un archivo REG.
-SÌ, tambiÈn tengo 5 cuando est· ACTIVO. Pero cuando est· DESHABILITADO, tengo 4 en lugar de 0. 
-Lo que podrÌa explicar por quÈ AntiVirus se habilitÛ nuevamente por sÌ solo despuÈs de un reinicio.</a><br>
+Esta es una <b>clave de registro protegida</b> por lo que no te permitir√° cambiarla manualmente ni usar un archivo REG.
+S√≠, tambi√©n tengo 5 cuando est√° ACTIVO. Pero cuando est√° DESHABILITADO, tengo 4 en lugar de 0. 
+Lo que podr√≠a explicar por qu√© AntiVirus se habilit√≥ nuevamente por s√≠ solo despu√©s de un reinicio.</a><br>
 <br>
 
 <justify=align>
 
-Para deshabilitar la protecciÛn contra manipulaciones (Tamper protection) mediante el registro, la subclave del registro "TamperProtection", 
+Para deshabilitar la protecci√≥n contra manipulaciones (Tamper protection) mediante el registro, la subclave del registro "TamperProtection", 
 ubicada en HKLM\SYSTEM\CurrentControlSet\Services\WinDefend\Start debe configurarse entre 5 y 0/4.<br>
 <br>
 No es posible modificar los valores de la subclave del registro en HKLM\SYSTEM\CurrentControlSet\Services\WinDefend<br>
  ni siquiera con privilegios SYSTEM/TrustedInstaller, ya que Windows Defender tiene un controlador en modo kernel <b>(WdFilter.sys)</b>
-que registra un filtro de devoluciÛn de llamada del Registro que protege las claves de registro de Defender.
+que registra un filtro de devoluci√≥n de llamada del Registro que protege las claves de registro de Defender.
 <br>
 
 
@@ -199,9 +200,9 @@ Exclusiones tanto de la Carpeta como del USB si lo tenemos externo<br>
 
 
     <a href="https://github.com/TairikuOokami/Windows/blob/main/Microsoft%20Defender%20Disable.bat" target="_blank">
-<b>Windows/Microsoft Defender Disable.bat</b> TairikuOokami/Windows ∑ GitHub</a><br>
+<b>Windows/Microsoft Defender Disable.bat</b> TairikuOokami/Windows ¬∑ GitHub</a><br>
     <a href="https://github.com/TairikuOokami/Windows/blob/main/Microsoft%20Defender%20Enable.bat" target="_blank">
-<b>Windows/Microsoft Defender Enable.bat</b> TairikuOokami/Windows ∑ GitHub</a><br>
+<b>Windows/Microsoft Defender Enable.bat</b> TairikuOokami/Windows ¬∑ GitHub</a><br>
 
 
 
@@ -241,21 +242,21 @@ Defender debe estar activo.:<br><br>
 <br>
 
 
-Ahora hay que ir a <b>-Configuracion >> -ActualizaciÛn y Seguridad >> -Seguridad de Windows >><br>
- -ProtecciÛn contra amenazas y virus (Centro de Seguridad de Windows Defender)<br>
--ConfiguraciÛn de Antivirus >> -Exclusiones</b><br>
+Ahora hay que ir a <b>-Configuracion >> -Actualizaci√≥n y Seguridad >> -Seguridad de Windows >><br>
+ -Protecci√≥n contra amenazas y virus (Centro de Seguridad de Windows Defender)<br>
+-Configuraci√≥n de Antivirus >> -Exclusiones</b><br>
 Y buscar el archivo, carpeta, tipo de archivo o proceso.<br>
 <br>
 <b>Powershell (Adm)</b><br><br>
 
 Defender debe estar activo.:<br><br>
 
-<b>Add-MpPreference -ExclusionPath "C:\INTEL" </b> <br>ExclusiÛn Carpeta (ejemplo Carpeta INTEL)<br>
-<b>Add-MpPreference -ExclusionProcess "C:\Windows\AutoKms\Autokms.exe"</b> <br> ExclusiÛn ejecutable (ejemplo Autokms.exe)<br>
+<b>Add-MpPreference -ExclusionPath "C:\INTEL" </b> <br>Exclusi√≥n Carpeta (ejemplo Carpeta INTEL)<br>
+<b>Add-MpPreference -ExclusionProcess "C:\Windows\AutoKms\Autokms.exe"</b> <br> Exclusi√≥n ejecutable (ejemplo Autokms.exe)<br>
 <b>Add-MpPreference -ExclusionProcess "C:\Windows\System32\SppExtComObjHook.dll"</b><br>
 <br>
 Podemos comprobarlo con.:<br>
-<b>Get-MpPreference</b> ComprobaciÛn Exclusiones<br>
+<b>Get-MpPreference</b> Comprobaci√≥n Exclusiones<br>
 <b>Get-MpPreference | Select-Object -ExpandProperty ExclusionPath</b><br>
 <b>Get-MpPreference | Select-Object -ExpandProperty ExclusionProcess</b><br>
 <b>Get-MpPreference | Select-Object -Property ExclusionPath -ExpandProperty ExclusionPath</b><br>
@@ -277,10 +278,10 @@ Ejemplo.:<br>
 Delete folder <b>Service   C:\ProgramData\Microsoft\Windows Defender\Scans\History\Service</b><br><br>
 
 Control Aplicaciones y Navegador Windows 2004<br>
-<b>"ConfiguraciÛn -> ActualizaciÛn y seguridad -> Seguridad de Windows -><br>
-Control de aplicaciones y navegadores<br> -> ProtecciÛn contra vulnerabilidades --><br>
-ConfiguraciÛn de protecciÛn contra vulnerabilidades--><br>
-ConfiguraciÛn del Sistema | ConfiguraciÛn del Programa</b><br>
+<b>"Configuraci√≥n -> Actualizaci√≥n y seguridad -> Seguridad de Windows -><br>
+Control de aplicaciones y navegadores<br> -> Protecci√≥n contra vulnerabilidades --><br>
+Configuraci√≥n de protecci√≥n contra vulnerabilidades--><br>
+Configuraci√≥n del Sistema | Configuraci√≥n del Programa</b><br>
 <br>
 Por ejemplo, tiene activado ASLR con Adobe acrobat reader (acroRD32.exe)
 <br>
@@ -311,7 +312,7 @@ Figuran tecnologias como.:<br>
 
 <br>    
 <a href="https://www.deskmodder.de/wiki/index.php?title=Windows_Defender_Dateien_aus_dem_Ordner_Quarant%C3%A4ne_wiederherstellen" target="_blank">
-<b>Restaurar archivos de Windows Defender desde la carpeta de cuarentena</b> alem·n</a><br>
+<b>Restaurar archivos de Windows Defender desde la carpeta de cuarentena</b> alem√°n</a><br>
 <br>
 
   <div class="alert">
@@ -346,7 +347,7 @@ El Servicio "Firewall de Windows Defender" <b>[mpssvc]</b> no deja el Sistema de
 <br>
 
 <b>GPO.:</b><br>
--ConfiguraciÛn del Equipo > -Plantillas administrativa > -Red > -Conexiones de red ><br>
+-Configuraci√≥n del Equipo > -Plantillas administrativa > -Red > -Conexiones de red ><br>
     -Firewall de Windows Defender > -Perfil Estandar ><br>
         - Firewall de Windows Defender:proteger todas las conexiones de red ><br>
         - <b>Deshabilitada</b> [X]<br>
@@ -355,12 +356,12 @@ Comandos.: <b>Powershell (adm)</b><br>
 <br>
 <b>Get-MpComputerStatus</b>    (informa las signatures/base de datos tanto del Antispyware como del Antivirus)<br>
 <b>Update-MpSignature</b>      (actualiza bases)<br>
-<b>Update-MpSignature -UpdateSource MicrosoftUpdateServer</b>   (otra opciÛn m·s completa de actualizaciÛn bases)<br>
+<b>Update-MpSignature -UpdateSource MicrosoftUpdateServer</b>   (otra opci√≥n m√°s completa de actualizaci√≥n bases)<br>
 <br>
-<b>Get-MpComputerStatus</b> Podemos tambiÈn chequear con m·s info (Tumper activo etc...)</b>
+<b>Get-MpComputerStatus</b> Podemos tambi√©n chequear con m√°s info (Tumper activo etc...)</b>
 
 <br>
-Comandos.: <b>CMD (adm)</b> ActualizaciÛn base datos<br>
+Comandos.: <b>CMD (adm)</b> Actualizaci√≥n base datos<br>
 <br>
 <b>cd "%ProgramFiles%\Windows Defender"</b> directorio Defender<br>
 <b>MpCmdRun.exe -SignatureUpdate</b> (Comprobamos ultima update)<br>
@@ -405,7 +406,7 @@ Usar el firewall <b>netsh advfirewall</b> ejemplos</a><br>
 
 
        <a href="https://www.solvetic.com/tutoriales/article/8767-desactivar-firewall-windows-10-cmd-powershell-o-menu-permanentemente/" target="_blank">
-<b>AdministraciÛn de Firewall de Windows con la lÌnea de comandos</b></a><br>
+<b>Administraci√≥n de Firewall de Windows con la l√≠nea de comandos</b></a><br>
 
        <a href="https://learn.microsoft.com/es-es/windows/security/operating-system-security/network-security/windows-firewall/configure-with-command-line?tabs=powershell" target="_blank">
 <b>Desactivar Firewall Windows 10 2020 CMD, PowerShell</b> solvetic.com</a><br>
@@ -441,14 +442,14 @@ Usar el firewall <b>netsh advfirewall</b> ejemplos</a><br>
 </font>
      <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"><br>
     <a href="https://computerhoy.com/tutoriales/puedes-restaurar-archivo-cuarentena-microsoft-defender-1165760" target="_blank">
-Restaurar un archivo que est· en cuarentena en <b>Defender</b><br>
+Restaurar un archivo que est√° en cuarentena en <b>Defender</b><br>
 En Microsoft Defender todos los archivos que son sospechosos se guardan en cuarentena en lugar de eliminarse de inmediato.</a><br>
 <br>
 Terminal (Administrador) CMD (adm)<br>
 <b>cd %ProgramFiles%\Windows Defender</b> y pulsar en el Enter.<br>
 <b>MpCmdRun.exe -restore -listall</b> para ver una lista de todos los archivos actualmente en cuarentena.<br>
-Por ˙ltimo, para restaurar aquel archivo que queramos escribimos<br>
-<b>MpCmdRun.exe -restore -name ìNombre de archivoî</b> y luego pulsamos en el Enter.<br>
+Por √∫ltimo, para restaurar aquel archivo que queramos escribimos<br>
+<b>MpCmdRun.exe -restore -name ‚ÄúNombre de archivo‚Äù</b> y luego pulsamos en el Enter.<br>
 Recordemos que debemos reemplazar "Nombre de fichero" 
 por el nombre del archivo que deseamos vuelva a su sitio dentro de nuestro almacenamiento interno, restaurar.<br>
 <br>
@@ -457,44 +458,44 @@ si Microsoft Defender considera al cien por cien que un fichero es una amenaza p
 
 <br>    
 <a href="https://www.deskmodder.de/wiki/index.php?title=Windows_Defender_Dateien_aus_dem_Ordner_Quarant%C3%A4ne_wiederherstellen" target="_blank">
-<b>Restaurar archivos de Windows Defender desde la carpeta de cuarentena</b> alem·n</a><br>
+<b>Restaurar archivos de Windows Defender desde la carpeta de cuarentena</b> alem√°n</a><br>
 <br>
 
 <a name="defendertamper"></a>
 <hr>
 
      <font color="#ff0000" face="verdana,arial,helvetica" size="2">
-<b>WinDefCtl .: protecciÛn contra manipulaciones (Tamper Protection)</b>
+<b>WinDefCtl .: protecci√≥n contra manipulaciones (Tamper Protection)</b>
 </font>
      <font color="#0404b4" face="Verdana,Arial,Helvetica" size="1"><br>
 <br>
 <b>WinDefCtl</b><br>
-Control automatizado de Windows Defender (Windows 11) y protecciÛn contra manipulaciones (Tamper Protection) mediante la automatizaciÛn de la interfaz de usuario (UI)<br>
+Control automatizado de Windows Defender (Windows 11) y protecci√≥n contra manipulaciones (Tamper Protection) mediante la automatizaci√≥n de la interfaz de usuario (UI)<br>
 <br>
-øQuÈ es?<br>
+¬øQu√© es?<br>
 <br>
-<b>WinDefCtl</b> es una utilidad de lÌnea de comandos que automatiza el control de la configuraciÛn de ProtecciÛn en Tiempo Real (RTP) y ProtecciÛn contra Manipulaciones (Tamper Protection) de Windows Defender. <br>
-A diferencia de los mÈtodos tradicionales (PowerShell, Registro), utiliza la API de AutomatizaciÛn de la IU para interactuar con la interfaz de Seguridad de Windows, 
-simulando eficazmente los clics humanos a la velocidad de una m·quina.<br>
+<b>WinDefCtl</b> es una utilidad de l√≠nea de comandos que automatiza el control de la configuraci√≥n de Protecci√≥n en Tiempo Real (RTP) y Protecci√≥n contra Manipulaciones (Tamper Protection) de Windows Defender. <br>
+A diferencia de los m√©todos tradicionales (PowerShell, Registro), utiliza la API de Automatizaci√≥n de la IU para interactuar con la interfaz de Seguridad de Windows, 
+simulando eficazmente los clics humanos a la velocidad de una m√°quina.<br>
 <br>
-øPor quÈ AutomatizaciÛn de la IU?<br>
+¬øPor qu√© Automatizaci√≥n de la IU?<br>
 <br>
-Cuando la ProtecciÛn contra Manipulaciones est· habilitada, Microsoft bloquea todos los mÈtodos administrativos tradicionales:<br>
+Cuando la Protecci√≥n contra Manipulaciones est√° habilitada, Microsoft bloquea todos los m√©todos administrativos tradicionales:<br>
 PowerShell: Set-MpPreference -DisableRealtimeMonitoring $true se ignora<br>
-Registro: ModificaciÛn directa bloqueada por el controlador ELAM<br>
-⁄nico mÈtodo autorizado: GUI de Seguridad de Windows (Windows Security GUI)<br>
+Registro: Modificaci√≥n directa bloqueada por el controlador ELAM<br>
+√önico m√©todo autorizado: GUI de Seguridad de Windows (Windows Security GUI)<br>
 <br>
 
 WinDefCtl <br>
 Cubre esta brecha automatizando la capa GUI mediante las interfaces COM de accesibilidad de Microsoft (IUIAutomation), a la vez que utiliza el ocultamiento de DWM para mantener la ventana invisible durante el funcionamiento.<br>
 <br>
-CaracterÌsticas:<br>
-Activar/Desactivar la protecciÛn en tiempo real<br>
-Activar/Desactivar la protecciÛn contra manipulaciones<br>
-Comprobar el estado de la protecciÛn<br>
-OperaciÛn invisible (ocultamiento de DWM + posicionamiento fuera de pantalla)<br>
-GestiÛn autom·tica del Control de Cuentas de Usuario (UAC) (copia de seguridad ? suprimir ? restaurar)<br>
-DetecciÛn de arranque en frÌo con precalentamiento<br>
+Caracter√≠sticas:<br>
+Activar/Desactivar la protecci√≥n en tiempo real<br>
+Activar/Desactivar la protecci√≥n contra manipulaciones<br>
+Comprobar el estado de la protecci√≥n<br>
+Operaci√≥n invisible (ocultamiento de DWM + posicionamiento fuera de pantalla)<br>
+Gesti√≥n autom√°tica del Control de Cuentas de Usuario (UAC) (copia de seguridad ? suprimir ? restaurar)<br>
+Detecci√≥n de arranque en fr√≠o con precalentamiento<br>
 Independiente del idioma (probado en Windows 11 25H2 EN/PL)<br>
 <br>
 Uso:<br>
@@ -510,19 +511,19 @@ Codigo:<br>
 ./WinDefCtl.exe tp off            # Desactivado<br>
 <br>
 <br>
-Detalles tÈcnicos:<br>
+Detalles t√©cnicos:<br>
 <br>
-La herramienta funciona asÌ:<br>
+La herramienta funciona as√≠:<br>
 1. Abrir la URI windowsdefender://threatsettings<br>
-2. Ocultar la ventana mediante ocultaciÛn multicapa (opacidad=0, ocultaciÛn DWM, teletransporte fuera de pantalla) (multi-layer hiding (opacity=0, DWM cloak, off-screen teleport)<br>
-3. Usar la automatizaciÛn de la interfaz de usuario (UI) para localizar los interruptores en el ·rbol de elementos<br>
+2. Ocultar la ventana mediante ocultaci√≥n multicapa (opacidad=0, ocultaci√≥n DWM, teletransporte fuera de pantalla) (multi-layer hiding (opacity=0, DWM cloak, off-screen teleport)<br>
+3. Usar la automatizaci√≥n de la interfaz de usuario (UI) para localizar los interruptores en el √°rbol de elementos<br>
 4. Suprimir temporalmente las solicitudes del Control de Cuentas de Usuario (UAC) mediante el intercambio del registro<br>
-5. Activar y desactivar los estados de protecciÛn y verificar los cambios en la interfaz de usuario (UI)<br>
+5. Activar y desactivar los estados de protecci√≥n y verificar los cambios en la interfaz de usuario (UI)<br>
 <br>
-Requiere una sesiÛn de interfaz de usuario (GUI); no se puede ejecutar sin interfaz gr·fica ni con RDP minimizado, ya que necesita la aplicaciÛn Windows Security UWP para renderizar y responder a los comandos de automatizaciÛn.<br>
+Requiere una sesi√≥n de interfaz de usuario (GUI); no se puede ejecutar sin interfaz gr√°fica ni con RDP minimizado, ya que necesita la aplicaci√≥n Windows Security UWP para renderizar y responder a los comandos de automatizaci√≥n.<br>
 <br>
 Pruebas:<br>
-Probado en Windows 11 25H2 (inglÈs y polaco). DiseÒado con detecciÛn de elementos independiente del idioma, por lo que deberÌa funcionar en todas las configuraciones regionales de Windows 11.<br>
+Probado en Windows 11 25H2 (ingl√©s y polaco). Dise√±ado con detecci√≥n de elementos independiente del idioma, por lo que deber√≠a funcionar en todas las configuraciones regionales de Windows 11.<br>
 <br>
 Descargar:<br>
 <a href="https://github.com/wesmar/WinDefCtl/releases/download/v1.0.0/WinDefCtl.7z">
@@ -533,10 +534,10 @@ Password: github.com<br>
 Requisitos:<br>
 Windows 11 (Interfaz de seguridad de Windows moderna)<br>
 Privilegios de administrador<br>
-SesiÛn de GUI activa (Escritorio/Consola)<br>
+Sesi√≥n de GUI activa (Escritorio/Consola)<br>
 <br>
 Nota.:<br>
-Solo para fines legÌtimos de administraciÛn del sistema e investigaciÛn de seguridad. El usuario asume plena responsabilidad legal.<br>
+Solo para fines leg√≠timos de administraci√≥n del sistema e investigaci√≥n de seguridad. El usuario asume plena responsabilidad legal.<br>
 <br>
 
 Uso.:<br>
@@ -556,7 +557,7 @@ PS C:\Tools\WinDefCtl> .\WinDefCtl.ps1 tp off<br>
 Para volver activar el Tamper.:<br>
 PowerShell (Privilegios Administrador)<br>
 PS C:\Tools\WinDefCtl> .\WinDefCtl.ps1 tp on<br>
-PS C:\Tools\WinDefCtl> .\WinDefCtl.exe tp on (dependiendo que ejecutable se utilizÛ)<br>
+PS C:\Tools\WinDefCtl> .\WinDefCtl.exe tp on (dependiendo que ejecutable se utiliz√≥)<br>
 <br>
 PS C:\Tools\WinDefCtl> Get-MpComputerStatus | Select-Object IsTamperProtected<br>
 PS C:\Tools\WinDefCtl><br>
